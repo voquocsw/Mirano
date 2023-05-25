@@ -1,0 +1,28 @@
+SMAP
+register_jsp.java
+JSP
+*S JSP
+*F
++ 0 register.jsp
+View/register.jsp
++ 1 setupCss.jsp
+View/setupCss.jsp
++ 2 header.jsp
+View/header.jsp
++ 3 footer.jsp
+View/footer.jsp
+*L
+1,6:61
+1#1,40:67
+6#0,27:106
+1#2,40:133
+40:339,8
+41,10:347
+50,2:175
+51:375,8
+52,4:383
+55,12:179
+32#0,90:190
+5#3,38:280
+121#0,5:317
+*E
