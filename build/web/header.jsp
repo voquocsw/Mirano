@@ -13,7 +13,7 @@
         <header class="header_section">
             <div class="container">
                 <nav class="navbar navbar-expand-lg custom_nav-container ">
-                    <a class="navbar-brand" href="home">
+                    <a class="navbar-brand" href="home.jsp">
                         <span>
                             Mirano restaurant
                         </span>
@@ -26,14 +26,19 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav  mx-auto ">
                             <li class="nav-item">
-                                <a class="nav-link" href="home">Home</a>
+                                <a class="nav-link" href="home.jsp">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="menu">Menu</a>
+                                <a class="nav-link" href="menuController">Menu</a>
                             </li>
+                            <c:if test="${sessionScope.id != null}">
                             <li class="nav-item">
-                                <a class="nav-link" href="historyBookingController">History Booking</a>
-                            </li>
+                                <a class="nav-link" href="chooseTable.jsp">Booking</a>
+                            </li> 
+                            <li class="nav-item">
+                                <a class="nav-link" href="historyBookingController">Carts</a>
+                            </li>  
+                            </c:if>
                         </ul>
                         <div class="user_option">
 

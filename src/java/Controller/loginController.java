@@ -6,6 +6,7 @@
 package Controller;
 
 import DAO.UserDao;
+import Model.Status;
 import Model.User;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,6 +14,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -76,17 +78,18 @@ public class loginController extends HttpServlet {
         String pass = request.getParameter("pass");
         UserDao db = new UserDao();
         User user = db.findUser(email, pass);
+        HttpSession session = request.getSession();
         if (user != null) {
             request.getSession().setAttribute("id", user.getId());
             request.getSession().setAttribute("role", user.getRole());
             if (user.getRole() == 1) {
-                response.sendRedirect("register.jsp");
-            } else if (user.getRole() == 0) {
-                response.sendRedirect("register.jsp");
-            }
-            
+                response.sendRedirect("home.jsp");
+            } else if (user.getRole() == 2) {
+                response.sendRedirect("adminDashboardController");
+            }           
         } else {
-            response.sendRedirect("footer.jsp");
+            request.setAttribute("ms", "Username or Password incorrect!");
+            response.sendRedirect("loginjsp.jsp");
         }
         
     }

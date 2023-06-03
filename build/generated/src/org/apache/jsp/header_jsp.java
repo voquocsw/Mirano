@@ -66,7 +66,7 @@ public final class header_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <header class=\"header_section\">\r\n");
       out.write("            <div class=\"container\">\r\n");
       out.write("                <nav class=\"navbar navbar-expand-lg custom_nav-container \">\r\n");
-      out.write("                    <a class=\"navbar-brand\" href=\"home\">\r\n");
+      out.write("                    <a class=\"navbar-brand\" href=\"home.jsp\">\r\n");
       out.write("                        <span>\r\n");
       out.write("                            Mirano restaurant\r\n");
       out.write("                        </span>\r\n");
@@ -79,10 +79,10 @@ public final class header_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\r\n");
       out.write("                        <ul class=\"navbar-nav  mx-auto \">\r\n");
       out.write("                            <li class=\"nav-item\">\r\n");
-      out.write("                                <a class=\"nav-link\" href=\"home\">Home</a>\r\n");
+      out.write("                                <a class=\"nav-link\" href=\"home.jsp\">Home</a>\r\n");
       out.write("                            </li>\r\n");
       out.write("                            <li class=\"nav-item\">\r\n");
-      out.write("                                <a class=\"nav-link\" href=\"menu\">Menu</a>\r\n");
+      out.write("                                <a class=\"nav-link\" href=\"menu.jsp\">Menu</a>\r\n");
       out.write("                            </li>\r\n");
       out.write("                            <li class=\"nav-item\">\r\n");
       out.write("                                <a class=\"nav-link\" href=\"historyBookingController\">History Booking</a>\r\n");

@@ -5,8 +5,13 @@
  */
 package Controller;
 
+import DAO.CategoryDao;
+import DAO.productDao;
+import Model.Category;
+import Model.Product;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -54,9 +59,16 @@ public class menuController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+        protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        String name = request.getParameter("name")==null? "": request.getParameter("name");
+        productDao productDb = new productDao();
+        List<Product> product = productDb.getAllProduct(name);
+        CategoryDao catDao = new CategoryDao();
+        List<Category> category = catDao.getAllCategory();
+        request.setAttribute("product", product);
+        request.setAttribute("category", category);
+        request.getRequestDispatcher("menu.jsp").forward(request, response);
     }
 
     /**

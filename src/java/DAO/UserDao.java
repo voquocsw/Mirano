@@ -12,6 +12,8 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import Model.User;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -73,10 +75,10 @@ public class UserDao extends DBContext{
     public User findUser(int userId, String password) {
         try {
             String sql = "select * from [Users] where [userId] = ? and [userPass] = ?";
-            PreparedStatement stm = connection.prepareStatement(sql);
-            
+            PreparedStatement stm = connection.prepareStatement(sql); 
+            String pass = md5.getMd5(password);
             stm.setInt(1, userId);
-            stm.setString(2, md5.getMd5(password));
+            stm.setString(2, md5.getMd5(pass));
             ResultSet rs = stm.executeQuery();
             if (rs.next()) {
                 User s = new User();
@@ -102,7 +104,7 @@ public class UserDao extends DBContext{
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setInt(1, userId);
             ResultSet rs = stm.executeQuery();
-//            if (rs.next()) {
+            if (rs.next()) {
                 User s = new User();
                 s.setId(rs.getInt("userId"));
                 s.setFullname(rs.getString("fullName"));
@@ -110,10 +112,10 @@ public class UserDao extends DBContext{
                 s.setPassword(rs.getString("userPass"));
                 s.setGender(rs.getBoolean("gender"));
                 s.setPhone(rs.getString("phone"));
-                s.setAddress(rs.getString("address"));
+                s.setAddress(rs.getString("addresss"));
                 s.setRole(rs.getInt("roleID"));
                 return s;
-//            }
+           }
         } catch (SQLException ex) {
             Logger.getLogger(UserDao.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -153,7 +155,7 @@ public class UserDao extends DBContext{
         try {
             String sql = "UPDATE [dbo].[Users]\n"
                     + "   SET [userPass] = ?\n"
-                    + "WHERE [Users].UserId =?";
+                    + "WHERE [Users].userId =?";
             PreparedStatement stm = connection.prepareCall(sql);
             stm.setString(1, pass);
             stm.setInt(2, uid);
@@ -165,17 +167,17 @@ public class UserDao extends DBContext{
         return 1;
     }
 
-    public int updateUser(String name, boolean gender, String phone, String address, int userId) {
+    public int updateUser(String name, int gender, String phone, String address, int userId) {
         try {
             String sql = "UPDATE [dbo].[Users]\n"
-                    + "   SET [fullname] = ?\n"
+                    + "   SET [fullName] = ?\n"
                     + "      ,[gender] = ?\n"
                     + "      ,[phone] = ?\n"
-                    + "      ,[address] = ?\n"
-                    + "WHERE [Users].UserId =?";
+                    + "      ,[addresss] = ?\n"
+                    + "WHERE [Users].userId =?";
             PreparedStatement stm = connection.prepareCall(sql);
             stm.setString(1, name);
-            stm.setBoolean(2, gender);
+            stm.setInt(2, gender);
             stm.setString(3, phone);
             stm.setString(4, address);
             stm.setInt(5, userId);
@@ -202,10 +204,32 @@ public class UserDao extends DBContext{
             return 0;
         }
     }
-
+      
+        public List<User> getUserByCondition() {
+        List<User> user = new ArrayList<>();
+        try {
+            String sql = "select * from Users\n";
+            PreparedStatement stm = connection.prepareCall(sql);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                User fl = new User();
+                fl.setId(rs.getInt("userId"));
+                fl.setFullname(rs.getString("fullName"));
+                fl.setGender(rs.getBoolean("gender"));
+                fl.setPhone(rs.getString("phone"));
+                fl.setAddress(rs.getString("addresss"));
+                fl.setRole(rs.getInt("roleID"));
+                user.add(fl);
+            }
+            return user;
+        } catch (SQLException ex) {
+            Logger.getLogger(productDao.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+    }
     public static void main(String[] args) {
         UserDao us = new UserDao();
 //        us.register("test", "admin@gmail.com", "123", true, "123", "ĐÀ NẴng", 2) ;
-          System.out.print(us.findUser("admin@gmail.com","123"));
+          System.out.println(us.findUser("",""));
     }
 }

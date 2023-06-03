@@ -131,7 +131,7 @@
                     </div>
                 </div>
                 <div class="btn-box">
-                    <a href="menu" style="background-color: brown !important;padding: 15px 25px; text-decoration: none;">
+                    <a href="menu.jsp" style="background-color: brown !important;padding: 15px 25px; text-decoration: none;">
                         View More
                     </a>
                 </div>

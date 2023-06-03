@@ -48,12 +48,11 @@
                             </div>
                             <div class="col-md-6 col-lg-6 d-flex align-items-center">
                                 <div class="card-body p-4 p-lg-5 text-black">
-
+                                    <div class="d-flex align-items-center mb-3 pb-1" >
+                                        <h1>Mirano</h1>
+                                    </div>                                    
                                     <form method="post" action="loginController">
-
-                                        <div class="d-flex align-items-center mb-3 pb-1" >
-                                            <h1>Mirano</h1>
-                                        </div>
+                                        <h3 style="color: red">${requestScope.ms}</h3>
 
                                         <h2 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your
                                             account</h2>

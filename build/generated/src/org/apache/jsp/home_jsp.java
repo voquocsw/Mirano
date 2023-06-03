@@ -112,9 +112,9 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <link href=\"view/css/font-awesome.min.css\" rel=\"stylesheet\" />\r\n");
       out.write("\r\n");
       out.write("        <!-- Custom styles for this template -->\r\n");
-      out.write("        <link href=\"view/css/style.css\" rel=\"stylesheet\" />\r\n");
+      out.write("        <link href=\"View/css/style.css\" rel=\"stylesheet\" />\r\n");
       out.write("        <!-- responsive style -->\r\n");
-      out.write("        <link href=\"view/css/responsive.css\" rel=\"stylesheet\" />\r\n");
+      out.write("        <link href=\"View/css/responsive.css\" rel=\"stylesheet\" />\r\n");
       out.write("\r\n");
       out.write("        <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi\" crossorigin=\"anonymous\">\r\n");
       out.write("    </head>\r\n");
@@ -151,7 +151,7 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <header class=\"header_section\">\r\n");
       out.write("            <div class=\"container\">\r\n");
       out.write("                <nav class=\"navbar navbar-expand-lg custom_nav-container \">\r\n");
-      out.write("                    <a class=\"navbar-brand\" href=\"home\">\r\n");
+      out.write("                    <a class=\"navbar-brand\" href=\"home.jsp\">\r\n");
       out.write("                        <span>\r\n");
       out.write("                            Mirano restaurant\r\n");
       out.write("                        </span>\r\n");
@@ -164,10 +164,10 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\r\n");
       out.write("                        <ul class=\"navbar-nav  mx-auto \">\r\n");
       out.write("                            <li class=\"nav-item\">\r\n");
-      out.write("                                <a class=\"nav-link\" href=\"home\">Home</a>\r\n");
+      out.write("                                <a class=\"nav-link\" href=\"home.jsp\">Home</a>\r\n");
       out.write("                            </li>\r\n");
       out.write("                            <li class=\"nav-item\">\r\n");
-      out.write("                                <a class=\"nav-link\" href=\"menu\">Menu</a>\r\n");
+      out.write("                                <a class=\"nav-link\" href=\"menu.jsp\">Menu</a>\r\n");
       out.write("                            </li>\r\n");
       out.write("                            <li class=\"nav-item\">\r\n");
       out.write("                                <a class=\"nav-link\" href=\"historyBookingController\">History Booking</a>\r\n");
@@ -277,7 +277,7 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    </div>\n");
       out.write("                </div>\n");
       out.write("                <div class=\"btn-box\">\n");
-      out.write("                    <a href=\"menu\" style=\"background-color: brown !important;padding: 15px 25px; text-decoration: none;\">\n");
+      out.write("                    <a href=\"menu.jsp\" style=\"background-color: brown !important;padding: 15px 25px; text-decoration: none;\">\n");
       out.write("                        View More\n");
       out.write("                    </a>\n");
       out.write("                </div>\n");

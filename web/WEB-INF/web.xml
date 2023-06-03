@@ -16,6 +16,46 @@
         <servlet-name>menuController</servlet-name>
         <servlet-class>Controller.menuController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>changePassController</servlet-name>
+        <servlet-class>Controller.changePassController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>manageProductControll</servlet-name>
+        <servlet-class>Controller.manageProductControll</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>profileController</servlet-name>
+        <servlet-class>Controller.profileController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>createProductController</servlet-name>
+        <servlet-class>Controller.createProductController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>viewProductController</servlet-name>
+        <servlet-class>Controller.viewProductController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>updateProductController</servlet-name>
+        <servlet-class>Controller.updateProductController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>managerUserControll</servlet-name>
+        <servlet-class>Controller.managerUserControll</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>adminDashboardController</servlet-name>
+        <servlet-class>Controller.adminDashboardController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>productController</servlet-name>
+        <servlet-class>Controller.productController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>chooseTable</servlet-name>
+        <servlet-class>Controller.chooseTable</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>loginController</servlet-name>
         <url-pattern>/loginController</url-pattern>
@@ -31,6 +71,46 @@
     <servlet-mapping>
         <servlet-name>menuController</servlet-name>
         <url-pattern>/menuController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>changePassController</servlet-name>
+        <url-pattern>/changePassController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>manageProductControll</servlet-name>
+        <url-pattern>/manageProductControll</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>profileController</servlet-name>
+        <url-pattern>/profileController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>createProductController</servlet-name>
+        <url-pattern>/createProductController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>viewProductController</servlet-name>
+        <url-pattern>/viewProductController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>updateProductController</servlet-name>
+        <url-pattern>/updateProductController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>managerUserControll</servlet-name>
+        <url-pattern>/managerUserControll</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>adminDashboardController</servlet-name>
+        <url-pattern>/adminDashboardController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>productController</servlet-name>
+        <url-pattern>/productController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>chooseTable</servlet-name>
+        <url-pattern>/chooseTable</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
