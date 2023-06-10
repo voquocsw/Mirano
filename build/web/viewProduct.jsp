@@ -49,17 +49,17 @@
                                 </div>
                                 <div class="col-md-12"><label class="labels">Image</label>
                                     <div class="text-center">
-                                        <img src="view/images/${product.image}" style="width: 100%; height: auto" class="rounded" alt="...">
+                                        <img src="View/image/${product.image}" style="width: 100%; height: auto" class="rounded" alt="...">
                                     </div>
                                 </div>
                                 <div class="col-md-12"><label class="labels">Category</label>
                                     <input type="text" readonly class="form-control" 
-                                           placeholder="category" value="${product.category.name}" name="category">
+                                           placeholder="category" value="${product.category.categoryName}" name="category">
                                 </div>
 
                                 <div class="col-md-12">
                                     <label class="labels">Description</label>
-                                    <textarea class="form-control" readonly name="description" rows="5" wrap="hard">${product.description}</textarea>
+                                    <textarea class="form-control" readonly name="description" rows="5" wrap="hard">${product.descript}</textarea>
                                 </div>
                               
                             </div>

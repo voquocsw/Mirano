@@ -5,7 +5,6 @@
  */
 package Model;
 
-
 /**
  *
  * @author Admin
@@ -14,10 +13,10 @@ public class User {
     //Role = 1 (User)
     //Role = 0 (Staff)
     //Role = 2 (Admin)  
-    
-    private  int id;
+
+    private int id;
     private String fullname;
-    private  String email;
+    private String email;
     private String password;
     private boolean gender;
     private String phone;
@@ -102,13 +101,10 @@ public class User {
     public void setRole(int role) {
         this.role = role;
     }
-    
 
     @Override
     public String toString() {
         return "User{" + "id=" + id + ", fullname=" + fullname + ", email=" + email + ", password=" + password + ", gender=" + gender + ", phone=" + phone + ", address=" + address + ", role=" + role + '}';
     }
-    
-    
-    
+
 }

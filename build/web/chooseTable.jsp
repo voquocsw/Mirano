@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>Booking</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <%@include file="setupCss.jsp" %>
         <style>
@@ -101,7 +102,7 @@
     </head>
     <body>
         <!--Header-->
-        <%@include file="header.jsp" %>
+        <%@include file="header-1.jsp" %>
         <!--Header-->
         <section class="about_section layout_padding" style="background-color: white;">
             <div class="container  " >

@@ -66,7 +66,7 @@ public class chooseTable extends HttpServlet {
         request.setAttribute("seats", slot);
         request.setAttribute("size", slot.size());
 //        response.getWriter().print(slot.get(0));
-        request.getRequestDispatcher("view/user/chooseSeatShow.jsp").forward(request, response);
+        request.getRequestDispatcher("chooseTable.jsp").forward(request, response);
     }
 
     /**

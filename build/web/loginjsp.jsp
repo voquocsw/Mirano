@@ -33,6 +33,7 @@
         <link href="view/css/style.css" rel="stylesheet" />
         <!-- responsive style -->
         <link href="view/css/responsive.css" rel="stylesheet" />
+        <%@include file="setupCss.jsp" %>
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     </head>
@@ -50,9 +51,10 @@
                                 <div class="card-body p-4 p-lg-5 text-black">
                                     <div class="d-flex align-items-center mb-3 pb-1" >
                                         <h1>Mirano</h1>
-                                    </div>                                    
+                                    </div> 
+                                    <h3 style="color: red">${requestScope.error}</h3>
                                     <form method="post" action="loginController">
-                                        <h3 style="color: red">${requestScope.ms}</h3>
+                                        
 
                                         <h2 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your
                                             account</h2>

@@ -34,12 +34,12 @@
                             </div>
                             <div class="row mt-3">
                                 <div class="col-md-12">
-                                    <label class="labels">ProductID</label>
+                                    <label class="labels">Product ID</label>
                                     <input type="text" readonly class="form-control" 
                                            placeholder="title" value="${product.productId}" name="productId">
                                 </div>
                                 <div class="col-md-12">
-                                    <label class="labels">ProductName</label>
+                                    <label class="labels">Product name</label>
                                     <input type="text" required class="form-control" 
                                            placeholder="title" value="${product.productName}" name="productName">
                                 </div>

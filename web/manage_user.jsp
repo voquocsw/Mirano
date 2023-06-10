@@ -13,7 +13,7 @@
             <meta charset="UTF-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Manage Show</title>
+            <title>Manage User</title>
 
             <!-- bootstrap core css -->
             <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
@@ -29,7 +29,7 @@
             <div class="container d-flex " style="min-height: 800px;">
 
                 <div class="col-md-12">
-                    <h3 class="mt-5">Manage product </h3>
+                    <h3 class="mt-5">Manage user</h3>
                     <c:set var="page" value="${param.page}" scope="session"/>
                     <c:if test="${page<=0}">
                         <c:set var="page" value="1" scope="session"/>
@@ -69,7 +69,7 @@
                                     <th scope="row">${f.address}</th>
                                     <th scope="row">${f.role}</th>
                             <th scope="row">
-                                <a style="margin-left: 10px" href="updateUserController?Id=${f.id}"><i class="fa fa-solid fa-pencil"></i></a>
+                                <a style="margin-left: 10px" href="updateUserController?id=${f.id}"><i class="fa fa-solid fa-pencil"></i></a>
                             </th>
                             <th scope="row">
                                 <button class="btn btn-link" type="button" class="btn btn-primary"
@@ -94,8 +94,8 @@
                                             Are you sure to delete this user?
                                         </div>
                                         <div class="modal-footer">
-                                            <form action="manageUserControll" method="post">
-                                                <input hidden type="search" value="${f.id}" name="productId" hidden>
+                                            <form action="managerUserControll" method="post">
+                                                <input hidden type="search" value="${f.id}" name="id" hidden>
                                                 <button type="submit" class="btn btn-primary">Yes</button>
                                                 <button type="button" class="btn btn-secondary"
                                                         data-bs-dismiss="modal">No</button>
@@ -113,7 +113,7 @@
                             <ul class="pagination">
                                 <c:forEach begin="1" end="${requestScope.total}" step="1" var="i">
                                     <li class="page-item <c:if test="${i == requestScope.page}"> active </c:if> " >
-                                        <a class="page-link" href="manageUserControll?page=${i}&fullname=${fullname}&id=${id}">
+                                        <a class="page-link" href="managerUserControll?page=${i}&fullname=${fullname}&id=${id}">
                                             ${i}
                                         </a>
                                     </li>

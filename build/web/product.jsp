@@ -20,7 +20,7 @@
                         <div class="card mb-3">
                             <img class="card-img img-fluid" 
                                  src="View/image/${requestScope.product.image}" alt="Card image cap"
-                                 style="height: 700px; width: auto"
+                                 style="height: 500px; width: auto"
                                  id="product-detail">
                         </div>
                         <div class="row">
@@ -32,7 +32,7 @@
                     </div>
                     <!-- col end -->
                     <div class="col-lg-7 mt-5" >
-                        <div class="card" style="height: 700px">
+                        <div class="card" style="height: 500px">
                             <div class="card-body">
                                 <h1 class="h2">${requestScope.product.productName}</h1><br><br>
                                 <ul class="list-inline">
@@ -59,14 +59,25 @@
                                 <h6>Description:</h6>
                                 <p>${requestScope.product.descript}</p>
                                 <ul class="list-inline">                                
-                                </ul>                             
-                                <form class="mt-5" action="chooseShowController" method="GET">
+                                </ul> 
+                                <form class="mt-5" action="buyController" method="post">
                                     <div class="row pb-3">
                                         <div class="col d-grid">
+                                            <div class="col-md-12"><label class="labels">Quantity</label>
+                                                <input type="number" required class="form-control"
+                                                       name="num" value="1" min="0" max="20" >
+                                            </div>
                                             <input hidden type="text" value="${requestScope.product.productId}" name="productId"/>
-                                            <button type="submit" class="btn btn-success btn-lg">
-                                                Order
-                                            </button>
+                                            <c:if test="${sessionScope.id != null}">
+                                                <button type="submit" class="btn btn-success btn-lg">
+                                                    Order
+                                                </button>
+                                            </c:if>
+                                            <c:if test="${sessionScope.id == null}">
+                                                <a href="loginController" class="btn btn-success btn-lg">
+                                                    Login to order
+                                                </a>
+                                            </c:if>
                                         </div>
                                     </div>
                                 </form>
@@ -77,10 +88,17 @@
                 </div>
             </div>
         </section>
+        <script type="text/javascript">
+            function buy(id) {
+                var m = document.f.num.value;
+                document.f.action = "buy?id=" + id + "&num=" + m;
+                document.f.submit();
+            }
+        </script>   
 
         <!-- end food section -->
 
         <%@include  file="footer.jsp"%>
-        
+
     </body>
 </html>

@@ -83,7 +83,7 @@ public final class manage_005fproduct_jsp extends org.apache.jasper.runtime.Http
       out.write("        <meta charset=\"UTF-8\">\n");
       out.write("        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n");
       out.write("        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n");
-      out.write("        <title>Manage Show</title>\n");
+      out.write("        <title>Manage Product</title>\n");
       out.write("\n");
       out.write("        <!-- bootstrap core css -->\n");
       out.write("        <link rel=\"stylesheet\" type=\"text/css\" href=\"css/bootstrap.css\" />\n");
@@ -112,7 +112,7 @@ public final class manage_005fproduct_jsp extends org.apache.jasper.runtime.Http
       out.write("            <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\" />\n");
       out.write("            <meta name=\"description\" content=\"\" />\n");
       out.write("            <meta name=\"author\" content=\"\" />\n");
-      out.write("            <title>Dashboard - SB Admin</title>\n");
+      out.write("            <title>Dashboard - Admin</title>\n");
       out.write("            <link href=\"https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css\" rel=\"stylesheet\" />\n");
       out.write("            <link href=\"css/styles.css\" rel=\"stylesheet\" />\n");
       out.write("            <script src=\"https://use.fontawesome.com/releases/v6.1.0/js/all.js\" crossorigin=\"anonymous\"></script>\n");
@@ -139,6 +139,9 @@ public final class manage_005fproduct_jsp extends org.apache.jasper.runtime.Http
       out.write("                        <li class=\"nav-item\">\n");
       out.write("                            <a class=\"nav-link ms-4\" href=\"manageBookingController?title=&date=&order=showId&dimesion=asc&page=1\">Booking</a>\n");
       out.write("                        </li>\n");
+      out.write("                        <li class=\"nav-item\">\n");
+      out.write("                            <a class=\"nav-link ms-4\" href=\"managerUserControll?page=1\">Users</a>\n");
+      out.write("                        </li>\n");
       out.write("                    </ul>\n");
       out.write("                </div>\n");
       out.write("                <div style=\"margin-right: 300px;\">\n");
@@ -146,7 +149,6 @@ public final class manage_005fproduct_jsp extends org.apache.jasper.runtime.Http
       out.write("                </div>\n");
       out.write("            </nav>\n");
       out.write("        </body>\n");
-      out.write("\n");
       out.write("    </html>\n");
       out.write("</body>\n");
       out.write("</html>\n");
@@ -398,7 +400,7 @@ public final class manage_005fproduct_jsp extends org.apache.jasper.runtime.Http
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${f.price}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</th>\n");
           out.write("                                    <th scope=\"row\">");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${f.productStatus}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${f.status}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</th>\n");
           out.write("                                    <th scope=\"row\">\n");
           out.write("                                        <a style=\"margin-left: 10px\" href=\"updateProductController?productId=");

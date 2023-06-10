@@ -85,14 +85,14 @@ public class managerUserControll extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        int productId = Integer.parseInt(request.getParameter("productId"));
-        productDao db = new productDao();
-        int status = db.deleteProduct(productId);
+        int id = Integer.parseInt(request.getParameter("id"));
+        UserDao db = new UserDao();
+        int status = db.deleteUser(id);
         if (status != 1) {
             response.sendRedirect("error");
             return;
         }
-        response.sendRedirect("manageProductControll?name=&category=productId&=asc&page=1");
+        response.sendRedirect("managerUserControll?fullname=&id&=asc&page=1");
         return;
         
     }

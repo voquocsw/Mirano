@@ -58,7 +58,7 @@ public class logoutController extends HttpServlet {
             throws ServletException, IOException {
         request.getSession().setAttribute("id", null);
         request.getSession().setAttribute("role", null);
-        response.sendRedirect("home.jsp");
+        response.sendRedirect("homeController");
     }
 
     /**

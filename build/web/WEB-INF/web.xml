@@ -56,6 +56,34 @@
         <servlet-name>chooseTable</servlet-name>
         <servlet-class>Controller.chooseTable</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>checkoutController</servlet-name>
+        <servlet-class>Controller.checkoutController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>processController</servlet-name>
+        <servlet-class>Controller.processController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>cartController</servlet-name>
+        <servlet-class>Controller.cartController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>buyController</servlet-name>
+        <servlet-class>Controller.buyController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>homeController</servlet-name>
+        <servlet-class>Controller.homeController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>updateUserController</servlet-name>
+        <servlet-class>Controller.updateUserController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>infoController</servlet-name>
+        <servlet-class>Controller.infoController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>loginController</servlet-name>
         <url-pattern>/loginController</url-pattern>
@@ -111,6 +139,34 @@
     <servlet-mapping>
         <servlet-name>chooseTable</servlet-name>
         <url-pattern>/chooseTable</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>checkoutController</servlet-name>
+        <url-pattern>/checkoutController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>processController</servlet-name>
+        <url-pattern>/processController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>cartController</servlet-name>
+        <url-pattern>/cartController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>buyController</servlet-name>
+        <url-pattern>/buyController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>homeController</servlet-name>
+        <url-pattern>/homeController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>updateUserController</servlet-name>
+        <url-pattern>/updateUserController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>infoController</servlet-name>
+        <url-pattern>/infoController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

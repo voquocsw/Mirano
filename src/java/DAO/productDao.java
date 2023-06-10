@@ -19,7 +19,8 @@ import java.util.logging.Logger;
  *
  * @author Aver
  */
-public class productDao extends DBContext{
+public class productDao extends DBContext {
+
     public int countProductActive() {
         try {
             String sql = "select count(productID) as countProduct from Products where productStatus = 1";
@@ -35,6 +36,59 @@ public class productDao extends DBContext{
             return 0;
         }
     }
+
+    public List<Product> getAllProduct() {
+        List<Product> products = new ArrayList<>();
+        try {
+            String sql = "select * from Products";
+            PreparedStatement stm = connection.prepareCall(sql);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                Product fl = new Product();
+                fl.setProductId(rs.getInt("productID"));
+                fl.setProductName(rs.getString("productName"));
+                fl.setDescript(rs.getString("descript"));
+                fl.setImage(rs.getString("imagee"));
+                fl.setPrice(rs.getFloat("price"));
+                Category cat = new Category();
+                cat.setCategoryId(rs.getInt("categoryId"));
+                cat.setCategoryName(rs.getString("categoryName"));
+                fl.setCategory(cat);
+                products.add(fl);
+            }
+            return products;
+        } catch (SQLException ex) {
+            Logger.getLogger(productDao.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+    }
+
+    public List<Product> getNewProductTop3() {
+        List<Product> product = new ArrayList<>();
+        try {
+            String sql = "select top 3 * from Products f \n"
+                    + "left join category g on f.categoryID = g.categoryID \n";
+            PreparedStatement stm = connection.prepareCall(sql);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                Product fl = new Product();
+                fl.setProductId(rs.getInt("productID"));
+                fl.setProductName(rs.getString("productName"));
+                fl.setImage(rs.getString("imagee"));
+                fl.setDescript(rs.getString("descript"));
+                Category cat = new Category();
+                cat.setCategoryId(rs.getInt("categoryID"));
+                cat.setCategoryName(rs.getString("categoryName"));
+                fl.setCategory(cat);               
+                product.add(fl);
+            }
+            return product;
+        } catch (SQLException ex) {
+            Logger.getLogger(productDao.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+    }
+
 
     public List<Product> getAllProduct(String name) {
         List<Product> products = new ArrayList<>();
@@ -64,10 +118,10 @@ public class productDao extends DBContext{
         }
     }
 
-       public List<Product> getProductByCondition(String proName, String category, int page, int page_Size) {
+    public List<Product> getProductByCondition(String proName, String category, int page, int page_Size) {
         List<Product> product = new ArrayList<>();
         try {
-            String sql = "select * from Products f  left join Category g on f.categoryID = g.categoryID \n"
+            String sql = "select * from Products f left join Category g on f.categoryID = g.categoryID \n"
                     + "where productName like ?\n"
                     + "and g.categoryName like ?\n"
                     + "order by [price] offset (?-1)*? row fetch next ? row only";
@@ -207,7 +261,6 @@ public class productDao extends DBContext{
         }
     }
 
-
     public int deleteProduct(int proId) {
         try {
             String sql = "DELETE FROM [dbo].[Products] \n"
@@ -240,7 +293,6 @@ public class productDao extends DBContext{
             return null;
         }
     }
-
 
     public int updateStatusProduct(int productId) {
         try {
@@ -289,6 +341,6 @@ public class productDao extends DBContext{
 //        db.registerProduct(1, "test", "null", "test", 100);
 //        db.getProductByCondition("test", "monman", 1, 10);   
 //        System.out.println(db.getProductByCondition("Bun cha", "saltly food", 1, 10));
-          db.deleteProduct(18);
+        db.deleteProduct(18);
     }
 }

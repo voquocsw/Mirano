@@ -12,7 +12,7 @@
         <meta name="keywords" content="" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <link rel="shortcut icon" href="View/image/image.png" type="">
+        <link rel="shortcut icon" href="View/image/image.png" type="" style="">
 
         <title> Mirano restaurant </title>
         <!-- bootstrap core css -->
@@ -28,13 +28,14 @@
 
     <body>
         <div class="hero_area">
-            <div class="bg-box">
-                <img src="View/image/image.png" alt="">
+            <div class="bg-box" style="margin-top: 100px">
+              <img src="View/image/image.png" alt="">
             </div>
             <!-- header section strats -->
             <%@include file="header.jsp" %>
             <!-- end header section -->
             <!-- slider section -->
+            
             <section class="slider_section ">
                 <div id="customCarousel1" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
@@ -103,23 +104,23 @@
         <section class="food_section layout_padding-bottom">
             <div class="container">
                 <div class="heading_container heading_center">
-                    <h2 style="font-family: sans-serif; margin: 15px;">Special food</h2>
+                    <h2 style="font-family: sans-serif; margin: 15px; margin-top: 150px">Special food</h2>
                 </div>
 
                 <!-- List Products -->
                 <div class="filters-content">
                     <div class="row grid">
-                        <c:forEach items="${requestScope.film}" var="f" >
+                        <c:forEach items="${requestScope.product}" var="f" >
                             <div class="col-sm-6 col-lg-4 all pizza">
                                 <div class="box" style="box-shadow:  0 0 5px 5px lightgray; ">
                                     <div>
                                         <div class="img-box" style="height: 400px !important; border-radius: 0px !important;">
-                                            <img src="view/images/${f.image}" alt="" height="100%" style="max-height: none;">
+                                            <img src="View/image/${f.image}" alt="" height="100%" style="max-height: none;">
                                         </div>
                                         <div class="detail-box" style="background: #f1f2f3; ">
                                             <h5 style="text-transform: uppercase; text-align: center;">
-                                                <a href="film?film=${f.filmId}" class="" style="color: black; text-decoration: none">
-                                                    ${f.title} <br>Time: ${f.time} minute
+                                                <a href="productController?productId=${f.productId}" class="" style="color: black; text-decoration: none">
+                                                    ${f.productName}
                                                 </a>
                                             </h5>
 
@@ -131,7 +132,7 @@
                     </div>
                 </div>
                 <div class="btn-box">
-                    <a href="menu.jsp" style="background-color: brown !important;padding: 15px 25px; text-decoration: none;">
+                    <a href="menuController" style="background-color: brown !important;padding: 15px 25px; text-decoration: none;">
                         View More
                     </a>
                 </div>

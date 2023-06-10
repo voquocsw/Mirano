@@ -115,7 +115,7 @@ public final class manage_005fuser_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("            <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\" />\n");
       out.write("            <meta name=\"description\" content=\"\" />\n");
       out.write("            <meta name=\"author\" content=\"\" />\n");
-      out.write("            <title>Dashboard - SB Admin</title>\n");
+      out.write("            <title>Dashboard - Admin</title>\n");
       out.write("            <link href=\"https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css\" rel=\"stylesheet\" />\n");
       out.write("            <link href=\"css/styles.css\" rel=\"stylesheet\" />\n");
       out.write("            <script src=\"https://use.fontawesome.com/releases/v6.1.0/js/all.js\" crossorigin=\"anonymous\"></script>\n");
@@ -143,7 +143,7 @@ public final class manage_005fuser_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("                            <a class=\"nav-link ms-4\" href=\"manageBookingController?title=&date=&order=showId&dimesion=asc&page=1\">Booking</a>\n");
       out.write("                        </li>\n");
       out.write("                        <li class=\"nav-item\">\n");
-      out.write("                            <a class=\"nav-link ms-4\" href=\"manageUserControll?page=1\">Booking</a>\n");
+      out.write("                            <a class=\"nav-link ms-4\" href=\"managerUserControll?page=1\">Users</a>\n");
       out.write("                        </li>\n");
       out.write("                    </ul>\n");
       out.write("                </div>\n");
@@ -152,7 +152,6 @@ public final class manage_005fuser_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("                </div>\n");
       out.write("            </nav>\n");
       out.write("        </body>\n");
-      out.write("\n");
       out.write("    </html>\n");
       out.write("</body>\n");
       out.write("</html>\n");
@@ -163,7 +162,7 @@ public final class manage_005fuser_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("            <div class=\"container d-flex \" style=\"min-height: 800px;\">\n");
       out.write("\n");
       out.write("                <div class=\"col-md-12\">\n");
-      out.write("                    <h3 class=\"mt-5\">Manage product </h3>\n");
+      out.write("                    <h3 class=\"mt-5\">Manage user</h3>\n");
       out.write("                    ");
       if (_jspx_meth_c_set_0(_jspx_page_context))
         return;
@@ -525,15 +524,11 @@ public final class manage_005fuser_jsp extends org.apache.jasper.runtime.HttpJsp
           out.write("                                    <th scope=\"row\">");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${f.address}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</th>\n");
-          out.write("                                    <th scope=\"row\"> \n");
-          out.write("                                        <datalist test=\"");
+          out.write("                                    <th scope=\"row\">");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${f.role}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("\">\n");
-          out.write("                                            <option test=\"1\">Customer</option>\n");
-          out.write("                                            <option test=\"2\">Admin</option>\n");
-          out.write("                                        </datalist></th>\n");
+          out.write("</th>\n");
           out.write("                            <th scope=\"row\">\n");
-          out.write("                                <a style=\"margin-left: 10px\" href=\"updateUserController?Id=");
+          out.write("                                <a style=\"margin-left: 10px\" href=\"updateUserController?id=");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${f.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("\"><i class=\"fa fa-solid fa-pencil\"></i></a>\n");
           out.write("                            </th>\n");
@@ -564,10 +559,10 @@ public final class manage_005fuser_jsp extends org.apache.jasper.runtime.HttpJsp
           out.write("                                            Are you sure to delete this user?\n");
           out.write("                                        </div>\n");
           out.write("                                        <div class=\"modal-footer\">\n");
-          out.write("                                            <form action=\"manageUserControll\" method=\"post\">\n");
+          out.write("                                            <form action=\"managerUserControll\" method=\"post\">\n");
           out.write("                                                <input hidden type=\"search\" value=\"");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${f.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("\" name=\"productId\" hidden>\n");
+          out.write("\" name=\"id\" hidden>\n");
           out.write("                                                <button type=\"submit\" class=\"btn btn-primary\">Yes</button>\n");
           out.write("                                                <button type=\"button\" class=\"btn btn-secondary\"\n");
           out.write("                                                        data-bs-dismiss=\"modal\">No</button>\n");
@@ -671,7 +666,7 @@ public final class manage_005fuser_jsp extends org.apache.jasper.runtime.HttpJsp
           if (_jspx_meth_c_if_6((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_1, _jspx_page_context, _jspx_push_body_count_c_forEach_1))
             return true;
           out.write(" \" >\n");
-          out.write("                                        <a class=\"page-link\" href=\"manageUserControll?page=");
+          out.write("                                        <a class=\"page-link\" href=\"managerUserControll?page=");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${i}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("&fullname=");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${fullname}", java.lang.String.class, (PageContext)_jspx_page_context, null));

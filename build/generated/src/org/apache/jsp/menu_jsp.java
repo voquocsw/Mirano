@@ -124,7 +124,22 @@ public final class menu_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <head>\r\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
       out.write("        <title>JSP Page</title>\r\n");
+      out.write("        <link href=\"css/styles.css\" rel=\"stylesheet\" />\r\n");
       out.write("    </head>\r\n");
+      out.write("    <head>\r\n");
+      out.write("            <meta charset=\"utf-8\" />\r\n");
+      out.write("            <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />\r\n");
+      out.write("            <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\" />\r\n");
+      out.write("            <meta name=\"description\" content=\"\" />\r\n");
+      out.write("            <meta name=\"author\" content=\"\" />\r\n");
+      out.write("            <title>Dashboard - Admin</title>\r\n");
+      out.write("            <link href=\"https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css\" rel=\"stylesheet\" />\r\n");
+      out.write("            <link href=\"css/styles.css\" rel=\"stylesheet\" />\r\n");
+      out.write("            <script src=\"https://use.fontawesome.com/releases/v6.1.0/js/all.js\" crossorigin=\"anonymous\"></script>\r\n");
+      out.write("            <!-- CSS only -->\r\n");
+      out.write("            <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css\" rel=\"stylesheet\"\r\n");
+      out.write("                  integrity=\"sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi\" crossorigin=\"anonymous\">\r\n");
+      out.write("        </head>\r\n");
       out.write("    <body>\r\n");
       out.write("        <!-- header section strats -->\r\n");
       out.write("        <header class=\"header_section\">\r\n");
@@ -143,7 +158,7 @@ public final class menu_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\r\n");
       out.write("                        <ul class=\"navbar-nav  mx-auto \">\r\n");
       out.write("                            <li class=\"nav-item\">\r\n");
-      out.write("                                <a class=\"nav-link\" href=\"home.jsp\">Home</a>\r\n");
+      out.write("                                <a class=\"nav-link\" href=\"homeController\">Home</a>\r\n");
       out.write("                            </li>\r\n");
       out.write("                            <li class=\"nav-item\">\r\n");
       out.write("                                <a class=\"nav-link\" href=\"menuController\">Menu</a>\r\n");
@@ -181,7 +196,7 @@ public final class menu_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <section class=\"food_section layout_padding\">\r\n");
       out.write("            <div class=\"container\">\r\n");
       out.write("                <div class=\"heading_container heading_center\">\r\n");
-      out.write("                    <h2 style=\"font-family: sans-serif; margin: 15px;\">\r\n");
+      out.write("                    <h2 style=\"font-family: sans-serif; margin: 15px; margin-top: -50px;\">\r\n");
       out.write("                        Menu\r\n");
       out.write("                    </h2>\r\n");
       out.write("                </div>\r\n");
@@ -332,12 +347,12 @@ public final class menu_jsp extends org.apache.jasper.runtime.HttpJspBase
     if (_jspx_eval_c_if_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write("\r\n");
-        out.write("                            <li class=\"nav-item\">\r\n");
-        out.write("                                <a class=\"nav-link\" href=\"chooseTable.jsp\">Booking</a>\r\n");
-        out.write("                            </li> \r\n");
-        out.write("                            <li class=\"nav-item\">\r\n");
-        out.write("                                <a class=\"nav-link\" href=\"historyBookingController\">Carts</a>\r\n");
-        out.write("                            </li>  \r\n");
+        out.write("                                <li class=\"nav-item\">\r\n");
+        out.write("                                    <a class=\"nav-link\" href=\"chooseTable.jsp\">Booking</a>\r\n");
+        out.write("                                </li> \r\n");
+        out.write("                                <li class=\"nav-item\">\r\n");
+        out.write("                                    <a class=\"nav-link\" href=\"cartController\">Carts</a>\r\n");
+        out.write("                                </li>  \r\n");
         out.write("                            ");
         int evalDoAfterBody = _jspx_th_c_if_0.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)

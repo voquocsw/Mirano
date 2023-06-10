@@ -19,8 +19,62 @@ import java.util.List;
  *
  * @author Aver
  */
-public class UserDao extends DBContext{
+public class UserDao extends DBContext {
+
     MD5 md5 = new MD5();
+
+    public int updateUser(int role, int userId) {
+        try {
+            String sql = "UPDATE [dbo].[Users]\n"
+                    + "   SET [roleID] = ?\n"
+                    + "WHERE [Users].userId =?";
+            PreparedStatement stm = connection.prepareCall(sql);
+            stm.setInt(1, role);
+            stm.setInt(2, userId);
+            stm.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(UserDao.class.getName()).log(Level.SEVERE, null, ex);
+            return 0;
+        }
+        return 1;
+    }
+
+    public int deleteUser(int proId) {
+        try {
+            String sql = "DELETE FROM [dbo].[Users] \n"
+                    + "      WHERE userid = ?";
+            PreparedStatement stm = connection.prepareCall(sql);
+            stm.setInt(1, proId);
+            stm.executeUpdate();
+            return 1;
+        } catch (SQLException ex) {
+            Logger.getLogger(productDao.class.getName()).log(Level.SEVERE, null, ex);
+            return 0;
+        }
+    }
+    
+    public User getUserByID(int Id) {
+        try {
+            String sql = "select * from Users \n"
+                    + "where userId = ?";
+            PreparedStatement stm = connection.prepareCall(sql);
+            stm.setInt(1, Id);
+            ResultSet rs = stm.executeQuery();
+            if (rs.next()) {
+                User fl = new User();
+                fl.setId(rs.getInt("userId"));
+                fl.setFullname(rs.getString("fullName"));
+                fl.setPhone(rs.getString("phone"));
+                fl.setAddress(rs.getString("addresss"));
+                fl.setGender(rs.getBoolean("gender"));
+                fl.setRole(rs.getInt("roleID"));
+                return fl;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(productDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
 
     public User findUser(String email) {
         try {
@@ -75,7 +129,7 @@ public class UserDao extends DBContext{
     public User findUser(int userId, String password) {
         try {
             String sql = "select * from [Users] where [userId] = ? and [userPass] = ?";
-            PreparedStatement stm = connection.prepareStatement(sql); 
+            PreparedStatement stm = connection.prepareStatement(sql);
             String pass = md5.getMd5(password);
             stm.setInt(1, userId);
             stm.setString(2, md5.getMd5(pass));
@@ -115,7 +169,7 @@ public class UserDao extends DBContext{
                 s.setAddress(rs.getString("addresss"));
                 s.setRole(rs.getInt("roleID"));
                 return s;
-           }
+            }
         } catch (SQLException ex) {
             Logger.getLogger(UserDao.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -194,9 +248,9 @@ public class UserDao extends DBContext{
             String sql = "select count([userId]) as count from [users] ";
             PreparedStatement stm = connection.prepareCall(sql);
             ResultSet rs = stm.executeQuery();
-            if(rs.next()){
-              int count = rs.getInt("count");
-              return count;
+            if (rs.next()) {
+                int count = rs.getInt("count");
+                return count;
             }
             return 0;
         } catch (SQLException ex) {
@@ -204,8 +258,8 @@ public class UserDao extends DBContext{
             return 0;
         }
     }
-      
-        public List<User> getUserByCondition() {
+
+    public List<User> getUserByCondition() {
         List<User> user = new ArrayList<>();
         try {
             String sql = "select * from Users\n";
@@ -227,9 +281,10 @@ public class UserDao extends DBContext{
             return null;
         }
     }
+
     public static void main(String[] args) {
         UserDao us = new UserDao();
 //        us.register("test", "admin@gmail.com", "123", true, "123", "ĐÀ NẴng", 2) ;
-          System.out.println(us.findUser("",""));
+        System.out.println(us.getUserByID(8));
     }
 }

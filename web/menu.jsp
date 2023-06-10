@@ -18,7 +18,7 @@
         <section class="food_section layout_padding">
             <div class="container">
                 <div class="heading_container heading_center">
-                    <h2 style="font-family: sans-serif; margin: 15px;">
+                    <h2 style="font-family: sans-serif; margin: 15px; margin-top: -50px;">
                         Menu
                     </h2>
                 </div>
