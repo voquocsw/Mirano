@@ -8,10 +8,14 @@ package Controller;
 import DAO.OrderDAO;
 import DAO.ShipDao;
 import DAO.UserDao;
+import Model.Cart;
+import Model.Product;
 import Model.User;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -39,7 +43,7 @@ public class infoController extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet infoController</title>");            
+            out.println("<title>Servlet infoController</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet infoController at " + request.getContextPath() + "</h1>");
@@ -60,10 +64,24 @@ public class infoController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        OrderDAO d = new OrderDAO();
+        List<Product> list = d.getAllProduct();
+        Cookie[] arr = request.getCookies();
+        String txt = "";
+        if (arr != null) {
+            for (Cookie o : arr) {
+                if (o.getName().equals("cart")) {
+                    txt += o.getValue();
+                }
+            }
+        }
+        Cart cart = new Cart(txt, list);
+
         int id = (int) request.getSession().getAttribute("id");
         UserDao db = new UserDao();
         User user = db.findUser(id);
         request.setAttribute("user", user);
+        request.setAttribute("cart", cart);
         request.getRequestDispatcher("orderInformation.jsp").forward(request, response);
     }
 
@@ -79,16 +97,40 @@ public class infoController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         ShipDao s = new ShipDao();
-        OrderDAO n = new OrderDAO();       
+        OrderDAO n = new OrderDAO();
         int id = (int) request.getSession().getAttribute("id");
-        int oid = n.getOrderId(id);
+        int oid = n.getTopOrderId(id);
+        float tp = Float.parseFloat(request.getParameter("totalPrice"));
         String name = request.getParameter("name");
         String phone = request.getParameter("phone");
         String address = request.getParameter("address");
-        int status = s.addInfo(oid, id, name, phone, address, id);
+        int status = s.addInfo(id, oid, name, phone, address, tp);
         request.setAttribute("id", id);
-        request.getRequestDispatcher("orderInformation.jsp").forward(request, response);
-
+        UserDao us = new UserDao();
+        List<Product> list = n.getAllProduct();
+        Cookie[] arr = request.getCookies();
+        String txt = "";
+        if (arr != null) {
+            for (Cookie o : arr) {
+                if (o.getName().equals("cart")) {
+                    txt += o.getValue();
+                }
+            }
+        }
+        Cart cart = new Cart(txt, list);
+        User a = us.getUserByID(id);
+        n.addOrder(a, cart);
+        Cookie c = new Cookie("cart", "");
+        c.setMaxAge(0);
+        response.addCookie(c);
+        request.setAttribute("oid", oid);
+        request.setAttribute("name", name);
+        request.setAttribute("phone", phone);
+        request.setAttribute("address", address);
+        request.setAttribute("price", tp);
+//        response.sendRedirect("Bill.jsp");
+        request.getRequestDispatcher("Bill.jsp").forward(request, response);       
+        //request.getRequestDispatcher("shop").forward(request, response);
     }
 
     /**

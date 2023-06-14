@@ -80,23 +80,17 @@ public class processController extends HttpServlet {
         Cart cart = new Cart(txt, list);
         String num_raw = request.getParameter("num");
         String id_raw = request.getParameter("productId");
-        int status = Integer.parseInt(request.getParameter("st"));
         int id, num = 0;
         try {
             id = Integer.parseInt(id_raw);
             Product p = pr.getProductByID(id);
             num = Integer.parseInt(num_raw);
-            if (status == 1) {
-                num++;
-            }else if(status == -1){
-                num--;
-            }
-            if (num == -1 && (cart.getQuantityById(id) <= 0)) {
+            if ((num == -1) && (cart.getQuantityById(id) == 0)) {
                 cart.removeItem(id);
             } else {
-                if ((num == 1)) {
-                    num = 0;
-                }
+                if((num==1) && (cart.getQuantityById(id)==21)){
+                    num=0;
+                }           
                 float price = p.getPrice();
                 Item t = new Item(p, num, price);
                 cart.addItem(t);
@@ -117,7 +111,7 @@ public class processController extends HttpServlet {
         Cookie c = new Cookie("cart", txt);
         c.setMaxAge(2 * 24 * 60 * 60);
         response.addCookie(c);
-        request.setAttribute("cart", cart);
+        request.setAttribute("cart", c);
         request.getRequestDispatcher("cartController").forward(request, response);
 
     }

@@ -75,22 +75,28 @@
                             <h4 class="text-right">Shipping information</h4>
                         </div>
                         <form action="infoController" method="post">
-                            <div class="row mt-3">
-                                <div class="col-md-12"><label class="labels">Full Name</label>
-                                    <input type="text" class="form-control" placeholder="fullname" value="${requestScope.user.fullname}" 
-                                           name="name">
+                            <c:set var="o" value="${requestScope.cart}"/>
+                            <c:set var="tt" value="0"/>
+                            <c:forEach items="${o.items}" var="f">
+                                <input type="hidden" name="productId" value="${f.product.productId}"/>
+                                <input type="hidden" name="totalPrice" value="${o.totalMoney}"/>                               
+                            </c:forEach> 
+                                <div class="row mt-3">
+                                    <div class="col-md-12"><label class="labels">Full Name</label>
+                                        <input type="text" class="form-control" placeholder="fullname" value="${requestScope.user.fullname}" 
+                                               name="name">
+                                    </div>
+                                    <div class="col-md-12"><label class="labels">Phone</label>
+                                        <input type="text" class="form-control" placeholder="phone" value="${requestScope.user.phone}" 
+                                               maxlength="11"
+                                               minlength="10" name="phone">
+                                    </div>
+                                    <div class="col-md-12"><label class="labels">Address</label>
+                                        <input type="text" class="form-control" placeholder="address" value="${requestScope.user.address}" 
+                                               name="address"></div>
                                 </div>
-                                <div class="col-md-12"><label class="labels">Phone</label>
-                                    <input type="text" class="form-control" placeholder="phone" value="${requestScope.user.phone}" 
-                                           maxlength="11"
-                                           minlength="10" name="phone">
+                                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Submit</button>
                                 </div>
-                                <div class="col-md-12"><label class="labels">Address</label>
-                                    <input type="text" class="form-control" placeholder="address" value="${requestScope.user.address}" 
-                                           name="address"></div>
-                            </div>
-                            <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Save</button>
-                            </div>
                         </form>
                     </div>
                 </div>

@@ -83,7 +83,7 @@ public class OrderDAO extends DBContext {
 
         }
     }
-    public int getOrderId(int id) {
+    public int getTopOrderId(int id) {
         try {
             String sql = "select top 1 orderID from [Orders] order by orderID desc";
             PreparedStatement stm = connection.prepareCall(sql);
@@ -99,5 +99,8 @@ public class OrderDAO extends DBContext {
         }
     }
     public static void main(String[] args) {
+        OrderDAO n = new OrderDAO();
+        int oid = n.getTopOrderId(5);
+        System.out.println(oid);
     }
 }

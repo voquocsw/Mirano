@@ -52,23 +52,28 @@
                                     <div class="d-flex align-items-center mb-3 pb-1" >
                                         <h1>Mirano</h1>
                                     </div> 
+                                    <p class="mb-4 ${NOTICE_LOGIN}">
+                                        ${MESSAGE_LOGIN}
+                                    </p>
                                     <h3 style="color: red">${requestScope.error}</h3>
                                     <form method="post" action="loginController">
-                                        
+
 
                                         <h2 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your
                                             account</h2>
 
                                         <div class="form-outline mb-4">
+                                            <label class="form-label" for="form2Example17">Email address</label>
                                             <input type="email" id="form2Example17"
                                                    class="form-control form-control-lg" placeholder="Email address" name="email"/>
-                                            <label class="form-label" for="form2Example17">Email address</label>
+
                                         </div>
 
                                         <div class="form-outline mb-4">
+                                            <label class="form-label" for="form2Example27">Password</label>
                                             <input type="password" id="form2Example27"
                                                    class="form-control form-control-lg" placeholder="Password" name="pass"/>
-                                            <label class="form-label" for="form2Example27">Password</label>
+
                                         </div>
 
                                         <div class="pt-1 mb-4">

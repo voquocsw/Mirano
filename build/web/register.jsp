@@ -42,47 +42,53 @@
                     <div class="col-xl-6" style="padding: 15px;color: white !important;">
                         <form action="registerController" method="post" >
                             <div class="card-body p-md-1 text-black">
-                                <h2 class="mb-5 text-uppercase" >registration form</h2>
+                                <h2 class="mb-5 text-uppercase" >Registration form</h2>
 
                                 <div class="form-outline mb-4 mr-3">
+                                    <label class="form-label" for="form3Example8">Full Name</label>
                                     <input type="text" id="form3Example8" class="form-control form-control-lg"
                                            required="true" placeholder="Fullname" name="name"/>
-                                    <label class="form-label" for="form3Example8">Full Name</label>
+                                    
                                 </div>
 
                                 <div class="form-outline mb-4 mr-3">
+                                    <label class="form-label" for="form3Example8">Email</label>
                                     <input type="email" id="form3Example8" class="form-control form-control-lg" 
                                            required placeholder="Email" name="email"/>
-                                    <label class="form-label" for="form3Example8">Email</label>
+                                    
                                 </div>
 
                                 <div class="row">
                                     <div class="col-md-6 mb-4 ">
                                         <div class="form-outline" style="width: 92%;">
+                                            <label class="form-label" for="form3Example1m1">Password</label>
                                             <input type="password" id="form3Example1m1 " required placeholder="Password"
                                                    class="form-control form-control-lg"  name = "pass"/>
-                                            <label class="form-label" for="form3Example1m1">Password</label>
+                                            
                                         </div>
                                     </div>
                                     <div class="col-md-6 mb-4">
                                         <div class="form-outline" style="width: 92%;">
+                                            <label class="form-label" for="form3Example1n1">Confirm Password</label>
                                             <input type="password" id="form3Example1n1" required placeholder="Confirm Password"
                                                    class="form-control form-control-lg" name = "repass"/>
-                                            <label class="form-label" for="form3Example1n1">Confirm Password</label>
+                                            
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="form-outline mb-4  mr-3">
+                                    <label class="form-label" for="form3Example90">Phone</label>
                                     <input type="text" id="form3Example90" class="form-control form-control-lg"
                                            required placeholder="Phone" pattern="(84|0[3|5|7|8|9])+([0-9]{8})\b" name="phone" />
-                                    <label class="form-label" for="form3Example90">Phone</label>
+                                    
                                 </div>
 
                                 <div class="form-outline mb-4  mr-3">
+                                    <label class="form-label" for="form3Example8">Address</label>
                                     <input type="text" id="form3Example8" class="form-control form-control-lg" 
                                            required placeholder="Address" name="address"/>
-                                    <label class="form-label" for="form3Example8">Address</label>
+                                    
                                 </div>
 
                                 <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">

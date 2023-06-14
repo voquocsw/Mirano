@@ -55,9 +55,9 @@
                                         <th scope="row">  <a href="productController?productId=${f.product.productId}">${f.product.productName}</a></th>
                                         <th scope="row">${f.price/2}</th>
                                         <th scope="row">
-                                            <button class=""><a href="processController?st=-1&num=${f.quantity}&productId=${f.product.productId}">-</a></button>
+                                            <button class=""><a href="processController?&num=-1&productId=${f.product.productId}">-</a></button>
                                             <input type="text" value="${f.quantity}">
-                                            <button class=""><a href="processController?st=1&num=${f.quantity}&productId=${f.product.productId}">+</a></button>
+                                            <button class=""><a href="processController?&num=1&productId=${f.product.productId}">+</a></button>
                                         <th scope="row">${(f.price*f.quantity)/2}</th>
                                         <th scope="row">
                                             <button class="btn btn-link" type="button" class="btn btn-primary"
@@ -95,9 +95,6 @@
 
                             </c:forEach>                      
                             </tbody>
-                            <div class="d-flex justify-content-between col-3 ">
-                                <a href="menuController" class="btn btn-success">Menu</a>
-                            </div>
                         </table>
                         <div class="d-flex justify-content-center">
                             <nav aria-label="Page navigation example">
@@ -113,11 +110,11 @@
                             </nav>
                         </div>
                     </div>
-                    <form action="checkoutController" method="post">
-                        <input class="btn btn-primary" type="submit" value="Check out"/>
-                    </form>
-                    <div class="d-flex justify-content-between col-3 " style="right">
-                        <a href="infoController" class="btn btn-success">Menu</a>
+                    <div style="margin-left: 75%">
+                        <h5>Total Price: ${cart.totalMoney} đ</h5>
+                    </div>
+                    <div class="d-flex justify-content-between col-3 " style="align-text: right">
+                        <a href="infoController" class="btn btn-success">Next</a>
                     </div>
 
                 </div>

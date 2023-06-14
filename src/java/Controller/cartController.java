@@ -72,8 +72,8 @@ public class cartController extends HttpServlet {
                 }
             }
         }
-        Cart c = new Cart(txt, list);
-        request.setAttribute("cart", c);
+        Cart cart = new Cart(txt, list);
+        request.setAttribute("cart", cart);
         request.getRequestDispatcher("manage_cart.jsp").forward(request, response);
     }
 

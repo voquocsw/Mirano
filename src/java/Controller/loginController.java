@@ -83,12 +83,15 @@ public class loginController extends HttpServlet {
             request.getSession().setAttribute("id", user.getId());
             request.getSession().setAttribute("role", user.getRole());
             if (user.getRole() == 1) {
+                session.setAttribute("MESSAGE_LOGIN", "");
                 response.sendRedirect("homeController");
             } else if (user.getRole() == 2) {
+                session.setAttribute("MESSAGE_LOGIN", "");
                 response.sendRedirect("adminDashboardController");
             }           
         } else {
-            request.setAttribute("error", "Username or Password incorrect!");
+            session.setAttribute("NOTICE_LOGIN", "text-danger");
+             session.setAttribute("MESSAGE_LOGIN", "LOGIN FAIL!");
             response.sendRedirect("loginjsp.jsp");
         }
         
