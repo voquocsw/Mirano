@@ -39,7 +39,7 @@
                     </button>
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav  mx-auto ">
+                        <ul class="navbar-nav  mx-auto " style="margin-right: -40px;">
                             <li class="nav-item">
                                 <a class="nav-link" href="homeController">Home</a>
                             </li>
@@ -48,30 +48,36 @@
                             </li>
                             <c:if test="${sessionScope.id != null}">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="chooseTable.jsp">Booking</a>
+                                    <a class="nav-link" href="BookingTable.jsp">Booking</a>
                                 </li> 
                                 <li class="nav-item">
                                     <a class="nav-link" href="cartController">Carts</a>
                                 </li>  
+                                <li class="nav-item">
+                                    <a class="nav-link" href="historyOrderController">History</a>
+                                </li> 
                             </c:if>
                         </ul>
                         <div class="user_option">
 
                             <c:if test="${sessionScope.id != null}">
-                                <a href="profileController" class="order_online">
+                                <a href="profileController" class="order_online" style="text-decoration: none">
                                     Profile
                                 </a>
-                                <a class="order_online" href="changePassController">
+                                <a class="order_online" href="changePassController" style="text-decoration: none">
                                     Change Pass
                                 </a>
-                                <a href="logoutController" class="order_online">
+                                <a href="logoutController" class="order_online" style="text-decoration: none">
                                     logout
                                 </a> 
                             </c:if>
                             <c:if test="${sessionScope.id == null}">
-                                <a href="loginController" class="order_online">
+                                <a href="loginController" class="order_online" style="text-decoration: none">
                                     Login
                                 </a> 
+                                <a href="registerController" class="order_online" style="text-decoration: none">
+                                    Register
+                                </a>
                             </c:if>
 
 

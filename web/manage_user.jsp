@@ -26,7 +26,7 @@
         <!-- Section: Design Block -->
         <section class="py-1">
             <!-- style="background-color: white"-->
-            <div class="container d-flex " style="min-height: 800px;">
+            g          <div class="container d-flex " style="min-height: 800px;">
 
                 <div class="col-md-12">
                     <h3 class="mt-5">Manage user</h3>
@@ -67,18 +67,21 @@
                                         </th>
                                         <th scope="row">${f.phone}</th>
                                     <th scope="row">${f.address}</th>
-                                    <th scope="row">${f.role}</th>
-                            <th scope="row">
-                                <a style="margin-left: 10px" href="updateUserController?id=${f.id}"><i class="fa fa-solid fa-pencil"></i></a>
-                            </th>
-                            <th scope="row">
-                                <button class="btn btn-link" type="button" class="btn btn-primary"
-                                        data-bs-toggle="modal" data-bs-target="#exampleModal${f.id}"><i
-                                        class="fa fa-solid fa-trash mb-1"></i>
-                                </button>
-                            </th>
+                                    <th scope="row">
+                                        <c:if test="${f.role == 0}">Staff</c:if>
+                                        <c:if test="${f.role == 1}">Customer</c:if>
+                                        <c:if test="${f.role == 2}">Admin</c:if></th>
+                                        <th scope="row">
+                                            <a style="margin-left: 10px" href="updateUserController?id=${f.id}"><i class="fa fa-solid fa-pencil"></i></a>
+                                    </th>
+                                    <th scope="row">
+                                        <button class="btn btn-link" type="button" class="btn btn-primary"
+                                                data-bs-toggle="modal" data-bs-target="#exampleModal${f.id}"><i
+                                                class="fa fa-solid fa-trash mb-1"></i>
+                                        </button>
+                                    </th>
 
-                            </tr>
+                                </tr>
 
                             <div class="modal fade" id="exampleModal${f.id}" tabindex="-1"
                                  aria-labelledby="exampleModalLabel" aria-hidden="true">

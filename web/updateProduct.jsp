@@ -64,16 +64,16 @@
                                     <label class="labels">Status</label>
                                     <select name="status" class="form-control">
                                         <option value = "1" 
-                                                <c:if test="${requestScope.productStatus}">
+                                                <c:if test="${product.status == 1}">
                                                     selected
                                                 </c:if>>
-                                            True
+                                            Activated
                                         </option>
                                         <option value = "0" 
-                                                <c:if test="${!requestScope.productStatus}">
+                                                <c:if test="${product.status == 0}">
                                                     selected
                                                 </c:if>>
-                                            False
+                                            Unactivated
                                         </option>
                                     </select>
                                 </div>

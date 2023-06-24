@@ -12,7 +12,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Manage Show</title>
+        <title>Manage Cart</title>
 
         <!-- bootstrap core css -->
         <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
@@ -20,7 +20,14 @@
               integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
         <%@include file="setupCss.jsp" %>
-
+        <style>
+            add{
+                text-decoration: none;
+                color: green;
+                font-size: 22px;
+                font-weight: normal;
+            }
+        </style>
     </head>
     <body>
         <%@include file="header.jsp" %>
@@ -55,9 +62,9 @@
                                         <th scope="row">  <a href="productController?productId=${f.product.productId}">${f.product.productName}</a></th>
                                         <th scope="row">${f.price/2}</th>
                                         <th scope="row">
-                                            <button class=""><a href="processController?&num=-1&productId=${f.product.productId}">-</a></button>
+                                            <a href="processController?&num=-1&productId=${f.product.productId}" class="order_online" style="text-decoration: none; font-size: 22px;">-</a>
                                             <input type="text" value="${f.quantity}">
-                                            <button class=""><a href="processController?&num=1&productId=${f.product.productId}">+</a></button>
+                                            <a href="processController?&num=1&productId=${f.product.productId}" class="order_online" style="text-decoration: none; font-size: 22px;">+</a>
                                         <th scope="row">${(f.price*f.quantity)/2}</th>
                                         <th scope="row">
                                             <button class="btn btn-link" type="button" class="btn btn-primary"
@@ -113,10 +120,11 @@
                     <div style="margin-left: 75%">
                         <h5>Total Price: ${cart.totalMoney} đ</h5>
                     </div>
+                    <c:if test="${cart.totalMoney != 0}">
                     <div class="d-flex justify-content-between col-3 " style="align-text: right">
                         <a href="infoController" class="btn btn-success">Next</a>
                     </div>
-
+                    </c:if>
                 </div>
         </section>
         <%@include file="footer.jsp" %>

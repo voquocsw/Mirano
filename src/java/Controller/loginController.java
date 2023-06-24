@@ -88,7 +88,10 @@ public class loginController extends HttpServlet {
             } else if (user.getRole() == 2) {
                 session.setAttribute("MESSAGE_LOGIN", "");
                 response.sendRedirect("adminDashboardController");
-            }           
+            } else if (user.getRole() == 0) {
+                session.setAttribute("MESSAGE_LOGIN", "");
+                response.sendRedirect("staffController");
+            }          
         } else {
             session.setAttribute("NOTICE_LOGIN", "text-danger");
              session.setAttribute("MESSAGE_LOGIN", "LOGIN FAIL!");

@@ -86,7 +86,7 @@ public final class manage_005fuser_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("            <meta charset=\"UTF-8\">\n");
       out.write("            <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n");
       out.write("            <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n");
-      out.write("            <title>Manage Show</title>\n");
+      out.write("            <title>Manage User</title>\n");
       out.write("\n");
       out.write("            <!-- bootstrap core css -->\n");
       out.write("            <link rel=\"stylesheet\" type=\"text/css\" href=\"css/bootstrap.css\" />\n");
@@ -159,7 +159,7 @@ public final class manage_005fuser_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("        <!-- Section: Design Block -->\n");
       out.write("        <section class=\"py-1\">\n");
       out.write("            <!-- style=\"background-color: white\"-->\n");
-      out.write("            <div class=\"container d-flex \" style=\"min-height: 800px;\">\n");
+      out.write("            g          <div class=\"container d-flex \" style=\"min-height: 800px;\">\n");
       out.write("\n");
       out.write("                <div class=\"col-md-12\">\n");
       out.write("                    <h3 class=\"mt-5\">Manage user</h3>\n");
@@ -524,24 +524,34 @@ public final class manage_005fuser_jsp extends org.apache.jasper.runtime.HttpJsp
           out.write("                                    <th scope=\"row\">");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${f.address}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</th>\n");
-          out.write("                                    <th scope=\"row\">");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${f.role}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("                                    <th scope=\"row\">\n");
+          out.write("                                        ");
+          if (_jspx_meth_c_if_6((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
+            return true;
+          out.write("\n");
+          out.write("                                        ");
+          if (_jspx_meth_c_if_7((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
+            return true;
+          out.write("\n");
+          out.write("                                        ");
+          if (_jspx_meth_c_if_8((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
+            return true;
           out.write("</th>\n");
-          out.write("                            <th scope=\"row\">\n");
-          out.write("                                <a style=\"margin-left: 10px\" href=\"updateUserController?id=");
+          out.write("                                        <th scope=\"row\">\n");
+          out.write("                                            <a style=\"margin-left: 10px\" href=\"updateUserController?id=");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${f.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("\"><i class=\"fa fa-solid fa-pencil\"></i></a>\n");
-          out.write("                            </th>\n");
-          out.write("                            <th scope=\"row\">\n");
-          out.write("                                <button class=\"btn btn-link\" type=\"button\" class=\"btn btn-primary\"\n");
-          out.write("                                        data-bs-toggle=\"modal\" data-bs-target=\"#exampleModal");
+          out.write("                                    </th>\n");
+          out.write("                                    <th scope=\"row\">\n");
+          out.write("                                        <button class=\"btn btn-link\" type=\"button\" class=\"btn btn-primary\"\n");
+          out.write("                                                data-bs-toggle=\"modal\" data-bs-target=\"#exampleModal");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${f.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("\"><i\n");
-          out.write("                                        class=\"fa fa-solid fa-trash mb-1\"></i>\n");
-          out.write("                                </button>\n");
-          out.write("                            </th>\n");
+          out.write("                                                class=\"fa fa-solid fa-trash mb-1\"></i>\n");
+          out.write("                                        </button>\n");
+          out.write("                                    </th>\n");
           out.write("\n");
-          out.write("                            </tr>\n");
+          out.write("                                </tr>\n");
           out.write("\n");
           out.write("                            <div class=\"modal fade\" id=\"exampleModal");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${f.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
@@ -644,6 +654,84 @@ public final class manage_005fuser_jsp extends org.apache.jasper.runtime.HttpJsp
     return false;
   }
 
+  private boolean _jspx_meth_c_if_6(javax.servlet.jsp.tagext.JspTag _jspx_th_c_forEach_0, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_forEach_0)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:if
+    org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_6 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
+    _jspx_th_c_if_6.setPageContext(_jspx_page_context);
+    _jspx_th_c_if_6.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_forEach_0);
+    _jspx_th_c_if_6.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${f.role == 0}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    int _jspx_eval_c_if_6 = _jspx_th_c_if_6.doStartTag();
+    if (_jspx_eval_c_if_6 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("Staff");
+        int evalDoAfterBody = _jspx_th_c_if_6.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_if_6.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_6);
+      return true;
+    }
+    _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_6);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_if_7(javax.servlet.jsp.tagext.JspTag _jspx_th_c_forEach_0, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_forEach_0)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:if
+    org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_7 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
+    _jspx_th_c_if_7.setPageContext(_jspx_page_context);
+    _jspx_th_c_if_7.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_forEach_0);
+    _jspx_th_c_if_7.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${f.role == 1}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    int _jspx_eval_c_if_7 = _jspx_th_c_if_7.doStartTag();
+    if (_jspx_eval_c_if_7 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("Customer");
+        int evalDoAfterBody = _jspx_th_c_if_7.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_if_7.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_7);
+      return true;
+    }
+    _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_7);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_if_8(javax.servlet.jsp.tagext.JspTag _jspx_th_c_forEach_0, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_forEach_0)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:if
+    org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_8 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
+    _jspx_th_c_if_8.setPageContext(_jspx_page_context);
+    _jspx_th_c_if_8.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_forEach_0);
+    _jspx_th_c_if_8.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${f.role == 2}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    int _jspx_eval_c_if_8 = _jspx_th_c_if_8.doStartTag();
+    if (_jspx_eval_c_if_8 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("Admin");
+        int evalDoAfterBody = _jspx_th_c_if_8.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_if_8.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_8);
+      return true;
+    }
+    _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_8);
+    return false;
+  }
+
   private boolean _jspx_meth_c_forEach_1(PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
@@ -663,7 +751,7 @@ public final class manage_005fuser_jsp extends org.apache.jasper.runtime.HttpJsp
         do {
           out.write("\n");
           out.write("                                    <li class=\"page-item ");
-          if (_jspx_meth_c_if_6((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_1, _jspx_page_context, _jspx_push_body_count_c_forEach_1))
+          if (_jspx_meth_c_if_9((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_1, _jspx_page_context, _jspx_push_body_count_c_forEach_1))
             return true;
           out.write(" \" >\n");
           out.write("                                        <a class=\"page-link\" href=\"managerUserControll?page=");
@@ -698,29 +786,29 @@ public final class manage_005fuser_jsp extends org.apache.jasper.runtime.HttpJsp
     return false;
   }
 
-  private boolean _jspx_meth_c_if_6(javax.servlet.jsp.tagext.JspTag _jspx_th_c_forEach_1, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_forEach_1)
+  private boolean _jspx_meth_c_if_9(javax.servlet.jsp.tagext.JspTag _jspx_th_c_forEach_1, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_forEach_1)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
     //  c:if
-    org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_6 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
-    _jspx_th_c_if_6.setPageContext(_jspx_page_context);
-    _jspx_th_c_if_6.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_forEach_1);
-    _jspx_th_c_if_6.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${i == requestScope.page}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
-    int _jspx_eval_c_if_6 = _jspx_th_c_if_6.doStartTag();
-    if (_jspx_eval_c_if_6 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+    org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_9 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
+    _jspx_th_c_if_9.setPageContext(_jspx_page_context);
+    _jspx_th_c_if_9.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_forEach_1);
+    _jspx_th_c_if_9.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${i == requestScope.page}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    int _jspx_eval_c_if_9 = _jspx_th_c_if_9.doStartTag();
+    if (_jspx_eval_c_if_9 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write(" active ");
-        int evalDoAfterBody = _jspx_th_c_if_6.doAfterBody();
+        int evalDoAfterBody = _jspx_th_c_if_9.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
           break;
       } while (true);
     }
-    if (_jspx_th_c_if_6.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_6);
+    if (_jspx_th_c_if_9.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_9);
       return true;
     }
-    _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_6);
+    _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_9);
     return false;
   }
 }

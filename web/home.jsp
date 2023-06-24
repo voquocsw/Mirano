@@ -115,7 +115,7 @@
                                 <div class="box" style="box-shadow:  0 0 5px 5px lightgray; ">
                                     <div>
                                         <div class="img-box" style="height: 400px !important; border-radius: 0px !important;">
-                                            <img src="View/image/${f.image}" alt="" height="100%" style="max-height: none;">
+                                            <img src="View/image/${f.image}" alt="" height="100%" style="max-height: none;  border-radius: 10px">
                                         </div>
                                         <div class="detail-box" style="background: #f1f2f3; ">
                                             <h5 style="text-transform: uppercase; text-align: center;">

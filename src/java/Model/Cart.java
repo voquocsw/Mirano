@@ -19,12 +19,16 @@ public class Cart {
     public List<Item> getItems() {
         return items;
     }
-    public int getQuantityById(int id){
-        return getItemById(id).getQuantity();
+     public int getQuantityById(int id){
+        Item a = getItemById(id);
+        int i = a.getQuantity();
+        return i;
     }
     private Item getItemById(int id){
         for(Item i:items){
-            if(i.getProduct().getProductId()==id){
+            Product a = i.getProduct();
+            int c = a.getProductId();
+            if(c == id){
                 return i;
             }
         }

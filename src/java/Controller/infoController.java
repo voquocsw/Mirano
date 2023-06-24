@@ -99,12 +99,10 @@ public class infoController extends HttpServlet {
         ShipDao s = new ShipDao();
         OrderDAO n = new OrderDAO();
         int id = (int) request.getSession().getAttribute("id");
-        int oid = n.getTopOrderId(id);
         float tp = Float.parseFloat(request.getParameter("totalPrice"));
         String name = request.getParameter("name");
         String phone = request.getParameter("phone");
-        String address = request.getParameter("address");
-        int status = s.addInfo(id, oid, name, phone, address, tp);
+        String address = request.getParameter("address");      
         request.setAttribute("id", id);
         UserDao us = new UserDao();
         List<Product> list = n.getAllProduct();
@@ -118,8 +116,10 @@ public class infoController extends HttpServlet {
             }
         }
         Cart cart = new Cart(txt, list);
-        User a = us.getUserByID(id);
+        User a = us.getUserByID(id);        
         n.addOrder(a, cart);
+        int oid = n.getTopOrderId(id);
+        int status = s.addInfo(id, oid, name, phone, address, tp);
         Cookie c = new Cookie("cart", "");
         c.setMaxAge(0);
         response.addCookie(c);

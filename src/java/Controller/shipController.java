@@ -5,6 +5,8 @@
  */
 package Controller;
 
+import DAO.ShipDao;
+import Model.Ship;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -17,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Aver
  */
-public class chooseTable extends HttpServlet {
+public class shipController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,10 +38,10 @@ public class chooseTable extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet chooseTable</title>");            
+            out.println("<title>Servlet shipController</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet chooseTable at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet shipController at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -57,16 +59,15 @@ public class chooseTable extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        int showId = Integer.valueOf(request.getParameter("showId"));
-        BookingDao db = new BookingDao();
-        ShowDao sDB = new ShowDao();
-        List<Seat> slot = db.getSeatIsBooking(showId);
-        Show show = sDB.findShow(showId);
-        request.setAttribute("show", show);
-        request.setAttribute("seats", slot);
-        request.setAttribute("size", slot.size());
-//        response.getWriter().print(slot.get(0));
-        request.getRequestDispatcher("chooseTable.jsp").forward(request, response);
+        ShipDao us = new ShipDao();
+        int total = us.totalShip();
+        List<Ship> ship = us.getAllShip();
+//        request.setAttribute("cat", cat);
+//        request.setAttribute("name", proName);
+//        request.setAttribute("category", proCat);
+        request.setAttribute("ship", ship);
+        request.setAttribute("total", Math.ceil((double) total / 10));
+        request.getRequestDispatcher("Ship.jsp").forward(request, response);
     }
 
     /**
@@ -80,7 +81,7 @@ public class chooseTable extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+
     }
 
     /**

@@ -16,11 +16,11 @@ public class Product {
     private String descript;
     private String image;
     private float price;
-    private boolean status;
+    private int status;
     
     public Product(){};
     
-    public Product(int productId, Category category, String productName, String descript, String image, float price, boolean status) {
+    public Product(int productId, Category category, String productName, String descript, String image, float price, int status) {
         this.productId = productId;
         this.category = category;
         this.productName = productName;
@@ -78,11 +78,11 @@ public class Product {
         this.price = price;
     }
 
-    public boolean isStatus() {
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(boolean status) {
+    public void setStatus(int status) {
         this.status = status;
     }
     

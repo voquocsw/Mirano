@@ -25,10 +25,11 @@
     <body>
         <%@include file="admin_header.jsp"%>
         <!-- Section: Design Block -->
-        <div class="container rounded bg-white mt-5 mb-5">
-            <div class="row d-flex justify-content-center">
-                <div class="col-md-6 border">
-                    <form action="updateUserController" method="post" enctype="multipart/form-data">
+        <form action="updateUserController" method="post">
+            <div class="container rounded bg-white mt-5 mb-5">           
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-6 border">
+
                         <div class="p-3 py-5">
                             <div class="d-flex justify-content-between align-items-center mb-3">
                                 <h4 class="text-right">Update user</h4>
@@ -59,35 +60,41 @@
                                     <input type="text" readonly class="form-control" 
                                            placeholder="address" value="${user.address}" name="address">
                                 </div>
-                                
                                 <div class="col-md-12">
                                     <label class="labels">Role</label>
-                                    <select name="role" class="form-control">
-                                        <option value = "1" >
+                                    <select name="role" class="form-control">                                      
+                                        <option value = "1"
+                                                <c:if test ="${user.role == 1}">
+                                                    selected
+                                                </c:if>>
                                             Customer
                                         </option>
-                                        <option value = "2">
+                                        <option value = "2"
+                                                <c:if test="${user.role == 2}">
+                                                    selected
+                                                </c:if>>
                                             Admin
                                         </option>
-                                        <option value = "0">
+                                        <option value = "0"
+                                                <c:if test="${user.role == 0}">
+                                                    selected
+                                                </c:if>>
                                             Staff
                                         </option>
                                     </select>
                                 </div>
-<!--                                <div class="col-md-12"><label class="labels">Slide</label>
-                                    <input type="file" class="form-control" placeholder="Choose File" name="slide">
-                                </div>-->
                             </div>
                             <div class="mt-5 text-center">
                                 <button class="btn btn-primary profile-button" type="submit">Save Change</button>
                             </div>
                         </div>
-                    </form>
+
+                    </div>
 
                 </div>
-
             </div>
-        </div>
+        </form>
+
         <%@include file="admin_footer.jsp" %>
         <!-- Section: Design Block -->
     </body>

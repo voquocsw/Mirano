@@ -100,7 +100,7 @@ public final class updateProduct_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("            <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\" />\n");
       out.write("            <meta name=\"description\" content=\"\" />\n");
       out.write("            <meta name=\"author\" content=\"\" />\n");
-      out.write("            <title>Dashboard - SB Admin</title>\n");
+      out.write("            <title>Dashboard - Admin</title>\n");
       out.write("            <link href=\"https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css\" rel=\"stylesheet\" />\n");
       out.write("            <link href=\"css/styles.css\" rel=\"stylesheet\" />\n");
       out.write("            <script src=\"https://use.fontawesome.com/releases/v6.1.0/js/all.js\" crossorigin=\"anonymous\"></script>\n");
@@ -127,6 +127,9 @@ public final class updateProduct_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("                        <li class=\"nav-item\">\n");
       out.write("                            <a class=\"nav-link ms-4\" href=\"manageBookingController?title=&date=&order=showId&dimesion=asc&page=1\">Booking</a>\n");
       out.write("                        </li>\n");
+      out.write("                        <li class=\"nav-item\">\n");
+      out.write("                            <a class=\"nav-link ms-4\" href=\"managerUserControll?page=1\">Users</a>\n");
+      out.write("                        </li>\n");
       out.write("                    </ul>\n");
       out.write("                </div>\n");
       out.write("                <div style=\"margin-right: 300px;\">\n");
@@ -134,7 +137,6 @@ public final class updateProduct_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("                </div>\n");
       out.write("            </nav>\n");
       out.write("        </body>\n");
-      out.write("\n");
       out.write("    </html>\n");
       out.write("</body>\n");
       out.write("</html>\n");
@@ -150,14 +152,14 @@ public final class updateProduct_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("                            </div>\n");
       out.write("                            <div class=\"row mt-3\">\n");
       out.write("                                <div class=\"col-md-12\">\n");
-      out.write("                                    <label class=\"labels\">ProductID</label>\n");
+      out.write("                                    <label class=\"labels\">Product ID</label>\n");
       out.write("                                    <input type=\"text\" readonly class=\"form-control\" \n");
       out.write("                                           placeholder=\"title\" value=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${product.productId}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("\" name=\"productId\">\n");
       out.write("                                </div>\n");
       out.write("                                <div class=\"col-md-12\">\n");
-      out.write("                                    <label class=\"labels\">ProductName</label>\n");
+      out.write("                                    <label class=\"labels\">Product name</label>\n");
       out.write("                                    <input type=\"text\" required class=\"form-control\" \n");
       out.write("                                           placeholder=\"title\" value=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${product.productName}", java.lang.String.class, (PageContext)_jspx_page_context, null));
@@ -191,14 +193,14 @@ public final class updateProduct_jsp extends org.apache.jasper.runtime.HttpJspBa
       if (_jspx_meth_c_if_1(_jspx_page_context))
         return;
       out.write(">\n");
-      out.write("                                            True\n");
+      out.write("                                            Activated\n");
       out.write("                                        </option>\n");
       out.write("                                        <option value = \"0\" \n");
       out.write("                                                ");
       if (_jspx_meth_c_if_2(_jspx_page_context))
         return;
       out.write(">\n");
-      out.write("                                            False\n");
+      out.write("                                            Unactivated\n");
       out.write("                                        </option>\n");
       out.write("                                    </select>\n");
       out.write("                                </div>\n");
@@ -346,7 +348,7 @@ public final class updateProduct_jsp extends org.apache.jasper.runtime.HttpJspBa
     org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_1 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
     _jspx_th_c_if_1.setPageContext(_jspx_page_context);
     _jspx_th_c_if_1.setParent(null);
-    _jspx_th_c_if_1.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${requestScope.productStatus}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    _jspx_th_c_if_1.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${product.status == 1}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
     int _jspx_eval_c_if_1 = _jspx_th_c_if_1.doStartTag();
     if (_jspx_eval_c_if_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
@@ -374,7 +376,7 @@ public final class updateProduct_jsp extends org.apache.jasper.runtime.HttpJspBa
     org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_2 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
     _jspx_th_c_if_2.setPageContext(_jspx_page_context);
     _jspx_th_c_if_2.setParent(null);
-    _jspx_th_c_if_2.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${!requestScope.productStatus}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    _jspx_th_c_if_2.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${!product.status == 1}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
     int _jspx_eval_c_if_2 = _jspx_th_c_if_2.doStartTag();
     if (_jspx_eval_c_if_2 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {

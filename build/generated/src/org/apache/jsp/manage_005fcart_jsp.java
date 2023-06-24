@@ -77,7 +77,7 @@ public final class manage_005fcart_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("        <meta charset=\"UTF-8\">\n");
       out.write("        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n");
       out.write("        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n");
-      out.write("        <title>Manage Show</title>\n");
+      out.write("        <title>Manage Cart</title>\n");
       out.write("\n");
       out.write("        <!-- bootstrap core css -->\n");
       out.write("        <link rel=\"stylesheet\" type=\"text/css\" href=\"css/bootstrap.css\" />\n");
@@ -125,7 +125,14 @@ public final class manage_005fcart_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("    </head>\r\n");
       out.write("</html>\r\n");
       out.write("\n");
-      out.write("\n");
+      out.write("        <style>\n");
+      out.write("            add{\n");
+      out.write("                text-decoration: none;\n");
+      out.write("                color: green;\n");
+      out.write("                font-size: 22px;\n");
+      out.write("                font-weight: normal;\n");
+      out.write("            }\n");
+      out.write("        </style>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
       out.write("        ");
@@ -364,13 +371,13 @@ public final class manage_005fcart_jsp extends org.apache.jasper.runtime.HttpJsp
     if (_jspx_eval_c_if_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write("\r\n");
-        out.write("                                <a href=\"profileController\" class=\"order_online\">\r\n");
+        out.write("                                <a href=\"profileController\" class=\"order_online\" style=\"text-decoration: none\">\r\n");
         out.write("                                    Profile\r\n");
         out.write("                                </a>\r\n");
-        out.write("                                <a class=\"order_online\" href=\"changePassController\">\r\n");
+        out.write("                                <a class=\"order_online\" href=\"changePassController\" style=\"text-decoration: none\">\r\n");
         out.write("                                    Change Pass\r\n");
         out.write("                                </a>\r\n");
-        out.write("                                <a href=\"logoutController\" class=\"order_online\">\r\n");
+        out.write("                                <a href=\"logoutController\" class=\"order_online\" style=\"text-decoration: none\">\r\n");
         out.write("                                    logout\r\n");
         out.write("                                </a> \r\n");
         out.write("                            ");
@@ -400,9 +407,12 @@ public final class manage_005fcart_jsp extends org.apache.jasper.runtime.HttpJsp
     if (_jspx_eval_c_if_2 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write("\r\n");
-        out.write("                                <a href=\"loginController\" class=\"order_online\">\r\n");
+        out.write("                                <a href=\"loginController\" class=\"order_online\" style=\"text-decoration: none\">\r\n");
         out.write("                                    Login\r\n");
         out.write("                                </a> \r\n");
+        out.write("                                <a href=\"registerController\" class=\"order_online\" style=\"text-decoration: none\">\r\n");
+        out.write("                                    Register\r\n");
+        out.write("                                </a>\r\n");
         out.write("                            ");
         int evalDoAfterBody = _jspx_th_c_if_2.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -489,15 +499,15 @@ public final class manage_005fcart_jsp extends org.apache.jasper.runtime.HttpJsp
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${f.price/2}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</th>\n");
           out.write("                                        <th scope=\"row\">\n");
-          out.write("                                            <button class=\"\"><a href=\"processController?&num=-1&productId=");
+          out.write("                                            <a href=\"processController?&num=-1&productId=");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${f.product.productId}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("\">-</a></button>\n");
+          out.write("\" class=\"order_online\" style=\"text-decoration: none\">-</a>\n");
           out.write("                                            <input type=\"text\" value=\"");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${f.quantity}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("\">\n");
-          out.write("                                            <button class=\"\"><a href=\"processController?&num=1&productId=");
+          out.write("                                            <a href=\"processController?&num=1&productId=");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${f.product.productId}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("\">+</a></button>\n");
+          out.write("\" class=\"order_online\" style=\"text-decoration: none\">+</a>\n");
           out.write("                                        <th scope=\"row\">");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${(f.price*f.quantity)/2}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</th>\n");

@@ -67,7 +67,8 @@ public class productDao extends DBContext {
         List<Product> product = new ArrayList<>();
         try {
             String sql = "select top 3 * from Products f \n"
-                    + "left join category g on f.categoryID = g.categoryID \n";
+                    + "left join category g on f.categoryID = g.categoryID "
+                    + "where productStatus = 1\n";
             PreparedStatement stm = connection.prepareCall(sql);
             ResultSet rs = stm.executeQuery();
             while (rs.next()) {
@@ -136,15 +137,14 @@ public class productDao extends DBContext {
                 Product fl = new Product();
                 fl.setProductId(rs.getInt("productID"));
                 fl.setProductName(rs.getString("productName"));
+                fl.setDescript(rs.getString("descript"));
                 fl.setImage(rs.getString("imagee"));
                 fl.setPrice(rs.getFloat("price"));
-                fl.setStatus(rs.getBoolean("productStatus"));
-                fl.setDescript(rs.getString("descript"));
                 Category cat = new Category();
-                cat.setCategoryId(rs.getInt("categoryID"));
+                cat.setCategoryId(rs.getInt("categoryId"));
                 cat.setCategoryName(rs.getString("categoryName"));
                 fl.setCategory(cat);
-
+                fl.setStatus(rs.getInt("productStatus"));
                 product.add(fl);
             }
             return product;
@@ -158,7 +158,7 @@ public class productDao extends DBContext {
         try {
             String sql = "select count(*) as count from Products f  left join Category g on f.categoryID = g.categoryID \n"
                     + "where productName like ? \n"
-                    + "and f.categoryID like ?\n";
+                    + "and g.categoryName like ?\n";
             PreparedStatement stm = connection.prepareCall(sql);
             stm.setString(1, "%" + name + "%");
             stm.setString(2, "%" + category + "%");
@@ -224,6 +224,7 @@ public class productDao extends DBContext {
                 cat.setCategoryId(rs.getInt("categoryId"));
                 cat.setCategoryName(rs.getString("categoryName"));
                 fl.setCategory(cat);
+                fl.setStatus(rs.getInt("productStatus"));
                 return fl;
             }
         } catch (SQLException ex) {
@@ -341,6 +342,6 @@ public class productDao extends DBContext {
 //        db.registerProduct(1, "test", "null", "test", 100);
 //        db.getProductByCondition("test", "monman", 1, 10);   
 //        System.out.println(db.getProductByCondition("Bun cha", "saltly food", 1, 10));
-        db.deleteProduct(18);
+        System.out.print(db.totalProductByCondition("bun cha", "saltly food"));
     }
 }

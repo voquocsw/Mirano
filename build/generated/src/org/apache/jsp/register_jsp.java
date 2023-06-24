@@ -78,7 +78,7 @@ public final class register_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <meta name=\"keywords\" content=\"\" />\r\n");
       out.write("        <meta name=\"description\" content=\"\" />\r\n");
       out.write("        <meta name=\"author\" content=\"\" />\r\n");
-      out.write("        <link rel=\"shortcut icon\" href=\"images/161-1616544_popcorn-icon-cinema-flat-icon-png.png\" type=\"\">\r\n");
+      out.write("        <link rel=\"shortcut icon\" href=\"View/image/image.png\" type=\"\">\r\n");
       out.write("\r\n");
       out.write("        <title> Mirano </title>\r\n");
       out.write("\r\n");
@@ -96,9 +96,9 @@ public final class register_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <link href=\"view/css/font-awesome.min.css\" rel=\"stylesheet\" />\r\n");
       out.write("\r\n");
       out.write("        <!-- Custom styles for this template -->\r\n");
-      out.write("        <link href=\"view/css/style.css\" rel=\"stylesheet\" />\r\n");
+      out.write("        <link href=\"View/css/style.css\" rel=\"stylesheet\" />\r\n");
       out.write("        <!-- responsive style -->\r\n");
-      out.write("        <link href=\"view/css/responsive.css\" rel=\"stylesheet\" />\r\n");
+      out.write("        <link href=\"View/css/responsive.css\" rel=\"stylesheet\" />\r\n");
       out.write("\r\n");
       out.write("        <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi\" crossorigin=\"anonymous\">\r\n");
       out.write("    </head>\r\n");
@@ -139,13 +139,28 @@ public final class register_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <head>\r\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
       out.write("        <title>JSP Page</title>\r\n");
+      out.write("        <link href=\"css/styles.css\" rel=\"stylesheet\" />\r\n");
       out.write("    </head>\r\n");
+      out.write("    <head>\r\n");
+      out.write("            <meta charset=\"utf-8\" />\r\n");
+      out.write("            <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />\r\n");
+      out.write("            <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\" />\r\n");
+      out.write("            <meta name=\"description\" content=\"\" />\r\n");
+      out.write("            <meta name=\"author\" content=\"\" />\r\n");
+      out.write("            <title>Dashboard - Admin</title>\r\n");
+      out.write("            <link href=\"https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css\" rel=\"stylesheet\" />\r\n");
+      out.write("            <link href=\"css/styles.css\" rel=\"stylesheet\" />\r\n");
+      out.write("            <script src=\"https://use.fontawesome.com/releases/v6.1.0/js/all.js\" crossorigin=\"anonymous\"></script>\r\n");
+      out.write("            <!-- CSS only -->\r\n");
+      out.write("            <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css\" rel=\"stylesheet\"\r\n");
+      out.write("                  integrity=\"sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi\" crossorigin=\"anonymous\">\r\n");
+      out.write("        </head>\r\n");
       out.write("    <body>\r\n");
       out.write("        <!-- header section strats -->\r\n");
       out.write("        <header class=\"header_section\">\r\n");
       out.write("            <div class=\"container\">\r\n");
       out.write("                <nav class=\"navbar navbar-expand-lg custom_nav-container \">\r\n");
-      out.write("                    <a class=\"navbar-brand\" href=\"home\">\r\n");
+      out.write("                    <a class=\"navbar-brand\" href=\"home.jsp\">\r\n");
       out.write("                        <span>\r\n");
       out.write("                            Mirano restaurant\r\n");
       out.write("                        </span>\r\n");
@@ -158,23 +173,24 @@ public final class register_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\r\n");
       out.write("                        <ul class=\"navbar-nav  mx-auto \">\r\n");
       out.write("                            <li class=\"nav-item\">\r\n");
-      out.write("                                <a class=\"nav-link\" href=\"home\">Home</a>\r\n");
+      out.write("                                <a class=\"nav-link\" href=\"homeController\">Home</a>\r\n");
       out.write("                            </li>\r\n");
       out.write("                            <li class=\"nav-item\">\r\n");
-      out.write("                                <a class=\"nav-link\" href=\"menu\">Menu</a>\r\n");
+      out.write("                                <a class=\"nav-link\" href=\"menuController\">Menu</a>\r\n");
       out.write("                            </li>\r\n");
-      out.write("                            <li class=\"nav-item\">\r\n");
-      out.write("                                <a class=\"nav-link\" href=\"historyBookingController\">History Booking</a>\r\n");
-      out.write("                            </li>\r\n");
-      out.write("                        </ul>\r\n");
-      out.write("                        <div class=\"user_option\">\r\n");
-      out.write("\r\n");
       out.write("                            ");
       if (_jspx_meth_c_if_0(_jspx_page_context))
         return;
       out.write("\r\n");
+      out.write("                        </ul>\r\n");
+      out.write("                        <div class=\"user_option\">\r\n");
+      out.write("\r\n");
       out.write("                            ");
       if (_jspx_meth_c_if_1(_jspx_page_context))
+        return;
+      out.write("\r\n");
+      out.write("                            ");
+      if (_jspx_meth_c_if_2(_jspx_page_context))
         return;
       out.write("\r\n");
       out.write("\r\n");
@@ -200,47 +216,59 @@ public final class register_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <div class=\"col-xl-6\" style=\"padding: 15px;color: white !important;\">\r\n");
       out.write("                        <form action=\"registerController\" method=\"post\" >\r\n");
       out.write("                            <div class=\"card-body p-md-1 text-black\">\r\n");
-      out.write("                                <h2 class=\"mb-5 text-uppercase\" >registration form</h2>\r\n");
+      out.write("                                <h2 class=\"mb-5 text-uppercase\" >Registration form</h2>\r\n");
+      out.write("                                <p class=\"mb-4 ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${NOTICE_REGIS}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\">\r\n");
+      out.write("                                    ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${MESSAGE_REGIS}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("\r\n");
+      out.write("                                </p>\r\n");
       out.write("                                <div class=\"form-outline mb-4 mr-3\">\r\n");
+      out.write("                                    <label class=\"form-label\" for=\"form3Example8\">Full Name</label>\r\n");
       out.write("                                    <input type=\"text\" id=\"form3Example8\" class=\"form-control form-control-lg\"\r\n");
       out.write("                                           required=\"true\" placeholder=\"Fullname\" name=\"name\"/>\r\n");
-      out.write("                                    <label class=\"form-label\" for=\"form3Example8\">Full Name</label>\r\n");
+      out.write("\r\n");
       out.write("                                </div>\r\n");
       out.write("\r\n");
       out.write("                                <div class=\"form-outline mb-4 mr-3\">\r\n");
+      out.write("                                    <label class=\"form-label\" for=\"form3Example8\">Email</label>\r\n");
       out.write("                                    <input type=\"email\" id=\"form3Example8\" class=\"form-control form-control-lg\" \r\n");
       out.write("                                           required placeholder=\"Email\" name=\"email\"/>\r\n");
-      out.write("                                    <label class=\"form-label\" for=\"form3Example8\">Email</label>\r\n");
+      out.write("\r\n");
       out.write("                                </div>\r\n");
       out.write("\r\n");
       out.write("                                <div class=\"row\">\r\n");
       out.write("                                    <div class=\"col-md-6 mb-4 \">\r\n");
       out.write("                                        <div class=\"form-outline\" style=\"width: 92%;\">\r\n");
+      out.write("                                            <label class=\"form-label\" for=\"form3Example1m1\">Password</label>\r\n");
       out.write("                                            <input type=\"password\" id=\"form3Example1m1 \" required placeholder=\"Password\"\r\n");
       out.write("                                                   class=\"form-control form-control-lg\"  name = \"pass\"/>\r\n");
-      out.write("                                            <label class=\"form-label\" for=\"form3Example1m1\">Password</label>\r\n");
+      out.write("\r\n");
       out.write("                                        </div>\r\n");
       out.write("                                    </div>\r\n");
       out.write("                                    <div class=\"col-md-6 mb-4\">\r\n");
       out.write("                                        <div class=\"form-outline\" style=\"width: 92%;\">\r\n");
+      out.write("                                            <label class=\"form-label\" for=\"form3Example1n1\">Confirm Password</label>\r\n");
       out.write("                                            <input type=\"password\" id=\"form3Example1n1\" required placeholder=\"Confirm Password\"\r\n");
       out.write("                                                   class=\"form-control form-control-lg\" name = \"repass\"/>\r\n");
-      out.write("                                            <label class=\"form-label\" for=\"form3Example1n1\">Confirm Password</label>\r\n");
+      out.write("\r\n");
       out.write("                                        </div>\r\n");
       out.write("                                    </div>\r\n");
       out.write("                                </div>\r\n");
       out.write("\r\n");
       out.write("                                <div class=\"form-outline mb-4  mr-3\">\r\n");
+      out.write("                                    <label class=\"form-label\" for=\"form3Example90\">Phone</label>\r\n");
       out.write("                                    <input type=\"text\" id=\"form3Example90\" class=\"form-control form-control-lg\"\r\n");
       out.write("                                           required placeholder=\"Phone\" pattern=\"(84|0[3|5|7|8|9])+([0-9]{8})\\b\" name=\"phone\" />\r\n");
-      out.write("                                    <label class=\"form-label\" for=\"form3Example90\">Phone</label>\r\n");
+      out.write("\r\n");
       out.write("                                </div>\r\n");
       out.write("\r\n");
       out.write("                                <div class=\"form-outline mb-4  mr-3\">\r\n");
+      out.write("                                    <label class=\"form-label\" for=\"form3Example8\">Address</label>\r\n");
       out.write("                                    <input type=\"text\" id=\"form3Example8\" class=\"form-control form-control-lg\" \r\n");
       out.write("                                           required placeholder=\"Address\" name=\"address\"/>\r\n");
-      out.write("                                    <label class=\"form-label\" for=\"form3Example8\">Address</label>\r\n");
+      out.write("\r\n");
       out.write("                                </div>\r\n");
       out.write("\r\n");
       out.write("                                <div class=\"d-md-flex justify-content-start align-items-center mb-4 py-2\">\r\n");
@@ -304,9 +332,9 @@ public final class register_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                <div class=\"footer-info\">\r\n");
       out.write("                    <p>\r\n");
       out.write("                        &copy; <span id=\"displayYear\"></span> All Rights Reserved By\r\n");
-      out.write("                        <a href=\"#\">FilmCinema </a><br><br>\r\n");
+      out.write("                        <a href=\"#\">Mirano </a><br><br>\r\n");
       out.write("                        &copy; <span id=\"displayYear\"></span> Distributed By\r\n");
-      out.write("                        <a href=\"#\" target=\"_blank\">FilmCinema</a>\r\n");
+      out.write("                        <a href=\"#\" target=\"_blank\">Mirano restaurant</a>\r\n");
       out.write("                    </p>\r\n");
       out.write("                </div>\r\n");
       out.write("            </div>\r\n");
@@ -344,15 +372,12 @@ public final class register_jsp extends org.apache.jasper.runtime.HttpJspBase
     if (_jspx_eval_c_if_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write("\r\n");
-        out.write("                                <a href=\"profileController\" class=\"order_online\">\r\n");
-        out.write("                                    Profile\r\n");
-        out.write("                                </a>\r\n");
-        out.write("                                <a class=\"order_online\" href=\"changePassController\">\r\n");
-        out.write("                                    Change Pass\r\n");
-        out.write("                                </a>\r\n");
-        out.write("                                <a href=\"logoutController\" class=\"order_online\">\r\n");
-        out.write("                                    logout\r\n");
-        out.write("                                </a> \r\n");
+        out.write("                                <li class=\"nav-item\">\r\n");
+        out.write("                                    <a class=\"nav-link\" href=\"chooseTable.jsp\">Booking</a>\r\n");
+        out.write("                                </li> \r\n");
+        out.write("                                <li class=\"nav-item\">\r\n");
+        out.write("                                    <a class=\"nav-link\" href=\"cartController\">Carts</a>\r\n");
+        out.write("                                </li>  \r\n");
         out.write("                            ");
         int evalDoAfterBody = _jspx_th_c_if_0.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -375,13 +400,19 @@ public final class register_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_1 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
     _jspx_th_c_if_1.setPageContext(_jspx_page_context);
     _jspx_th_c_if_1.setParent(null);
-    _jspx_th_c_if_1.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${sessionScope.id == null}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    _jspx_th_c_if_1.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${sessionScope.id != null}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
     int _jspx_eval_c_if_1 = _jspx_th_c_if_1.doStartTag();
     if (_jspx_eval_c_if_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write("\r\n");
-        out.write("                                <a href=\"loginController\" class=\"order_online\">\r\n");
-        out.write("                                    Login\r\n");
+        out.write("                                <a href=\"profileController\" class=\"order_online\" style=\"text-decoration: none\">\r\n");
+        out.write("                                    Profile\r\n");
+        out.write("                                </a>\r\n");
+        out.write("                                <a class=\"order_online\" href=\"changePassController\" style=\"text-decoration: none\">\r\n");
+        out.write("                                    Change Pass\r\n");
+        out.write("                                </a>\r\n");
+        out.write("                                <a href=\"logoutController\" class=\"order_online\" style=\"text-decoration: none\">\r\n");
+        out.write("                                    logout\r\n");
         out.write("                                </a> \r\n");
         out.write("                            ");
         int evalDoAfterBody = _jspx_th_c_if_1.doAfterBody();
@@ -394,6 +425,39 @@ public final class register_jsp extends org.apache.jasper.runtime.HttpJspBase
       return true;
     }
     _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_1);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_if_2(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:if
+    org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_2 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
+    _jspx_th_c_if_2.setPageContext(_jspx_page_context);
+    _jspx_th_c_if_2.setParent(null);
+    _jspx_th_c_if_2.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${sessionScope.id == null}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    int _jspx_eval_c_if_2 = _jspx_th_c_if_2.doStartTag();
+    if (_jspx_eval_c_if_2 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("\r\n");
+        out.write("                                <a href=\"loginController\" class=\"order_online\" style=\"text-decoration: none\">\r\n");
+        out.write("                                    Login\r\n");
+        out.write("                                </a> \r\n");
+        out.write("                                <a href=\"registerController\" class=\"order_online\" style=\"text-decoration: none\">\r\n");
+        out.write("                                    Register\r\n");
+        out.write("                                </a>\r\n");
+        out.write("                            ");
+        int evalDoAfterBody = _jspx_th_c_if_2.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_if_2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_2);
+      return true;
+    }
+    _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_2);
     return false;
   }
 }

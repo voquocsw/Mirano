@@ -284,7 +284,6 @@ public class UserDao extends DBContext {
 
     public static void main(String[] args) {
         UserDao us = new UserDao();
-//        us.register("test", "admin@gmail.com", "123", true, "123", "ĐÀ NẴng", 2) ;
-        System.out.println(us.getUserByID(8));
+//        us.register("staff", "staff@gmail.com", "123", true, "123", "ĐÀ NẴng", 2) ;
     }
 }

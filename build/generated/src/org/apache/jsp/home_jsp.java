@@ -12,8 +12,7 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
   private static java.util.List<String> _jspx_dependants;
 
   static {
-    _jspx_dependants = new java.util.ArrayList<String>(3);
-    _jspx_dependants.add("/setupCss.jsp");
+    _jspx_dependants = new java.util.ArrayList<String>(2);
     _jspx_dependants.add("/header.jsp");
     _jspx_dependants.add("/footer.jsp");
   }
@@ -79,47 +78,6 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("        <title> Mirano restaurant </title>\n");
       out.write("        <!-- bootstrap core css -->\n");
-      out.write("        ");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("<!DOCTYPE html>\r\n");
-      out.write("<html>\r\n");
-      out.write("    <head>\r\n");
-      out.write("        <!-- Basic -->\r\n");
-      out.write("        <meta charset=\"utf-8\" />\r\n");
-      out.write("        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />\r\n");
-      out.write("        <!-- Mobile Metas -->\r\n");
-      out.write("        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\" />\r\n");
-      out.write("        <!-- Site Metas -->\r\n");
-      out.write("        <meta name=\"keywords\" content=\"\" />\r\n");
-      out.write("        <meta name=\"description\" content=\"\" />\r\n");
-      out.write("        <meta name=\"author\" content=\"\" />\r\n");
-      out.write("        <link rel=\"shortcut icon\" href=\"View/image/image.png\" type=\"\">\r\n");
-      out.write("\r\n");
-      out.write("        <title> Mirano </title>\r\n");
-      out.write("\r\n");
-      out.write("        <!-- bootstrap core css -->\r\n");
-      out.write("        <link rel=\"stylesheet\" type=\"text/css\" href=\"view/css/bootstrap.css\" />\r\n");
-      out.write("\r\n");
-      out.write("        <!--owl slider stylesheet -->\r\n");
-      out.write("        <link rel=\"stylesheet\" type=\"text/css\"\r\n");
-      out.write("              href=\"https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css\" />\r\n");
-      out.write("        <!-- nice select  -->\r\n");
-      out.write("        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css\"\r\n");
-      out.write("              integrity=\"sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==\"\r\n");
-      out.write("              crossorigin=\"anonymous\" />\r\n");
-      out.write("        <!-- font awesome style -->\r\n");
-      out.write("        <link href=\"view/css/font-awesome.min.css\" rel=\"stylesheet\" />\r\n");
-      out.write("\r\n");
-      out.write("        <!-- Custom styles for this template -->\r\n");
-      out.write("        <link href=\"View/css/style.css\" rel=\"stylesheet\" />\r\n");
-      out.write("        <!-- responsive style -->\r\n");
-      out.write("        <link href=\"View/css/responsive.css\" rel=\"stylesheet\" />\r\n");
-      out.write("\r\n");
-      out.write("        <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi\" crossorigin=\"anonymous\">\r\n");
-      out.write("    </head>\r\n");
-      out.write("</html>\r\n");
-      out.write("\n");
       out.write("        <style>\n");
       out.write("            .icon:hover{\n");
       out.write("                font-size: 18px\n");
@@ -177,7 +135,7 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    </button>\r\n");
       out.write("\r\n");
       out.write("                    <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\r\n");
-      out.write("                        <ul class=\"navbar-nav  mx-auto \">\r\n");
+      out.write("                        <ul class=\"navbar-nav  mx-auto \" style=\"margin-left: -40px;\">\r\n");
       out.write("                            <li class=\"nav-item\">\r\n");
       out.write("                                <a class=\"nav-link\" href=\"homeController\">Home</a>\r\n");
       out.write("                            </li>\r\n");
@@ -404,11 +362,14 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       do {
         out.write("\r\n");
         out.write("                                <li class=\"nav-item\">\r\n");
-        out.write("                                    <a class=\"nav-link\" href=\"chooseTable.jsp\">Booking</a>\r\n");
+        out.write("                                    <a class=\"nav-link\" href=\"BookingTable.jsp\">Booking</a>\r\n");
         out.write("                                </li> \r\n");
         out.write("                                <li class=\"nav-item\">\r\n");
         out.write("                                    <a class=\"nav-link\" href=\"cartController\">Carts</a>\r\n");
         out.write("                                </li>  \r\n");
+        out.write("                                <li class=\"nav-item\">\r\n");
+        out.write("                                    <a class=\"nav-link\" href=\"historyOrderController\">History</a>\r\n");
+        out.write("                                </li> \r\n");
         out.write("                            ");
         int evalDoAfterBody = _jspx_th_c_if_0.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -436,13 +397,13 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
     if (_jspx_eval_c_if_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write("\r\n");
-        out.write("                                <a href=\"profileController\" class=\"order_online\">\r\n");
+        out.write("                                <a href=\"profileController\" class=\"order_online\" style=\"text-decoration: none\">\r\n");
         out.write("                                    Profile\r\n");
         out.write("                                </a>\r\n");
-        out.write("                                <a class=\"order_online\" href=\"changePassController\">\r\n");
+        out.write("                                <a class=\"order_online\" href=\"changePassController\" style=\"text-decoration: none\">\r\n");
         out.write("                                    Change Pass\r\n");
         out.write("                                </a>\r\n");
-        out.write("                                <a href=\"logoutController\" class=\"order_online\">\r\n");
+        out.write("                                <a href=\"logoutController\" class=\"order_online\" style=\"text-decoration: none\">\r\n");
         out.write("                                    logout\r\n");
         out.write("                                </a> \r\n");
         out.write("                            ");
@@ -472,9 +433,12 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
     if (_jspx_eval_c_if_2 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write("\r\n");
-        out.write("                                <a href=\"loginController\" class=\"order_online\">\r\n");
+        out.write("                                <a href=\"loginController\" class=\"order_online\" style=\"text-decoration: none\">\r\n");
         out.write("                                    Login\r\n");
         out.write("                                </a> \r\n");
+        out.write("                                <a href=\"registerController\" class=\"order_online\" style=\"text-decoration: none\">\r\n");
+        out.write("                                    Register\r\n");
+        out.write("                                </a>\r\n");
         out.write("                            ");
         int evalDoAfterBody = _jspx_th_c_if_2.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -511,7 +475,7 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write("                                        <div class=\"img-box\" style=\"height: 400px !important; border-radius: 0px !important;\">\n");
           out.write("                                            <img src=\"View/image/");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${f.image}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("\" alt=\"\" height=\"100%\" style=\"max-height: none;\">\n");
+          out.write("\" alt=\"\" height=\"100%\" style=\"max-height: none;  border-radius: 10px\">\n");
           out.write("                                        </div>\n");
           out.write("                                        <div class=\"detail-box\" style=\"background: #f1f2f3; \">\n");
           out.write("                                            <h5 style=\"text-transform: uppercase; text-align: center;\">\n");

@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import Model.User;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -73,6 +74,7 @@ public class registerController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        HttpSession session = request.getSession();
         String name = request.getParameter("name");
         String email = request.getParameter("email");
         String pass = request.getParameter("pass");
@@ -83,13 +85,18 @@ public class registerController extends HttpServlet {
         UserDao db = new UserDao();
         User u = db.findUser(email);
         if (u != null) {
+            session.setAttribute("NOTICE_REGIS", "text-danger");
+            session.setAttribute("MESSAGE_REGIS", "Account already exists!");
             request.getRequestDispatcher("register.jsp").forward(request, response);
             return;
         }
         if (!pass.equals(rePass)) {
+            session.setAttribute("NOTICE_REGIS", "text-danger");
+            session.setAttribute("MESSAGE_REGIS", "PASSWORD INCORRECT!");
             request.getRequestDispatcher("register.jsp").forward(request, response);
             return;
         } else {
+            session.setAttribute("MESSAGE_REGIS", "");
             db.register(name, email, pass, gender, phone, address, 1);
             response.sendRedirect("loginController");
             return;

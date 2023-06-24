@@ -10,20 +10,35 @@ package Model;
  * @author Aver
  */
 public class Ship {
+
     private int userId;
     private int orderID;
     private String phone;
     private String address;
     private String name;
     private float price;
+    private int status;
 
-    public Ship(int userId, int orderID, String phone, String address, String name, float price) {
+    public Ship() {
+    }
+
+    ;
+    public Ship(int userId, int orderID, String phone, String address, String name, float price, int status) {
         this.userId = userId;
         this.orderID = orderID;
         this.phone = phone;
         this.address = address;
         this.name = name;
         this.price = price;
+        this.status = status;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
     }
 
     public int getUserId() {
@@ -73,5 +88,5 @@ public class Ship {
     public void setPrice(float price) {
         this.price = price;
     }
-    
+
 }

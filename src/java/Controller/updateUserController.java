@@ -37,7 +37,7 @@ public class updateUserController extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet updateUserController</title>");
+            out.println("<title>Servlet updateUserController</title>");            
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet updateUserController at " + request.getContextPath() + "</h1>");
@@ -77,7 +77,7 @@ public class updateUserController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        int id = Integer.valueOf(request.getParameter("id"));
+        int id = Integer.parseInt(request.getParameter("id"));
         int role = Integer.valueOf(request.getParameter("role"));
         UserDao db = new UserDao();
         User user = db.getUserByID(id);
@@ -94,11 +94,10 @@ public class updateUserController extends HttpServlet {
         if (status != 1) {
             response.sendRedirect("error");
         } else {
-            response.sendRedirect("manageUserControll?fullname=&Id=asc&page=1");
+            response.sendRedirect("managerUserControll?fullname=&Id=asc&page=1");
         }
 
     }
-
     /**
      * Returns a short description of the servlet.
      *

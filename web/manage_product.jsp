@@ -45,7 +45,7 @@
                                 <select class="col-md-8 form-select"  name="category">
                                     <option value="" <c:if test="${category == ''}">selected</c:if> >All</option>
                                     <c:forEach items="${cat}" var="g">
-                                        <option value="${g.categoryId}" <c:if test="${category == g.categoryName}">selected</c:if>>${g.categoryName}</option>
+                                        <option value="${g.categoryId}" <c:if test="${category == g.categoryName}">selected</c:if>${g.categoryName}</option>
                                     </c:forEach>
                                 </select>
                             </div>
@@ -66,7 +66,7 @@
                                     <th scope="col">Price</th>
                                     <th scope="col">Status</th>
                                     <th scope="col">Edit</th>
-                                    <th scope="col">Delete</th>
+<!--                                    <th scope="col">Delete</th>-->
                                 </tr>
                             </thead>
                             <tbody>
@@ -76,16 +76,18 @@
                                     <th scope="row">  <a href="viewProductController?productId=${f.productId}">${f.productName}</a></th>
                                     <th scope="row">${f.category.categoryName}</th>
                                     <th scope="row">${f.price}</th>
-                                    <th scope="row">${f.status}</th>
+                                    <th scope="row">
+                                        <c:if test="${f.status == 0}">Unactivated</c:if>
+                                        <c:if test="${f.status == 1}">Activated</c:if></th>
                                     <th scope="row">
                                         <a style="margin-left: 10px" href="updateProductController?productId=${f.productId}"><i class="fa fa-solid fa-pencil"></i></a>
                                         </th>
-                                    <th scope="row">
+<!--                                    <th scope="row">
                                         <button class="btn btn-link" type="button" class="btn btn-primary"
                                                 data-bs-toggle="modal" data-bs-target="#exampleModal${f.productId}"><i
                                                 class="fa fa-solid fa-trash mb-1"></i>
                                         </button>
-                                    </th>
+                                    </th>-->
 
                                 </tr>
 

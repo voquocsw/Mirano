@@ -76,7 +76,6 @@
                         </div>
                         <form action="infoController" method="post">
                             <c:set var="o" value="${requestScope.cart}"/>
-                            <c:set var="tt" value="0"/>
                             <c:forEach items="${o.items}" var="f">
                                 <input type="hidden" name="productId" value="${f.product.productId}"/>
                                 <input type="hidden" name="totalPrice" value="${o.totalMoney}"/>                               

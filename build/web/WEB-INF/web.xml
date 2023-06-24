@@ -77,12 +77,40 @@
         <servlet-class>Controller.homeController</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>infoController</servlet-name>
+        <servlet-class>Controller.infoController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>staffController</servlet-name>
+        <servlet-class>Controller.staffController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ShipController</servlet-name>
+        <servlet-class>Controller.ShipController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>shipController</servlet-name>
+        <servlet-class>Controller.shipController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>shipDetailController</servlet-name>
+        <servlet-class>Controller.shipDetailController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>historyOrderController</servlet-name>
+        <servlet-class>Controller.historyOrderController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>changeShipStatus</servlet-name>
+        <servlet-class>Controller.changeShipStatus</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>updateUserController</servlet-name>
         <servlet-class>Controller.updateUserController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>infoController</servlet-name>
-        <servlet-class>Controller.infoController</servlet-class>
+        <servlet-name>userHistoryOrderController</servlet-name>
+        <servlet-class>Controller.userHistoryOrderController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>loginController</servlet-name>
@@ -161,12 +189,40 @@
         <url-pattern>/homeController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>infoController</servlet-name>
+        <url-pattern>/infoController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>staffController</servlet-name>
+        <url-pattern>/staffController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ShipController</servlet-name>
+        <url-pattern>/ShipController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>shipController</servlet-name>
+        <url-pattern>/shipController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>shipDetailController</servlet-name>
+        <url-pattern>/shipDetailController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>historyOrderController</servlet-name>
+        <url-pattern>/historyOrderController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>changeShipStatus</servlet-name>
+        <url-pattern>/changeShipStatus</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>updateUserController</servlet-name>
         <url-pattern>/updateUserController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>infoController</servlet-name>
-        <url-pattern>/infoController</url-pattern>
+        <servlet-name>userHistoryOrderController</servlet-name>
+        <url-pattern>/userHistoryOrderController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

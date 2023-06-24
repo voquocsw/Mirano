@@ -5,6 +5,8 @@
  */
 package Controller;
 
+import DAO.OrderDAO;
+import DAO.ShipDao;
 import DAO.UserDao;
 import DAO.productDao;
 import Model.Category;
@@ -87,7 +89,12 @@ public class managerUserControll extends HttpServlet {
             throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         UserDao db = new UserDao();
-        int status = db.deleteUser(id);
+        ShipDao sd = new ShipDao();
+        OrderDAO od = new OrderDAO();
+        int status = sd.deleteShip(id);
+        status = od.deleteOrderItems(id);
+        status = od.deleteOrder(id);
+        status = db.deleteUser(id);
         if (status != 1) {
             response.sendRedirect("error");
             return;

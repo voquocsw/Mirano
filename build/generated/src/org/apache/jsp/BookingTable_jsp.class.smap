@@ -1,0 +1,31 @@
+SMAP
+BookingTable_jsp.java
+JSP
+*S JSP
+*F
++ 0 BookingTable.jsp
+BookingTable.jsp
++ 1 setupCss.jsp
+setupCss.jsp
++ 2 header.jsp
+header.jsp
++ 3 footer.jsp
+footer.jsp
+*L
+1,6:61
+1#1,40:67
+6#0,27:106
+1#2,49:133
+49:332,8
+50,7:340
+56,5:184
+60:365,8
+61,10:373
+70,2:191
+71:401,8
+72,7:409
+78,12:195
+32#0,67:206
+5#3,38:273
+98#0,4:310
+*E

@@ -85,10 +85,10 @@ public class processController extends HttpServlet {
             id = Integer.parseInt(id_raw);
             Product p = pr.getProductByID(id);
             num = Integer.parseInt(num_raw);
-            if ((num == -1) && (cart.getQuantityById(id) == 0)) {
+            if ((num == -1) && (cart.getQuantityById(id) <= 1)) {
                 cart.removeItem(id);
             } else {
-                if((num==1) && (cart.getQuantityById(id)==21)){
+                if((num==1) && (cart.getQuantityById(id) >= 10)){
                     num=0;
                 }           
                 float price = p.getPrice();
@@ -111,8 +111,8 @@ public class processController extends HttpServlet {
         Cookie c = new Cookie("cart", txt);
         c.setMaxAge(2 * 24 * 60 * 60);
         response.addCookie(c);
-        request.setAttribute("cart", c);
-        request.getRequestDispatcher("cartController").forward(request, response);
+        request.setAttribute("cart", cart);
+        request.getRequestDispatcher("manage_cart.jsp").forward(request, response);
 
     }
 
