@@ -26,7 +26,7 @@
         <!-- Section: Design Block -->
         <section class="py-1">
             <!-- style="background-color: white"-->
-            g          <div class="container d-flex " style="min-height: 800px;">
+                      <div class="container d-flex " style="min-height: 800px;">
 
                 <div class="col-md-12">
                     <h3 class="mt-5">Manage user</h3>

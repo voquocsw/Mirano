@@ -59,10 +59,11 @@ public class historyOrderController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        int page = Integer.parseInt(request.getParameter("page"));
         int id = (int) request.getSession().getAttribute("id");
         ShipDao us = new ShipDao();
         int total = us.totalShipById(id);
-        List<Ship> ship = us.getShipById(id);
+        List<Ship> ship = us.getShipById(id, page);
 //        request.setAttribute("cat", cat);
 //        request.setAttribute("name", proName);
 //        request.setAttribute("category", proCat);

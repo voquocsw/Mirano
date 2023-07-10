@@ -6,8 +6,10 @@
 package Controller;
 
 import DAO.OrderDAO;
+import DAO.TableDao;
 import Model.Cart;
 import Model.Product;
+import Model.Table;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -61,7 +63,9 @@ public class cartController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        TableDao tb = new TableDao();
         OrderDAO d=new OrderDAO();
+        List<Table> tableList = tb.GetAllTable();
         List<Product> list = d.getAllProduct();
         Cookie[] arr=request.getCookies();
         String txt="";
@@ -73,6 +77,7 @@ public class cartController extends HttpServlet {
             }
         }
         Cart cart = new Cart(txt, list);
+        request.setAttribute("table", tableList);
         request.setAttribute("cart", cart);
         request.getRequestDispatcher("manage_cart.jsp").forward(request, response);
     }

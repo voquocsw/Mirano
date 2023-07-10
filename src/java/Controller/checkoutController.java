@@ -9,6 +9,7 @@ import DAO.OrderDAO;
 import DAO.UserDao;
 import DAO.productDao;
 import Model.Cart;
+import Model.Item;
 import Model.Product;
 import Model.User;
 import java.io.IOException;
@@ -65,7 +66,16 @@ public class checkoutController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        OrderDAO d = new OrderDAO();
+        UserDao us = new UserDao();
+        int id = (int) request.getSession().getAttribute("id");
+        User a = us.getUserByID(id);
+        float totalPrice = Float.parseFloat(request.getParameter("ttpr"));
+        int tableId = Integer.parseInt(request.getParameter("tbId"));
+        List<Item> it = d.getItemByTableId(tableId);
+        d.addOrder2(a, it, totalPrice);
+        d.deleteFromCart(tableId);
+        request.getRequestDispatcher("newjsp.jsp").forward(request, response);
     }
 
     /**
@@ -105,6 +115,7 @@ public class checkoutController extends HttpServlet {
             //request.getRequestDispatcher("shop").forward(request, response);
 
         }
+
     }
 
     /**

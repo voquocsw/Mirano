@@ -43,6 +43,65 @@ public class TableDao extends DBContext {
         return seats;
     }
 
+    public List<Table> getTableInvalid() {
+        List<Table> table = new ArrayList<>();
+        try {
+            String sql = "SELECT DISTINCT a.tableId, b.tableName\n"
+                    + "from Cart a , [table] b\n"
+                    + "where a.tableId = b.tableId";
+            PreparedStatement stm = connection.prepareCall(sql);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                Table s = new Table();
+                s.setTableId(rs.getInt("tableId"));
+                s.setTableName(rs.getString("tableName"));
+                table.add(s);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(TableDao.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+        return table;
+    }
+
+    public List<Table> GetAllTable() {
+        List<Table> table = new ArrayList<>();
+        try {
+            String sql = "select * from [table]";
+            PreparedStatement stm = connection.prepareCall(sql);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                Table s = new Table();
+                s.setTableId(rs.getInt("tableId"));
+                s.setTableName(rs.getString("tableName"));
+                table.add(s);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(TableDao.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+        return table;
+    }
+
+    public List<Table> GetTableAvaiable() {
+        List<Table> table = new ArrayList<>();
+        try {
+            String sql = "select * from [table] where tableStatus = 0";
+            PreparedStatement stm = connection.prepareCall(sql);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                Table s = new Table();
+                s.setTableId(rs.getInt("tableId"));
+                s.setTableName(rs.getString("tableName"));
+                table.add(s);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(TableDao.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+        return table;
+    }
+
     public static void main(String[] args) {
         TableDao db = new TableDao();
         List<Table> table = db.getTableIsBooking(1);

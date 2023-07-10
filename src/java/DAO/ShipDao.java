@@ -125,12 +125,15 @@ public class ShipDao extends DBContext {
         }
     }
 
-    public List<Ship> getShipById(int UserId) {
+    public List<Ship> getShipById(int UserId, int page) {
         List<Ship> ship = new ArrayList<>();
         try {
-            String sql = "select * from Ship where userid = ?\n";
+            String sql = "select * from Ship "
+                    + "where userid = ? "
+                    + "order by [orderID] desc offset (?-1)*10 row fetch next 10 row only \n";
             PreparedStatement stm = connection.prepareCall(sql);
             stm.setInt(1, UserId);
+            stm.setInt(2, page);
             ResultSet rs = stm.executeQuery();
             while (rs.next()) {
                 Ship fl = new Ship();
@@ -150,11 +153,14 @@ public class ShipDao extends DBContext {
         }
     }
 
-    public List<Ship> getAllShip() {
+    public List<Ship> getAllShip(int page) {
         List<Ship> ship = new ArrayList<>();
         try {
-            String sql = "select * from Ship\n";
+            String sql = "select * from Ship "
+                    + "where statuss = 1\n"
+                    + "order by [orderID] desc offset (?-1)*10 row fetch next 10 row only";
             PreparedStatement stm = connection.prepareCall(sql);
+            stm.setInt(1, page);
             ResultSet rs = stm.executeQuery();
             while (rs.next()) {
                 Ship fl = new Ship();
@@ -177,5 +183,7 @@ public class ShipDao extends DBContext {
     public static void main(String args[]) {
         ShipDao s = new ShipDao();
         System.out.println(s.totalShip());
+        System.out.println(s.getShipById(17, 1));
+        
     }
 }

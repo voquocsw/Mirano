@@ -7,9 +7,13 @@
         <%@include file="setupCss.jsp" %>
     </head>
     <body>
+        <c:if test ="sectionScope.role == 0">
+            <%@include file="Staff_header.jsp"%>
+        </c:if>
         <!--Header-->
-        <%@include file="header.jsp" %>
-        <!--Header-->
+        <c:if test ="sectionScope.role == 1">
+            <%@include file="header.jsp" %>
+        </c:if>
 
 
         <!-- food section -->

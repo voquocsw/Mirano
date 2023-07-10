@@ -54,7 +54,7 @@
                                     <a class="nav-link" href="cartController">Carts</a>
                                 </li>  
                                 <li class="nav-item">
-                                    <a class="nav-link" href="historyOrderController">History</a>
+                                    <a class="nav-link" href="historyOrderController?page=1">History</a>
                                 </li> 
                             </c:if>
                         </ul>
@@ -77,6 +77,9 @@
                                 </a> 
                                 <a href="registerController" class="order_online" style="text-decoration: none">
                                     Register
+                                </a>
+                                <a href="forgotPasswordController" class="order_online" style="text-decoration: none">
+                                    Forgot Password
                                 </a>
                             </c:if>
 

@@ -59,9 +59,10 @@ public class shipController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        int page = Integer.parseInt(request.getParameter("page"));
         ShipDao us = new ShipDao();
         int total = us.totalShip();
-        List<Ship> ship = us.getAllShip();
+        List<Ship> ship = us.getAllShip(page);
 //        request.setAttribute("cat", cat);
 //        request.setAttribute("name", proName);
 //        request.setAttribute("category", proCat);

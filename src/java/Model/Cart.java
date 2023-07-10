@@ -46,8 +46,8 @@ public class Cart {
             items.remove(getItemById(id));
         }
     }
-    public double getTotalMoney(){
-        double t=0;
+    public float getTotalMoney(){
+        float t=0;
         for(Item i:items)
             t+=(i.getQuantity()*i.getPrice()/2);
         return t;

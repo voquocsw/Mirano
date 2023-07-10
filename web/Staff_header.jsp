@@ -46,10 +46,16 @@
                             <a class="nav-link ms-4" href="menuController">Order</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link ms-4" href="shipController">Ship</a>
+                            <a class="nav-link ms-4" href="shipController?page=1">Ship</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link ms-4" href="cartController">Cart</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link ms-4" href="managerUserControll?page=1">Users</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link ms-4" href="tableOrderController?">TBOrder</a>
                         </li>
                     </ul>
                 </div>

@@ -29,20 +29,6 @@
             <div class="container d-flex " style="min-height: 800px;">
                 <div class="col-md-12">
                     <h3 class="mt-5">Ship</h3>
-                    <c:set var="page" value="${param.page}" scope="session"/>
-                    <c:if test="${page<=0}">
-                        <c:set var="page" value="1" scope="session"/>
-                    </c:if>
-                    <c:if test="${page==null}">
-                        <c:set var="page" value="1" scope="session"/>
-                    </c:if>
-                    <c:if test="${not empty page}">
-                        <c:set var="page" value="${page}" scope="session"/>
-                    </c:if>
-                    <c:if test="${page>=49}">
-                        <c:set var="page" value="${49}" scope="session"/>
-                    </c:if>  
-
                     <table class="table col-3 table-bordered" style="height: 100px">
                         <thead>
                             <tr>

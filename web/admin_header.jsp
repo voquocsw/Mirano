@@ -46,7 +46,7 @@
                             <a class="nav-link ms-4" href="manageProductControll?productName=&category=&page=1">Product</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link ms-4" href="manageBookingController?title=&date=&order=showId&dimesion=asc&page=1">Booking</a>
+                            <a class="nav-link ms-4" href="managerOrderCotroller?page=1">Booking</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link ms-4" href="managerUserControll?page=1">Users</a>

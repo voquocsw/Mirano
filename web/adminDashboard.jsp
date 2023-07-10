@@ -47,10 +47,10 @@
                             </div>
                             <div class="col-md-5">
                                 <div class="card bg-success text-white mb-4" >
-                                    <div class="card-body">Total Booking: </div>
-                                    <h3 class="card-body text-center">${totalBooking} Booking</h3>
+                                    <div class="card-body">Total Order: </div>
+                                    <h3 class="card-body text-center">${totalOrder} Order</h3>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="manageBookingController?title=&date=&order=showId&dimesion=asc&page=1">View Details</a>
+                                        <a class="small text-white stretched-link" href="managerOrderController?page=1">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -60,7 +60,7 @@
                                     <div class="card-body">Total Users: </div>
                                     <h3 class="card-body text-center">${totalUser} Users</h3>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="managerUserControll">View Details</a>
+                                        <a class="small text-white stretched-link" href="managerUserControll?page=1">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>

@@ -181,7 +181,7 @@ public final class loginjsp_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    </button>\r\n");
       out.write("\r\n");
       out.write("                    <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\r\n");
-      out.write("                        <ul class=\"navbar-nav  mx-auto \">\r\n");
+      out.write("                        <ul class=\"navbar-nav  mx-auto \" style=\"margin-right: -40px;\">\r\n");
       out.write("                            <li class=\"nav-item\">\r\n");
       out.write("                                <a class=\"nav-link\" href=\"homeController\">Home</a>\r\n");
       out.write("                            </li>\r\n");
@@ -259,7 +259,6 @@ public final class loginjsp_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                        <div class=\"pt-1 mb-4\">\r\n");
       out.write("                                            <button class=\"btn btn-dark btn-lg btn-block\" type=\"submit\">Login</button>\r\n");
       out.write("                                        </div>\r\n");
-      out.write("\r\n");
       out.write("                                        <p class=\"mb-5 pb-lg-2\" style=\"color: #393f81;\">Don't have an account? <a\r\n");
       out.write("                                                href=\"register.jsp\" style=\"color: #393f81;\">Register here</a></p>\r\n");
       out.write("                                        <a href=\"#!\" class=\"small text-muted\">Terms of use.</a>\r\n");
@@ -344,11 +343,14 @@ public final class loginjsp_jsp extends org.apache.jasper.runtime.HttpJspBase
       do {
         out.write("\r\n");
         out.write("                                <li class=\"nav-item\">\r\n");
-        out.write("                                    <a class=\"nav-link\" href=\"chooseTable.jsp\">Booking</a>\r\n");
+        out.write("                                    <a class=\"nav-link\" href=\"BookingTable.jsp\">Booking</a>\r\n");
         out.write("                                </li> \r\n");
         out.write("                                <li class=\"nav-item\">\r\n");
         out.write("                                    <a class=\"nav-link\" href=\"cartController\">Carts</a>\r\n");
         out.write("                                </li>  \r\n");
+        out.write("                                <li class=\"nav-item\">\r\n");
+        out.write("                                    <a class=\"nav-link\" href=\"historyOrderController\">History</a>\r\n");
+        out.write("                                </li> \r\n");
         out.write("                            ");
         int evalDoAfterBody = _jspx_th_c_if_0.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -376,13 +378,13 @@ public final class loginjsp_jsp extends org.apache.jasper.runtime.HttpJspBase
     if (_jspx_eval_c_if_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write("\r\n");
-        out.write("                                <a href=\"profileController\" class=\"order_online\">\r\n");
+        out.write("                                <a href=\"profileController\" class=\"order_online\" style=\"text-decoration: none\">\r\n");
         out.write("                                    Profile\r\n");
         out.write("                                </a>\r\n");
-        out.write("                                <a class=\"order_online\" href=\"changePassController\">\r\n");
+        out.write("                                <a class=\"order_online\" href=\"changePassController\" style=\"text-decoration: none\">\r\n");
         out.write("                                    Change Pass\r\n");
         out.write("                                </a>\r\n");
-        out.write("                                <a href=\"logoutController\" class=\"order_online\">\r\n");
+        out.write("                                <a href=\"logoutController\" class=\"order_online\" style=\"text-decoration: none\">\r\n");
         out.write("                                    logout\r\n");
         out.write("                                </a> \r\n");
         out.write("                            ");
@@ -412,9 +414,15 @@ public final class loginjsp_jsp extends org.apache.jasper.runtime.HttpJspBase
     if (_jspx_eval_c_if_2 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write("\r\n");
-        out.write("                                <a href=\"loginController\" class=\"order_online\">\r\n");
+        out.write("                                <a href=\"loginController\" class=\"order_online\" style=\"text-decoration: none\">\r\n");
         out.write("                                    Login\r\n");
         out.write("                                </a> \r\n");
+        out.write("                                <a href=\"registerController\" class=\"order_online\" style=\"text-decoration: none\">\r\n");
+        out.write("                                    Register\r\n");
+        out.write("                                </a>\r\n");
+        out.write("                                <a href=\"forgotPasswordController\" class=\"order_online\" style=\"text-decoration: none\">\r\n");
+        out.write("                                    Forgot Password\r\n");
+        out.write("                                </a>\r\n");
         out.write("                            ");
         int evalDoAfterBody = _jspx_th_c_if_2.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)

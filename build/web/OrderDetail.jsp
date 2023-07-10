@@ -34,7 +34,7 @@
                                     <input type="text" readonly class="form-control" 
                                            placeholder="" value="${id}" name="id">
                                 </div>
-                            <h6 class="mt-5" > Date: ${dt}</h6>
+                            <h6 class="mt-5" style="margin-left: 75%" > Date: ${dt}</h6>
                         </div>
 
                         <table class="table col-3 table-bordered" style="height: 100px">

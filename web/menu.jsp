@@ -9,8 +9,13 @@
         <%@include file="setupCss.jsp" %>
     </head>
     <body>
-        <!--Header-->
-        <%@include file="header.jsp" %>
+        <c:if test="${sessionScope.role != 0}">
+            <%@include file="header.jsp" %>
+        </c:if>
+        <c:if test="${sessionScope.role == 0}">
+            <%@include file="Staff_header.jsp"%>
+        </c:if>
+        
         <!--Header-->
 
         <!-- food section -->

@@ -5,8 +5,6 @@
  */
 package Model;
 
-import java.sql.Time;
-import java.time.LocalTime;
 
 
 public class Table {

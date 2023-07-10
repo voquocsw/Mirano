@@ -75,30 +75,7 @@ public class buyController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         OrderDAO d=new OrderDAO();
-        List<Product> list=d.getAllProduct();
-        Cookie[] arr=request.getCookies();
-        String txt="";
-        if(arr!=null){
-            for(Cookie o:arr){
-                if(o.getName().equals("cart")){
-                    txt+=o.getValue();
-                    o.setMaxAge(0);
-                    response.addCookie(o);
-                }
-            }
-        }
-        String num=request.getParameter("num");
-        String id=request.getParameter("productId");
-        if(txt.isEmpty()){
-            txt=id+":"+num;
-        }else{
-            txt=txt+"/"+id+":"+num;//thay / cho dau ,
-        }
-        Cookie c=new Cookie("cart", txt);
-        c.setMaxAge(2*24*60*60);
-        response.addCookie(c);
-        response.sendRedirect("menuController");//thay cai duoi
-        //request.getRequestDispatcher("shop").forward(request, response);
+        
     }
     /**
      * Returns a short description of the servlet.

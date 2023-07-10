@@ -40,7 +40,7 @@
                                     <div class="card-body">Total Order </div>
                                     <h3 class="card-body text-center">${totalOrder} Order</h3>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="menuControll?page=1">View Details</a>
+                                        <a class="small text-white stretched-link" href="menuController?page=1">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -60,7 +60,7 @@
                                     <div class="card-body">Ship </div>
                                     <h3 class="card-body text-center">${totalShip} Ship</h3>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="shipController">View Details</a>
+                                        <a class="small text-white stretched-link" href="shipController?page=1">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>

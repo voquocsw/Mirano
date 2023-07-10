@@ -5,6 +5,7 @@
  */
 package Controller;
 
+import DAO.OrderDAO;
 import DAO.UserDao;
 import DAO.productDao;
 import java.io.IOException;
@@ -37,7 +38,7 @@ public class adminDashboardController extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet adminDashboardController</title>");            
+            out.println("<title>Servlet adminDashboardController</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet adminDashboardController at " + request.getContextPath() + "</h1>");
@@ -59,6 +60,8 @@ public class adminDashboardController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         UserDao uDB = new UserDao();
+        OrderDAO oDB = new OrderDAO();
+        int totalOrder = oDB.totalOrder();
         int totalUser = uDB.totalUser();
 //        ShowDao sDB = new ShowDao();
 //        int totalShow = sDB.countShowActive();
@@ -66,6 +69,7 @@ public class adminDashboardController extends HttpServlet {
         int totalProduct = fDB.countProductActive();
 //        BookingDao bDb = new BookingDao();
 //        int totalBooking = bDb.totalSeatIsBooking();
+        request.setAttribute("totalOrder", totalOrder);
         request.setAttribute("totalUser", totalUser);
 //        request.setAttribute("totalShow", totalShow);
         request.setAttribute("totalProduct", totalProduct);

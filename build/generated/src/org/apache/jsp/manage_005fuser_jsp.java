@@ -159,7 +159,7 @@ public final class manage_005fuser_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("        <!-- Section: Design Block -->\n");
       out.write("        <section class=\"py-1\">\n");
       out.write("            <!-- style=\"background-color: white\"-->\n");
-      out.write("            g          <div class=\"container d-flex \" style=\"min-height: 800px;\">\n");
+      out.write("                      <div class=\"container d-flex \" style=\"min-height: 800px;\">\n");
       out.write("\n");
       out.write("                <div class=\"col-md-12\">\n");
       out.write("                    <h3 class=\"mt-5\">Manage user</h3>\n");

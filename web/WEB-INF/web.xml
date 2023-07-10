@@ -112,6 +112,42 @@
         <servlet-name>userHistoryOrderController</servlet-name>
         <servlet-class>Controller.userHistoryOrderController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>forgotPasswordController</servlet-name>
+        <servlet-class>Controller.forgotPasswordController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>validateOtpController</servlet-name>
+        <servlet-class>Controller.validateOtpController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>newPasswordController</servlet-name>
+        <servlet-class>Controller.newPasswordController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>billController</servlet-name>
+        <servlet-class>Controller.billController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>mangerOrderController</servlet-name>
+        <servlet-class>Controller.mangerOrderController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>managerOrderController</servlet-name>
+        <servlet-class>Controller.managerOrderController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>saveController</servlet-name>
+        <servlet-class>Controller.saveController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>tableOrderController</servlet-name>
+        <servlet-class>Controller.tableOrderController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PaymentOnlineServlet</servlet-name>
+        <servlet-class>Controller.PaymentOnlineServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>loginController</servlet-name>
         <url-pattern>/loginController</url-pattern>
@@ -223,6 +259,42 @@
     <servlet-mapping>
         <servlet-name>userHistoryOrderController</servlet-name>
         <url-pattern>/userHistoryOrderController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>forgotPasswordController</servlet-name>
+        <url-pattern>/forgotPasswordController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>validateOtpController</servlet-name>
+        <url-pattern>/validateOtpController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>newPasswordController</servlet-name>
+        <url-pattern>/newPasswordController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>billController</servlet-name>
+        <url-pattern>/billController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>mangerOrderController</servlet-name>
+        <url-pattern>/mangerOrderController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>managerOrderController</servlet-name>
+        <url-pattern>/managerOrderController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>saveController</servlet-name>
+        <url-pattern>/saveController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>tableOrderController</servlet-name>
+        <url-pattern>/tableOrderController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PaymentOnlineServlet</servlet-name>
+        <url-pattern>/PaymentOnlineServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

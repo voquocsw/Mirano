@@ -39,6 +39,48 @@ public class UserDao extends DBContext {
         return 1;
     }
 
+    public int updateUser(String password, String email) {
+        String pass = md5.getMd5(password);
+        try {
+            String sql = "UPDATE [dbo].[Users]\n"
+                    + "   SET [userPass] = ?\n"
+                    + "WHERE [Users].email =?";
+            PreparedStatement stm = connection.prepareCall(sql);
+            stm.setString(1, pass);
+            stm.setString(2, email);
+            stm.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(UserDao.class.getName()).log(Level.SEVERE, null, ex);
+            return 0;
+        }
+        return 1;
+    }
+
+    public User checkUserExistByFullNameAndEmail(String fullname, String email) {
+        try {
+            String sql = "select * from Users where [fullName]=? and [email]=?";
+            PreparedStatement stm = connection.prepareCall(sql);
+            stm.setString(1, fullname);
+            stm.setString(2, email);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                User s = new User();
+                s.setId(rs.getInt("userId"));
+                s.setFullname(rs.getString("fullName"));
+                s.setEmail(rs.getString("email"));
+                s.setPassword(rs.getString("userPass"));
+                s.setGender(rs.getBoolean("gender"));
+                s.setPhone(rs.getString("phone"));
+                s.setAddress(rs.getString("addresss"));
+                s.setRole(rs.getInt("roleID"));
+                return s;
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(UserDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+
     public int deleteUser(int proId) {
         try {
             String sql = "DELETE FROM [dbo].[Users] \n"
@@ -52,7 +94,7 @@ public class UserDao extends DBContext {
             return 0;
         }
     }
-    
+
     public User getUserByID(int Id) {
         try {
             String sql = "select * from Users \n"
@@ -259,11 +301,13 @@ public class UserDao extends DBContext {
         }
     }
 
-    public List<User> getUserByCondition() {
+    public List<User> getUserByCondition(int page) {
         List<User> user = new ArrayList<>();
         try {
-            String sql = "select * from Users\n";
+            String sql = "select * from Users "
+                    + "order by [roleID] offset (?-1)*10 row fetch next 10 row only\n";
             PreparedStatement stm = connection.prepareCall(sql);
+            stm.setInt(1, page);
             ResultSet rs = stm.executeQuery();
             while (rs.next()) {
                 User fl = new User();

@@ -88,7 +88,7 @@ public final class adminDashboard_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("            <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\" />\n");
       out.write("            <meta name=\"description\" content=\"\" />\n");
       out.write("            <meta name=\"author\" content=\"\" />\n");
-      out.write("            <title>Dashboard - SB Admin</title>\n");
+      out.write("            <title>Dashboard - Admin</title>\n");
       out.write("            <link href=\"https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css\" rel=\"stylesheet\" />\n");
       out.write("            <link href=\"css/styles.css\" rel=\"stylesheet\" />\n");
       out.write("            <script src=\"https://use.fontawesome.com/releases/v6.1.0/js/all.js\" crossorigin=\"anonymous\"></script>\n");
@@ -113,7 +113,10 @@ public final class adminDashboard_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("                            <a class=\"nav-link ms-4\" href=\"manageProductControll?productName=&category=&page=1\">Product</a>\n");
       out.write("                        </li>\n");
       out.write("                        <li class=\"nav-item\">\n");
-      out.write("                            <a class=\"nav-link ms-4\" href=\"manageBookingController?title=&date=&order=showId&dimesion=asc&page=1\">Booking</a>\n");
+      out.write("                            <a class=\"nav-link ms-4\" href=\"managerOrderCotroller?page=1\">Booking</a>\n");
+      out.write("                        </li>\n");
+      out.write("                        <li class=\"nav-item\">\n");
+      out.write("                            <a class=\"nav-link ms-4\" href=\"managerUserControll?page=1\">Users</a>\n");
       out.write("                        </li>\n");
       out.write("                    </ul>\n");
       out.write("                </div>\n");
@@ -122,7 +125,6 @@ public final class adminDashboard_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("                </div>\n");
       out.write("            </nav>\n");
       out.write("        </body>\n");
-      out.write("\n");
       out.write("    </html>\n");
       out.write("</body>\n");
       out.write("</html>\n");
@@ -151,12 +153,12 @@ public final class adminDashboard_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("                            </div>\n");
       out.write("                            <div class=\"col-md-5\">\n");
       out.write("                                <div class=\"card bg-success text-white mb-4\" >\n");
-      out.write("                                    <div class=\"card-body\">Total Booking: </div>\n");
+      out.write("                                    <div class=\"card-body\">Total Order: </div>\n");
       out.write("                                    <h3 class=\"card-body text-center\">");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${totalBooking}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write(" Booking</h3>\n");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${totalOrder}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write(" Order</h3>\n");
       out.write("                                    <div class=\"card-footer d-flex align-items-center justify-content-between\">\n");
-      out.write("                                        <a class=\"small text-white stretched-link\" href=\"manageBookingController?title=&date=&order=showId&dimesion=asc&page=1\">View Details</a>\n");
+      out.write("                                        <a class=\"small text-white stretched-link\" href=\"managerOrderController?page=1\">View Details</a>\n");
       out.write("                                        <div class=\"small text-white\"><i class=\"fas fa-angle-right\"></i></div>\n");
       out.write("                                    </div>\n");
       out.write("                                </div>\n");
@@ -168,7 +170,7 @@ public final class adminDashboard_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${totalUser}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write(" Users</h3>\n");
       out.write("                                    <div class=\"card-footer d-flex align-items-center justify-content-between\">\n");
-      out.write("                                        <a class=\"small text-white stretched-link\" href=\"managerUserControll\">View Details</a>\n");
+      out.write("                                        <a class=\"small text-white stretched-link\" href=\"managerUserControll?page=1\">View Details</a>\n");
       out.write("                                        <div class=\"small text-white\"><i class=\"fas fa-angle-right\"></i></div>\n");
       out.write("                                    </div>\n");
       out.write("                                </div>\n");

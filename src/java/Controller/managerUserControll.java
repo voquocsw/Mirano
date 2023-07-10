@@ -66,7 +66,8 @@ public class managerUserControll extends HttpServlet {
             throws ServletException, IOException {
         UserDao us = new UserDao();
         int total = us.totalUser();
-        List<User> user = us.getUserByCondition();
+        int page = Integer.parseInt(request.getParameter("page"));
+        List<User> user = us.getUserByCondition(page);
 //        request.setAttribute("cat", cat);
 //        request.setAttribute("name", proName);
 //        request.setAttribute("category", proCat);

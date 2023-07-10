@@ -30,7 +30,12 @@
         </style>
     </head>
     <body>
-        <%@include file="header.jsp" %>
+        <c:if test="${sessionScope.role != 0}">
+            <%@include file="header.jsp" %>
+        </c:if>
+        <c:if test="${sessionScope.role == 0}">
+            <%@include file="Staff_header.jsp"%>
+        </c:if>
         <!-- Section: Design Block -->
         <section class="py-1">
             <!-- style="background-color: white"-->
@@ -38,7 +43,18 @@
 
                 <div class="col-md-12">
                     <h3 class="mt-5">Cart</h3>
-
+                    <c:if test="${sessionScope.role == 0}">
+                        <div>
+                            <label class="labels">Table</label>
+                            <select id="table" class="form-control" style="width: 100px">
+                                <c:forEach items="${requestScope.table}" var="g">
+                                    <option value="${g.tableId}" >
+                                        ${g.tableName}
+                                    </option>
+                                </c:forEach>
+                            </select>
+                        </div>
+                    </c:if>
                     <div >
 
                         <table class="table col-3 table-bordered" style="height: 100px">
@@ -67,10 +83,12 @@
                                             <a href="processController?&num=1&productId=${f.product.productId}" class="order_online" style="text-decoration: none; font-size: 22px;">+</a>
                                         <th scope="row">${(f.price*f.quantity)/2}</th>
                                         <th scope="row">
-                                            <button class="btn btn-link" type="button" class="btn btn-primary"
-                                                    data-bs-toggle="modal" data-bs-target="#exampleModal${f.product.productId}"><i
-                                                    class="fa fa-solid fa-trash mb-1"></i>
-                                            </button>
+                                            <form action="processController" method="post">
+                                                <input type="hidden" name="id" value="${f.product.productId}"/>
+                                                <button class="btn btn-link" type="submit" class="btn btn-primary"><i
+                                                        class="fa fa-solid fa-trash mb-1"></i>
+                                                </button>
+                                            </form>
                                         </th>
 
                                     </tr>
@@ -103,32 +121,37 @@
                             </c:forEach>                      
                             </tbody>
                         </table>
-                        <div class="d-flex justify-content-center">
-                            <nav aria-label="Page navigation example">
-                                <ul class="pagination">
-                                    <c:forEach begin="1" end="${requestScope.total}" step="1" var="i">
-                                        <li class="page-item <c:if test="${i == requestScope.page}"> active </c:if> " >
-                                            <a class="page-link" href="cartControll?page=${i}&productName=${productName}&category=${category}">
-                                                ${i}
-                                            </a>
-                                        </li>
-                                    </c:forEach>
-                                </ul>
-                            </nav>
-                        </div>
                     </div>
                     <div style="margin-left: 75%">
                         <h5>Total Price: ${cart.totalMoney} đ</h5>
                     </div>
                     <c:if test="${cart.totalMoney != 0}">
-                    <div class="d-flex justify-content-between col-3 " style="align-text: right">
-                        <a href="infoController" class="btn btn-success">Next</a>
-                    </div>
+                        <c:if test="${sessionScope.role == 0}">
+                            <div class="d-flex justify-content-between col-3 " style="align-text: right">
+                                <a href="#" onclick="passValueToServlet()" class="btn btn-success">Save</a>
+                            </div>
+                        </c:if>
+                        <c:if test="${sessionScope.role == 1}">
+                            <div class="d-flex justify-content-between col-3 " style="align-text: right">
+                                <a href="infoController" class="btn btn-success">Next</a>
+                            </div>
+                        </c:if>
                     </c:if>
                 </div>
         </section>
         <%@include file="footer.jsp" %>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            function passValueToServlet() {
+                var selectElement = document.getElementById("table");
+                var selectedValue = selectElement.options[selectElement.selectedIndex].value;
+
+                var servletURL = "saveController";
+                var link = servletURL + "?table=" + encodeURIComponent(selectedValue);
+
+                window.location.href = link;
+            }
+            src = "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        </script>
         <!-- Section: Design Block -->
     </body>
 

@@ -14,6 +14,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-       
+        <input type ="time" min="15" max="21">
     </body>
 </html>

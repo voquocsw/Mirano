@@ -20,7 +20,12 @@
         <%@include file="setupCss.jsp" %>
     </head>
     <body>
-        <%@include file="header.jsp" %>
+        <c:if test="${sessionScope.role != 2}">
+            <%@include file="header.jsp" %>
+        </c:if>
+        <c:if test="${sessionScope.role == 2}">
+            <%@include file="admin_header.jsp"%>
+        </c:if>
         <!-- Section: Design Block -->
         <section class="py-1">
             <form action="changeShipStatus" method="post">

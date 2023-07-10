@@ -119,19 +119,17 @@ public class productDao extends DBContext {
         }
     }
 
-    public List<Product> getProductByCondition(String proName, String category, int page, int page_Size) {
+    public List<Product> getProductByCondition(String proName, String category, int page) {
         List<Product> product = new ArrayList<>();
         try {
             String sql = "select * from Products f left join Category g on f.categoryID = g.categoryID \n"
                     + "where productName like ?\n"
                     + "and g.categoryName like ?\n"
-                    + "order by [price] offset (?-1)*? row fetch next ? row only";
+                    + "order by [price] offset (?-1)*10 row fetch next 10 row only";
             PreparedStatement stm = connection.prepareCall(sql);
             stm.setString(1, "%" + proName + "%");
             stm.setString(2, "%" + category + "%");
             stm.setInt(3, page);
-            stm.setInt(4, page_Size);
-            stm.setInt(5, page_Size);
             ResultSet rs = stm.executeQuery();
             while (rs.next()) {
                 Product fl = new Product();
