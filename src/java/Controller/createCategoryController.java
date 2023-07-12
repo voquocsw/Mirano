@@ -5,13 +5,9 @@
  */
 package Controller;
 
-import DAO.OrderDAO;
-import Model.Product;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.servlet.ServletException;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Aver
  */
-public class buyController extends HttpServlet {
+public class createCategoryController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -39,10 +35,10 @@ public class buyController extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet buyController</title>");            
+            out.println("<title>Servlet createCategoryController</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet buyController at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet createCategoryController at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -74,32 +70,9 @@ public class buyController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        OrderDAO d=new OrderDAO();
-        List<Product> list=d.getAllProduct();
-        Cookie[] arr=request.getCookies();
-        String txt="";
-        if(arr!=null){
-            for(Cookie o:arr){
-                if(o.getName().equals("cart")){
-                    txt+=o.getValue();
-                    o.setMaxAge(0);
-                    response.addCookie(o);
-                }
-            }
-        }
-        String num=request.getParameter("num");
-        String id=request.getParameter("productId");
-        if(txt.isEmpty()){
-            txt=id+":"+num;
-        }else{
-            txt=txt+"/"+id+":"+num;//thay / cho dau ,
-        }
-        Cookie c=new Cookie("cart", txt);
-        c.setMaxAge(2*24*60*60);
-        response.addCookie(c);
-        response.sendRedirect("menuController");//thay cai duoi
-        //request.getRequestDispatcher("shop").forward(request, response);
+        processRequest(request, response);
     }
+
     /**
      * Returns a short description of the servlet.
      *

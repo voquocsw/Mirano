@@ -340,6 +340,6 @@ public class productDao extends DBContext {
 //        db.registerProduct(1, "test", "null", "test", 100);
 //        db.getProductByCondition("test", "monman", 1, 10);   
 //        System.out.println(db.getProductByCondition("Bun cha", "saltly food", 1, 10));
-        System.out.print(db.totalProductByCondition("bun cha", "saltly food"));
+        System.out.print(db.getProductByCondition("bun cha", "saltly food", 1));
     }
 }

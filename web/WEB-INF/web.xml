@@ -148,6 +148,10 @@
         <servlet-name>PaymentOnlineServlet</servlet-name>
         <servlet-class>Controller.PaymentOnlineServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>createCategoryController</servlet-name>
+        <servlet-class>Controller.createCategoryController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>loginController</servlet-name>
         <url-pattern>/loginController</url-pattern>
@@ -295,6 +299,10 @@
     <servlet-mapping>
         <servlet-name>PaymentOnlineServlet</servlet-name>
         <url-pattern>/PaymentOnlineServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>createCategoryController</servlet-name>
+        <url-pattern>/createCategoryController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

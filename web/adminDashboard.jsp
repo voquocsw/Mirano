@@ -40,7 +40,7 @@
                                     <div class="card-body">Total Product: </div>
                                     <h3 class="card-body text-center">${totalProduct} Products</h3>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="manageProductControll?productName=&category=&page=1">View Details</a>
+                                        <a class="small text-white stretched-link" href="manageProductControll?name=&category=&page=1">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>

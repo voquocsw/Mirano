@@ -80,7 +80,7 @@ public class OrderDAO extends DBContext {
         List<Order> orders = new ArrayList<>();
         try {
             String sql = "select * from Orders "
-                    + "order by [orderID] desc offset (?-1)*10 row fetch next 10 row only ";
+                    + "order by [date_Time] desc offset (?-1)*10 row fetch next 10 row only ";
             PreparedStatement stm = connection.prepareCall(sql);
             stm.setInt(1, page);
             ResultSet rs = stm.executeQuery();

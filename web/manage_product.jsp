@@ -46,8 +46,8 @@
                                             <c:if test="${category == ''}">selected</c:if> >
                                                 All
                                             </option>
-                                    <c:forEach items="${requestScope.cat}" var="g">
-                                        <option value="${g.categoryId}" 
+                                    <c:forEach items="${cat}" var="g">
+                                        <option value="${g.categoryName}" 
                                                 <c:if test="${category == g.categoryName}">selected</c:if>>
                                                 ${g.categoryName}
                                     </option>
@@ -60,6 +60,7 @@
                     </form>
                 </div>
                 <div class="d-flex justify-content-between col-3 ">
+                    
                     <a href="createProductController" class="btn btn-success ">Add product</a>
                 </div>
                 <table class="table col-3 table-bordered" style="height: 100px">

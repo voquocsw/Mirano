@@ -69,7 +69,7 @@ public final class tableOrder_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <meta charset=\"UTF-8\">\n");
       out.write("        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n");
       out.write("        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n");
-      out.write("        <title>Ship</title>\n");
+      out.write("        <title>Table Order</title>\n");
       out.write("\n");
       out.write("        <!-- bootstrap core css -->\n");
       out.write("        <link rel=\"stylesheet\" type=\"text/css\" href=\"css/bootstrap.css\" />\n");
@@ -188,6 +188,17 @@ public final class tableOrder_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write(" đ</h5>\n");
       out.write("                    </div>\n");
       out.write("                </div>\n");
+      out.write("                <form action=\"checkoutController\">\n");
+      out.write("                    <div>\n");
+      out.write("                        <input hidden type=\"search\" value=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${totalPrice}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\" name=\"ttpr\" hidden>\n");
+      out.write("                        <input hidden type=\"search\" value=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${tableId}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\" name=\"tbId\" hidden>\n");
+      out.write("                        <button type=\"submit\" class=\"btn btn-primary\">Payment</button>\n");
+      out.write("                    </div>\n");
+      out.write("                </form>\n");
       out.write("            </div>\n");
       out.write("        </section>\n");
       out.write("        ");
@@ -253,7 +264,7 @@ public final class tableOrder_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write("                                    <option value=\"");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${g.tableId}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("\"\n");
-          out.write("                                        ");
+          out.write("                                            ");
           if (_jspx_meth_c_if_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
             return true;
           out.write(">\n");

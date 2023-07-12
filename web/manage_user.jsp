@@ -26,23 +26,10 @@
         <!-- Section: Design Block -->
         <section class="py-1">
             <!-- style="background-color: white"-->
-                      <div class="container d-flex " style="min-height: 800px;">
+            <div class="container d-flex " style="min-height: 800px;">
 
                 <div class="col-md-12">
                     <h3 class="mt-5">Manage user</h3>
-                    <c:set var="page" value="${param.page}" scope="session"/>
-                    <c:if test="${page<=0}">
-                        <c:set var="page" value="1" scope="session"/>
-                    </c:if>
-                    <c:if test="${page==null}">
-                        <c:set var="page" value="1" scope="session"/>
-                    </c:if>
-                    <c:if test="${not empty page}">
-                        <c:set var="page" value="${page}" scope="session"/>
-                    </c:if>
-                    <c:if test="${page>=49}">
-                        <c:set var="page" value="${49}" scope="session"/>
-                    </c:if>        
                     <table class="table col-3 table-bordered" style="height: 100px">
                         <thead>
                             <tr>
@@ -53,7 +40,6 @@
                                 <th scope="col">Address</th>
                                 <th scope="col">Role</th>
                                 <th scope="col">Edit</th>
-                                <th scope="col">Delete</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -73,42 +59,12 @@
                                         <c:if test="${f.role == 2}">Admin</c:if></th>
                                         <th scope="row">
                                             <a style="margin-left: 10px" href="updateUserController?id=${f.id}"><i class="fa fa-solid fa-pencil"></i></a>
-                                    </th>
-                                    <th scope="row">
-                                        <button class="btn btn-link" type="button" class="btn btn-primary"
-                                                data-bs-toggle="modal" data-bs-target="#exampleModal${f.id}"><i
-                                                class="fa fa-solid fa-trash mb-1"></i>
-                                        </button>
-                                    </th>
-
+                                    </th>                                 
                                 </tr>
 
-                            <div class="modal fade" id="exampleModal${f.id}" tabindex="-1"
-                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel"><i class="bi bi-trash-fill"></i>
-                                                Delete</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            Are you sure to delete this user?
-                                        </div>
-                                        <div class="modal-footer">
-                                            <form action="managerUserControll" method="post">
-                                                <input hidden type="search" value="${f.id}" name="id" hidden>
-                                                <button type="submit" class="btn btn-primary">Yes</button>
-                                                <button type="button" class="btn btn-secondary"
-                                                        data-bs-dismiss="modal">No</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
-                        </c:forEach>                      
+
+                            </c:forEach>                      
                         </tbody>
                     </table>
                     <div class="d-flex justify-content-center">

@@ -60,10 +60,16 @@
                                     </li>
                                 </ul>
 
-                                <h6>Description:</h6>
-                                <p>${requestScope.product.descript}</p>
-                                <ul class="list-inline">                                
-                                </ul> 
+                                <ul class="list-inline">
+                                    <li class="list-inline-item">
+                                        <h6>Description:</h6>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <p class="text-muted">
+                                            <strong>${requestScope.product.descript}</strong>
+                                        </p>
+                                    </li>
+                                </ul>
                                 <form class="mt-5" action="buyController" method="post">
                                     <div class="row pb-3">
                                         <div class="col d-grid">

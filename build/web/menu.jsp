@@ -43,10 +43,9 @@
                 </form>
                 <ul class="filters_menu">
                     <li class="active" data-filter="*">All</li>
-                        <c:forEach items="${requestScope.category}" var="g">
+                        <c:forEach items="${category}" var="g">
                         <li data-filter=".${g.categoryName}">${g.categoryName}</li>
                         </c:forEach>
-
                 </ul>
 
                 <div class="filters-content">
@@ -64,7 +63,6 @@
                                                     ${f.productName}
                                                 </a>
                                             </h5>
-
                                         </div>
                                     </div>
                                 </div>

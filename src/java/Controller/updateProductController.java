@@ -121,7 +121,7 @@ public class updateProductController extends HttpServlet {
         if (status != 1) {
             response.sendRedirect("error");
         } else {
-            response.sendRedirect("manageProductControll?productName=&category=&productId=asc&page=1");
+            response.sendRedirect("manageProductControll?name=&category=&productId=asc&page=1");
         }
 
     }
