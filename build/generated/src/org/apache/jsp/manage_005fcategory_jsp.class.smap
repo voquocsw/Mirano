@@ -1,0 +1,42 @@
+SMAP
+manage_005fcategory_jsp.java
+JSP
+*S JSP
+*F
++ 0 manage_category.jsp
+manage_category.jsp
++ 1 setupCss.jsp
+setupCss.jsp
++ 2 admin_header.jsp
+admin_header.jsp
++ 3 admin_footer.jsp
+admin_footer.jsp
+*L
+5,9:70
+14:79,10
+15,10:89
+1#1,40:99
+24#0,4:138
+5#2,60:142
+27#0,21:201
+47:294,6
+47,2:224
+48:313,11
+49:324
+49:372,6
+49,2:327
+51,4:329,3
+55:341
+56:342,3
+57,3:345
+59,7:228
+65:391,13
+66:404
+66:441,8
+66:407
+67,2:408,3
+69,3:414
+71,9:237
+5#3,25:246
+79#0,7:270
+*E

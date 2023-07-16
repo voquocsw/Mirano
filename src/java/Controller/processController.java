@@ -6,10 +6,12 @@
 package Controller;
 
 import DAO.OrderDAO;
+import DAO.TableDao;
 import DAO.productDao;
 import Model.Cart;
 import Model.Item;
 import Model.Product;
+import Model.Table;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -64,6 +66,8 @@ public class processController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         OrderDAO d = new OrderDAO();
+        TableDao tb = new TableDao();
+        List<Table> tableList = tb.GetAllTable();
         productDao pr = new productDao();
         List<Product> list = d.getAllProduct();
         Cookie[] arr = request.getCookies();
@@ -111,6 +115,7 @@ public class processController extends HttpServlet {
         Cookie c = new Cookie("cart", txt);
         c.setMaxAge(2 * 24 * 60 * 60);
         response.addCookie(c);
+        request.setAttribute("table", tableList);
         request.setAttribute("cart", cart);
         request.getRequestDispatcher("manage_cart.jsp").forward(request, response);
 
@@ -128,6 +133,8 @@ public class processController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         OrderDAO d = new OrderDAO();
+        TableDao tb = new TableDao();
+        List<Table> tableList = tb.GetAllTable();
         List<Product> list = d.getAllProduct();
         Cookie[] arr = request.getCookies();
         String txt = "";
@@ -159,6 +166,7 @@ public class processController extends HttpServlet {
             response.addCookie(c);
         }
         Cart cart = new Cart(out, list);
+        request.setAttribute("table", tableList);
         request.setAttribute("cart", cart);
         request.getRequestDispatcher("manage_cart.jsp").forward(request, response);
     }

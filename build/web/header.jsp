@@ -44,7 +44,7 @@
                                 <a class="nav-link" href="homeController">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="menuController">Menu</a>
+                                <a class="nav-link" href="menuController?name=&category=&page=1">Menu</a>
                             </li>
                             <c:if test="${sessionScope.id != null}">
                                 <li class="nav-item">

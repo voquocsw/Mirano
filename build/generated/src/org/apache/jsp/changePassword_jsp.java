@@ -66,7 +66,7 @@ public final class changePassword_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>Profile</title>\n");
+      out.write("        <title>Change password</title>\n");
       out.write("        ");
       out.write("\r\n");
       out.write("\r\n");
@@ -169,7 +169,22 @@ public final class changePassword_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("    <head>\r\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
       out.write("        <title>JSP Page</title>\r\n");
+      out.write("        <link href=\"css/styles.css\" rel=\"stylesheet\" />\r\n");
       out.write("    </head>\r\n");
+      out.write("    <head>\r\n");
+      out.write("            <meta charset=\"utf-8\" />\r\n");
+      out.write("            <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />\r\n");
+      out.write("            <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\" />\r\n");
+      out.write("            <meta name=\"description\" content=\"\" />\r\n");
+      out.write("            <meta name=\"author\" content=\"\" />\r\n");
+      out.write("            <title>Dashboard - Admin</title>\r\n");
+      out.write("            <link href=\"https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css\" rel=\"stylesheet\" />\r\n");
+      out.write("            <link href=\"css/styles.css\" rel=\"stylesheet\" />\r\n");
+      out.write("            <script src=\"https://use.fontawesome.com/releases/v6.1.0/js/all.js\" crossorigin=\"anonymous\"></script>\r\n");
+      out.write("            <!-- CSS only -->\r\n");
+      out.write("            <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css\" rel=\"stylesheet\"\r\n");
+      out.write("                  integrity=\"sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi\" crossorigin=\"anonymous\">\r\n");
+      out.write("        </head>\r\n");
       out.write("    <body>\r\n");
       out.write("        <!-- header section strats -->\r\n");
       out.write("        <header class=\"header_section\">\r\n");
@@ -186,25 +201,26 @@ public final class changePassword_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("                    </button>\r\n");
       out.write("\r\n");
       out.write("                    <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\r\n");
-      out.write("                        <ul class=\"navbar-nav  mx-auto \">\r\n");
+      out.write("                        <ul class=\"navbar-nav  mx-auto \" style=\"margin-right: -40px;\">\r\n");
       out.write("                            <li class=\"nav-item\">\r\n");
-      out.write("                                <a class=\"nav-link\" href=\"home.jsp\">Home</a>\r\n");
+      out.write("                                <a class=\"nav-link\" href=\"homeController\">Home</a>\r\n");
       out.write("                            </li>\r\n");
       out.write("                            <li class=\"nav-item\">\r\n");
-      out.write("                                <a class=\"nav-link\" href=\"menu.jsp\">Menu</a>\r\n");
+      out.write("                                <a class=\"nav-link\" href=\"menuController\">Menu</a>\r\n");
       out.write("                            </li>\r\n");
-      out.write("                            <li class=\"nav-item\">\r\n");
-      out.write("                                <a class=\"nav-link\" href=\"historyBookingController\">Booking</a>\r\n");
-      out.write("                            </li>\r\n");
-      out.write("                        </ul>\r\n");
-      out.write("                        <div class=\"user_option\">\r\n");
-      out.write("\r\n");
       out.write("                            ");
       if (_jspx_meth_c_if_0(_jspx_page_context))
         return;
       out.write("\r\n");
+      out.write("                        </ul>\r\n");
+      out.write("                        <div class=\"user_option\">\r\n");
+      out.write("\r\n");
       out.write("                            ");
       if (_jspx_meth_c_if_1(_jspx_page_context))
+        return;
+      out.write("\r\n");
+      out.write("                            ");
+      if (_jspx_meth_c_if_2(_jspx_page_context))
         return;
       out.write("\r\n");
       out.write("\r\n");
@@ -228,7 +244,7 @@ public final class changePassword_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("                            <h4 class=\"text-right\">Change Password</h4>\n");
       out.write("                        </div>\n");
       out.write("                        ");
-      if (_jspx_meth_c_if_2(_jspx_page_context))
+      if (_jspx_meth_c_if_3(_jspx_page_context))
         return;
       out.write("                    \n");
       out.write("                        <form action = \"changePassController\" method=\"post\">\n");
@@ -251,7 +267,7 @@ public final class changePassword_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("                                    Save Changes\n");
       out.write("                                </button>\n");
       out.write("                            </div>\n");
-      out.write("                        </form>>\n");
+      out.write("                        </form>\n");
       out.write("                    </div>\n");
       out.write("                </div>\n");
       out.write("\n");
@@ -366,15 +382,15 @@ public final class changePassword_jsp extends org.apache.jasper.runtime.HttpJspB
     if (_jspx_eval_c_if_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write("\r\n");
-        out.write("                                <a href=\"profileController\" class=\"order_online\">\r\n");
-        out.write("                                    Profile\r\n");
-        out.write("                                </a>\r\n");
-        out.write("                                <a class=\"order_online\" href=\"changePassController\">\r\n");
-        out.write("                                    Change Pass\r\n");
-        out.write("                                </a>\r\n");
-        out.write("                                <a href=\"logoutController\" class=\"order_online\">\r\n");
-        out.write("                                    logout\r\n");
-        out.write("                                </a> \r\n");
+        out.write("                                <li class=\"nav-item\">\r\n");
+        out.write("                                    <a class=\"nav-link\" href=\"BookingTable.jsp\">Booking</a>\r\n");
+        out.write("                                </li> \r\n");
+        out.write("                                <li class=\"nav-item\">\r\n");
+        out.write("                                    <a class=\"nav-link\" href=\"cartController\">Carts</a>\r\n");
+        out.write("                                </li>  \r\n");
+        out.write("                                <li class=\"nav-item\">\r\n");
+        out.write("                                    <a class=\"nav-link\" href=\"historyOrderController?page=1\">History</a>\r\n");
+        out.write("                                </li> \r\n");
         out.write("                            ");
         int evalDoAfterBody = _jspx_th_c_if_0.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -397,13 +413,19 @@ public final class changePassword_jsp extends org.apache.jasper.runtime.HttpJspB
     org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_1 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
     _jspx_th_c_if_1.setPageContext(_jspx_page_context);
     _jspx_th_c_if_1.setParent(null);
-    _jspx_th_c_if_1.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${sessionScope.id == null}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    _jspx_th_c_if_1.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${sessionScope.id != null}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
     int _jspx_eval_c_if_1 = _jspx_th_c_if_1.doStartTag();
     if (_jspx_eval_c_if_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write("\r\n");
-        out.write("                                <a href=\"loginController\" class=\"order_online\">\r\n");
-        out.write("                                    Login\r\n");
+        out.write("                                <a href=\"profileController\" class=\"order_online\" style=\"text-decoration: none\">\r\n");
+        out.write("                                    Profile\r\n");
+        out.write("                                </a>\r\n");
+        out.write("                                <a class=\"order_online\" href=\"changePassController\" style=\"text-decoration: none\">\r\n");
+        out.write("                                    Change Pass\r\n");
+        out.write("                                </a>\r\n");
+        out.write("                                <a href=\"logoutController\" class=\"order_online\" style=\"text-decoration: none\">\r\n");
+        out.write("                                    logout\r\n");
         out.write("                                </a> \r\n");
         out.write("                            ");
         int evalDoAfterBody = _jspx_th_c_if_1.doAfterBody();
@@ -427,20 +449,21 @@ public final class changePassword_jsp extends org.apache.jasper.runtime.HttpJspB
     org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_2 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
     _jspx_th_c_if_2.setPageContext(_jspx_page_context);
     _jspx_th_c_if_2.setParent(null);
-    _jspx_th_c_if_2.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${requestScope.mess != null}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    _jspx_th_c_if_2.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${sessionScope.id == null}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
     int _jspx_eval_c_if_2 = _jspx_th_c_if_2.doStartTag();
     if (_jspx_eval_c_if_2 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
-        out.write(" \n");
+        out.write("\r\n");
+        out.write("                                <a href=\"loginController\" class=\"order_online\" style=\"text-decoration: none\">\r\n");
+        out.write("                                    Login\r\n");
+        out.write("                                </a> \r\n");
+        out.write("                                <a href=\"registerController\" class=\"order_online\" style=\"text-decoration: none\">\r\n");
+        out.write("                                    Register\r\n");
+        out.write("                                </a>\r\n");
+        out.write("                                <a href=\"forgotPasswordController\" class=\"order_online\" style=\"text-decoration: none\">\r\n");
+        out.write("                                    Forgot Password\r\n");
+        out.write("                                </a>\r\n");
         out.write("                            ");
-        if (_jspx_meth_c_if_3((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_if_2, _jspx_page_context))
-          return true;
-        out.write("\n");
-        out.write("                            ");
-        if (_jspx_meth_c_if_4((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_if_2, _jspx_page_context))
-          return true;
-        out.write("\n");
-        out.write("                        ");
         int evalDoAfterBody = _jspx_th_c_if_2.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
           break;
@@ -454,25 +477,28 @@ public final class changePassword_jsp extends org.apache.jasper.runtime.HttpJspB
     return false;
   }
 
-  private boolean _jspx_meth_c_if_3(javax.servlet.jsp.tagext.JspTag _jspx_th_c_if_2, PageContext _jspx_page_context)
+  private boolean _jspx_meth_c_if_3(PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
     //  c:if
     org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_3 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
     _jspx_th_c_if_3.setPageContext(_jspx_page_context);
-    _jspx_th_c_if_3.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_if_2);
-    _jspx_th_c_if_3.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${requestScope.mess.statusCode != 200}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    _jspx_th_c_if_3.setParent(null);
+    _jspx_th_c_if_3.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${requestScope.mess != null}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
     int _jspx_eval_c_if_3 = _jspx_th_c_if_3.doStartTag();
     if (_jspx_eval_c_if_3 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
-        out.write("\n");
-        out.write("                                <div class=\"alert alert-danger\" role=\"alert\">\n");
-        out.write("                                    ");
-        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${requestScope.mess.mess}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-        out.write("\n");
-        out.write("                                </div>\n");
+        out.write(" \n");
         out.write("                            ");
+        if (_jspx_meth_c_if_4((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_if_3, _jspx_page_context))
+          return true;
+        out.write("\n");
+        out.write("                            ");
+        if (_jspx_meth_c_if_5((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_if_3, _jspx_page_context))
+          return true;
+        out.write("\n");
+        out.write("                        ");
         int evalDoAfterBody = _jspx_th_c_if_3.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
           break;
@@ -486,20 +512,20 @@ public final class changePassword_jsp extends org.apache.jasper.runtime.HttpJspB
     return false;
   }
 
-  private boolean _jspx_meth_c_if_4(javax.servlet.jsp.tagext.JspTag _jspx_th_c_if_2, PageContext _jspx_page_context)
+  private boolean _jspx_meth_c_if_4(javax.servlet.jsp.tagext.JspTag _jspx_th_c_if_3, PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
     //  c:if
     org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_4 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
     _jspx_th_c_if_4.setPageContext(_jspx_page_context);
-    _jspx_th_c_if_4.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_if_2);
-    _jspx_th_c_if_4.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${requestScope.mess.statusCode == 200}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    _jspx_th_c_if_4.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_if_3);
+    _jspx_th_c_if_4.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${requestScope.mess.statusCode != 200}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
     int _jspx_eval_c_if_4 = _jspx_th_c_if_4.doStartTag();
     if (_jspx_eval_c_if_4 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write("\n");
-        out.write("                                <div class=\"alert alert-success\" role=\"alert\">\n");
+        out.write("                                <div class=\"alert alert-danger\" role=\"alert\">\n");
         out.write("                                    ");
         out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${requestScope.mess.mess}", java.lang.String.class, (PageContext)_jspx_page_context, null));
         out.write("\n");
@@ -515,6 +541,38 @@ public final class changePassword_jsp extends org.apache.jasper.runtime.HttpJspB
       return true;
     }
     _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_4);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_if_5(javax.servlet.jsp.tagext.JspTag _jspx_th_c_if_3, PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:if
+    org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_5 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
+    _jspx_th_c_if_5.setPageContext(_jspx_page_context);
+    _jspx_th_c_if_5.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_if_3);
+    _jspx_th_c_if_5.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${requestScope.mess.statusCode == 200}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    int _jspx_eval_c_if_5 = _jspx_th_c_if_5.doStartTag();
+    if (_jspx_eval_c_if_5 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("\n");
+        out.write("                                <div class=\"alert alert-success\" role=\"alert\">\n");
+        out.write("                                    ");
+        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${requestScope.mess.mess}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+        out.write("\n");
+        out.write("                                </div>\n");
+        out.write("                            ");
+        int evalDoAfterBody = _jspx_th_c_if_5.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_if_5.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_5);
+      return true;
+    }
+    _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_5);
     return false;
   }
 }

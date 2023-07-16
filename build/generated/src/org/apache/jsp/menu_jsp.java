@@ -21,6 +21,7 @@ public final class menu_jsp extends org.apache.jasper.runtime.HttpJspBase
   }
 
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_forEach_var_items;
+  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_forEach_var_step_end_begin;
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_if_test;
 
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
@@ -31,11 +32,13 @@ public final class menu_jsp extends org.apache.jasper.runtime.HttpJspBase
 
   public void _jspInit() {
     _jspx_tagPool_c_forEach_var_items = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _jspx_tagPool_c_forEach_var_step_end_begin = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _jspx_tagPool_c_if_test = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
   }
 
   public void _jspDestroy() {
     _jspx_tagPool_c_forEach_var_items.release();
+    _jspx_tagPool_c_forEach_var_step_end_begin.release();
     _jspx_tagPool_c_if_test.release();
   }
 
@@ -122,7 +125,7 @@ public final class menu_jsp extends org.apache.jasper.runtime.HttpJspBase
       if (_jspx_meth_c_if_4(_jspx_page_context))
         return;
       out.write("\r\n");
-      out.write("        \r\n");
+      out.write("\r\n");
       out.write("        <!--Header-->\r\n");
       out.write("\r\n");
       out.write("        <!-- food section -->\r\n");
@@ -135,13 +138,29 @@ public final class menu_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    </h2>\r\n");
       out.write("                </div>\r\n");
       out.write("                <form method=\"get\" action=\"menuController\" class=row>\r\n");
-      out.write("                    <div class=\"col-md-4\">\r\n");
-      out.write("\r\n");
-      out.write("                    </div>\r\n");
-      out.write("                    <div class=\"col-md-3\">\r\n");
+      out.write("                    <input hidden type=\"text form-control\" value=\"1\" name=\"page\">\r\n");
+      out.write("                    <div class=\"col-3\"></div>\r\n");
+      out.write("                    <div class=\"col-3\">\r\n");
+      out.write("                        <label class=\"col-md-3\">Name: </label>\r\n");
       out.write("                        <input type=\"text\"  class=\"form-control\" name=\"name\" value=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param[\"name\"]}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("\">\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                    <div class=\"col-3\">\r\n");
+      out.write("                        <label class=\"col-md-3\">Category: </label>\r\n");
+      out.write("                        <select class=\"col-md-8 form-select\"  name=\"category\">\r\n");
+      out.write("                            <option value=\"\" \r\n");
+      out.write("                                    ");
+      if (_jspx_meth_c_if_5(_jspx_page_context))
+        return;
+      out.write(" >\r\n");
+      out.write("                                        All\r\n");
+      out.write("                                    </option>\r\n");
+      out.write("                            ");
+      if (_jspx_meth_c_forEach_0(_jspx_page_context))
+        return;
+      out.write("\r\n");
+      out.write("                        </select>\r\n");
       out.write("                    </div>\r\n");
       out.write("                    <div class=\"col-md-3\">\r\n");
       out.write("                        <input type=\"submit\" value=\"Seach\" class=\"btn btn-primary\">\r\n");
@@ -150,14 +169,6 @@ public final class menu_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("                    </div>\r\n");
       out.write("                </form>\r\n");
-      out.write("                <ul class=\"filters_menu\">\r\n");
-      out.write("                    <li class=\"active\" data-filter=\"*\">All</li>\r\n");
-      out.write("                        ");
-      if (_jspx_meth_c_forEach_0(_jspx_page_context))
-        return;
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("                </ul>\r\n");
       out.write("\r\n");
       out.write("                <div class=\"filters-content\">\r\n");
       out.write("                    <div class=\"row grid\">\r\n");
@@ -166,6 +177,18 @@ public final class menu_jsp extends org.apache.jasper.runtime.HttpJspBase
         return;
       out.write("\r\n");
       out.write("                    </div>\r\n");
+      out.write("\r\n");
+      out.write("                </div>\r\n");
+      out.write("                                        <div><br></div>\r\n");
+      out.write("                <div class=\"d-flex justify-content-center\">\r\n");
+      out.write("                    <nav aria-label=\"Page navigation example\">\r\n");
+      out.write("                        <ul class=\"pagination\">\r\n");
+      out.write("                            ");
+      if (_jspx_meth_c_forEach_2(_jspx_page_context))
+        return;
+      out.write("\r\n");
+      out.write("                        </ul>\r\n");
+      out.write("                    </nav>\r\n");
       out.write("                </div>\r\n");
       out.write("            </div>\r\n");
       out.write("\r\n");
@@ -276,7 +299,7 @@ public final class menu_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_0 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
     _jspx_th_c_if_0.setPageContext(_jspx_page_context);
     _jspx_th_c_if_0.setParent(null);
-    _jspx_th_c_if_0.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${sessionScope.role == 1}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    _jspx_th_c_if_0.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${sessionScope.role != 0}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
     int _jspx_eval_c_if_0 = _jspx_th_c_if_0.doStartTag();
     if (_jspx_eval_c_if_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
@@ -328,7 +351,7 @@ public final class menu_jsp extends org.apache.jasper.runtime.HttpJspBase
         out.write("                                <a class=\"nav-link\" href=\"homeController\">Home</a>\r\n");
         out.write("                            </li>\r\n");
         out.write("                            <li class=\"nav-item\">\r\n");
-        out.write("                                <a class=\"nav-link\" href=\"menuController\">Menu</a>\r\n");
+        out.write("                                <a class=\"nav-link\" href=\"menuController?name=&category=&page=1\">Menu</a>\r\n");
         out.write("                            </li>\r\n");
         out.write("                            ");
         if (_jspx_meth_c_if_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_if_0, _jspx_page_context))
@@ -390,7 +413,7 @@ public final class menu_jsp extends org.apache.jasper.runtime.HttpJspBase
         out.write("                                    <a class=\"nav-link\" href=\"cartController\">Carts</a>\r\n");
         out.write("                                </li>  \r\n");
         out.write("                                <li class=\"nav-item\">\r\n");
-        out.write("                                    <a class=\"nav-link\" href=\"historyOrderController\">History</a>\r\n");
+        out.write("                                    <a class=\"nav-link\" href=\"historyOrderController?page=1\">History</a>\r\n");
         out.write("                                </li> \r\n");
         out.write("                            ");
         int evalDoAfterBody = _jspx_th_c_if_1.doAfterBody();
@@ -536,13 +559,13 @@ public final class menu_jsp extends org.apache.jasper.runtime.HttpJspBase
         out.write("                            <a class=\"nav-link ms-4\" href=\"menuController\">Order</a>\n");
         out.write("                        </li>\n");
         out.write("                        <li class=\"nav-item\">\n");
-        out.write("                            <a class=\"nav-link ms-4\" href=\"shipController\">Ship</a>\n");
+        out.write("                            <a class=\"nav-link ms-4\" href=\"shipController?page=1\">Ship</a>\n");
         out.write("                        </li>\n");
         out.write("                        <li class=\"nav-item\">\n");
         out.write("                            <a class=\"nav-link ms-4\" href=\"cartController\">Cart</a>\n");
         out.write("                        </li>\n");
         out.write("                        <li class=\"nav-item\">\n");
-        out.write("                            <a class=\"nav-link ms-4\" href=\"managerUserControll?page=1\">Users</a>\n");
+        out.write("                            <a class=\"nav-link ms-4\" href=\"tableOrderController?\">TBOrder</a>\n");
         out.write("                        </li>\n");
         out.write("                    </ul>\n");
         out.write("                </div>\n");
@@ -569,6 +592,32 @@ public final class menu_jsp extends org.apache.jasper.runtime.HttpJspBase
     return false;
   }
 
+  private boolean _jspx_meth_c_if_5(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:if
+    org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_5 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
+    _jspx_th_c_if_5.setPageContext(_jspx_page_context);
+    _jspx_th_c_if_5.setParent(null);
+    _jspx_th_c_if_5.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${category == ''}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    int _jspx_eval_c_if_5 = _jspx_th_c_if_5.doStartTag();
+    if (_jspx_eval_c_if_5 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("selected");
+        int evalDoAfterBody = _jspx_th_c_if_5.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_if_5.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_5);
+      return true;
+    }
+    _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_5);
+    return false;
+  }
+
   private boolean _jspx_meth_c_forEach_0(PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
@@ -577,7 +626,7 @@ public final class menu_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_forEach_0 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _jspx_tagPool_c_forEach_var_items.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
     _jspx_th_c_forEach_0.setPageContext(_jspx_page_context);
     _jspx_th_c_forEach_0.setParent(null);
-    _jspx_th_c_forEach_0.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${requestScope.category}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    _jspx_th_c_forEach_0.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${cat}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
     _jspx_th_c_forEach_0.setVar("g");
     int[] _jspx_push_body_count_c_forEach_0 = new int[] { 0 };
     try {
@@ -585,13 +634,18 @@ public final class menu_jsp extends org.apache.jasper.runtime.HttpJspBase
       if (_jspx_eval_c_forEach_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
           out.write("\r\n");
-          out.write("                        <li data-filter=\".");
+          out.write("                                <option value=\"");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${g.categoryName}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write('"');
-          out.write('>');
+          out.write("\" \r\n");
+          out.write("                                        ");
+          if (_jspx_meth_c_if_6((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
+            return true;
+          out.write(">\r\n");
+          out.write("                                    ");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${g.categoryName}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("</li>\r\n");
-          out.write("                        ");
+          out.write("\r\n");
+          out.write("                                </option>\r\n");
+          out.write("                            ");
           int evalDoAfterBody = _jspx_th_c_forEach_0.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
             break;
@@ -611,6 +665,32 @@ public final class menu_jsp extends org.apache.jasper.runtime.HttpJspBase
     return false;
   }
 
+  private boolean _jspx_meth_c_if_6(javax.servlet.jsp.tagext.JspTag _jspx_th_c_forEach_0, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_forEach_0)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:if
+    org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_6 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
+    _jspx_th_c_if_6.setPageContext(_jspx_page_context);
+    _jspx_th_c_if_6.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_forEach_0);
+    _jspx_th_c_if_6.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${category == g.categoryName}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    int _jspx_eval_c_if_6 = _jspx_th_c_if_6.doStartTag();
+    if (_jspx_eval_c_if_6 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("selected");
+        int evalDoAfterBody = _jspx_th_c_if_6.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_if_6.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_6);
+      return true;
+    }
+    _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_6);
+    return false;
+  }
+
   private boolean _jspx_meth_c_forEach_1(PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
@@ -619,7 +699,7 @@ public final class menu_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_forEach_1 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _jspx_tagPool_c_forEach_var_items.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
     _jspx_th_c_forEach_1.setPageContext(_jspx_page_context);
     _jspx_th_c_forEach_1.setParent(null);
-    _jspx_th_c_forEach_1.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${requestScope.product}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    _jspx_th_c_forEach_1.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${requestScope.pro}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
     _jspx_th_c_forEach_1.setVar("f");
     int[] _jspx_push_body_count_c_forEach_1 = new int[] { 0 };
     try {
@@ -647,7 +727,6 @@ public final class menu_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write("\r\n");
           out.write("                                                </a>\r\n");
           out.write("                                            </h5>\r\n");
-          out.write("\r\n");
           out.write("                                        </div>\r\n");
           out.write("                                    </div>\r\n");
           out.write("                                </div>\r\n");
@@ -669,6 +748,86 @@ public final class menu_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_th_c_forEach_1.doFinally();
       _jspx_tagPool_c_forEach_var_items.reuse(_jspx_th_c_forEach_1);
     }
+    return false;
+  }
+
+  private boolean _jspx_meth_c_forEach_2(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:forEach
+    org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_forEach_2 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _jspx_tagPool_c_forEach_var_step_end_begin.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
+    _jspx_th_c_forEach_2.setPageContext(_jspx_page_context);
+    _jspx_th_c_forEach_2.setParent(null);
+    _jspx_th_c_forEach_2.setBegin(1);
+    _jspx_th_c_forEach_2.setEnd(((java.lang.Integer) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${requestScope.total}", java.lang.Integer.class, (PageContext)_jspx_page_context, null)).intValue());
+    _jspx_th_c_forEach_2.setStep(1);
+    _jspx_th_c_forEach_2.setVar("i");
+    int[] _jspx_push_body_count_c_forEach_2 = new int[] { 0 };
+    try {
+      int _jspx_eval_c_forEach_2 = _jspx_th_c_forEach_2.doStartTag();
+      if (_jspx_eval_c_forEach_2 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+        do {
+          out.write("\r\n");
+          out.write("                                <li class=\"page-item ");
+          if (_jspx_meth_c_if_7((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_2, _jspx_page_context, _jspx_push_body_count_c_forEach_2))
+            return true;
+          out.write(" \" >\r\n");
+          out.write("                                    <a class=\"page-link\" href=\"menuController?page=");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${i}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("&name=");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${productName}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("&category=");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${category}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("\">\r\n");
+          out.write("                                        ");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${i}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("\r\n");
+          out.write("                                    </a>\r\n");
+          out.write("                                </li>\r\n");
+          out.write("                            ");
+          int evalDoAfterBody = _jspx_th_c_forEach_2.doAfterBody();
+          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+            break;
+        } while (true);
+      }
+      if (_jspx_th_c_forEach_2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+        return true;
+      }
+    } catch (Throwable _jspx_exception) {
+      while (_jspx_push_body_count_c_forEach_2[0]-- > 0)
+        out = _jspx_page_context.popBody();
+      _jspx_th_c_forEach_2.doCatch(_jspx_exception);
+    } finally {
+      _jspx_th_c_forEach_2.doFinally();
+      _jspx_tagPool_c_forEach_var_step_end_begin.reuse(_jspx_th_c_forEach_2);
+    }
+    return false;
+  }
+
+  private boolean _jspx_meth_c_if_7(javax.servlet.jsp.tagext.JspTag _jspx_th_c_forEach_2, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_forEach_2)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:if
+    org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_7 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
+    _jspx_th_c_if_7.setPageContext(_jspx_page_context);
+    _jspx_th_c_if_7.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_forEach_2);
+    _jspx_th_c_if_7.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${i == requestScope.page}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    int _jspx_eval_c_if_7 = _jspx_th_c_if_7.doStartTag();
+    if (_jspx_eval_c_if_7 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write(" active ");
+        int evalDoAfterBody = _jspx_th_c_if_7.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_if_7.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_7);
+      return true;
+    }
+    _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_7);
     return false;
   }
 }

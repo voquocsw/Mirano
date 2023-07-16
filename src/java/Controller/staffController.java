@@ -5,6 +5,7 @@
  */
 package Controller;
 
+import DAO.OrderDAO;
 import DAO.ShipDao;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -36,7 +37,7 @@ public class staffController extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet staffController</title>");            
+            out.println("<title>Servlet staffController</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet staffController at " + request.getContextPath() + "</h1>");
@@ -59,12 +60,16 @@ public class staffController extends HttpServlet {
             throws ServletException, IOException {
         ShipDao sip = new ShipDao();
         int totalShip = sip.totalShip();
+        OrderDAO od = new OrderDAO();
+        int id = (int) request.getSession().getAttribute("id");
+        float totalMoney = od.getTotalMoneyById(id);
 //        ShowDao sDB = new ShowDao();
 //        int totalShow = sDB.countShowActive();
 //        productDao fDB = new productDao();
 //        int totalProduct = fDB.countProductActive();
 //        BookingDao bDb = new BookingDao();
 //        int totalBooking = bDb.totalSeatIsBooking();
+        request.setAttribute("totalMoney", totalMoney);
         request.setAttribute("totalShip", totalShip);
 //        request.setAttribute("totalShow", totalShow);
 //        request.setAttribute("totalProduct", totalProduct);

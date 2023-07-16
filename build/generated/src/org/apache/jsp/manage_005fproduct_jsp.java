@@ -134,10 +134,10 @@ public final class manage_005fproduct_jsp extends org.apache.jasper.runtime.Http
       out.write("                            <a class=\"nav-link ms-5\" href=\"adminDashboardController\">Home <span class=\"sr-only\">(current)</span></a>\n");
       out.write("                        </li>\n");
       out.write("                        <li class=\"nav-item\">\n");
-      out.write("                            <a class=\"nav-link ms-4\" href=\"manageProductControll?productName=&category=&page=1\">Product</a>\n");
+      out.write("                            <a class=\"nav-link ms-4\" href=\"manageProductControll?name=&category=&page=1\">Product</a>\n");
       out.write("                        </li>\n");
       out.write("                        <li class=\"nav-item\">\n");
-      out.write("                            <a class=\"nav-link ms-4\" href=\"manageBookingController?title=&date=&order=showId&dimesion=asc&page=1\">Booking</a>\n");
+      out.write("                            <a class=\"nav-link ms-4\" href=\"managerOrderCotroller?page=1\">Booking</a>\n");
       out.write("                        </li>\n");
       out.write("                        <li class=\"nav-item\">\n");
       out.write("                            <a class=\"nav-link ms-4\" href=\"managerUserControll?page=1\">Users</a>\n");
@@ -165,6 +165,7 @@ public final class manage_005fproduct_jsp extends org.apache.jasper.runtime.Http
       out.write("                        <h3 class=\"text-center mt-5\" >Filter</h3>\n");
       out.write("                        <form action=\"manageProductControll\" method=\"get\" class=\"row\">\n");
       out.write("                            <input hidden type=\"text form-control\" value=\"1\" name=\"page\">\n");
+      out.write("                            <div class=\"col-3\"></div>\n");
       out.write("                            <div class=\"col-3\">\n");
       out.write("                                <label class=\"col-md-3\">Name: </label>\n");
       out.write("                                <input class=\"col-md-8  form-control\" type=\"text\" value=\"");
@@ -193,6 +194,7 @@ public final class manage_005fproduct_jsp extends org.apache.jasper.runtime.Http
       out.write("                    </form>\n");
       out.write("                </div>\n");
       out.write("                <div class=\"d-flex justify-content-between col-3 \">\n");
+      out.write("                    <a href=\"manageCategoryController?page=1\" class=\"btn btn-success \">Category</a>\n");
       out.write("                    <a href=\"createProductController\" class=\"btn btn-success \">Add product</a>\n");
       out.write("                </div>\n");
       out.write("                <table class=\"table col-3 table-bordered\" style=\"height: 100px\">\n");
@@ -306,7 +308,7 @@ public final class manage_005fproduct_jsp extends org.apache.jasper.runtime.Http
     org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_forEach_0 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _jspx_tagPool_c_forEach_var_items.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
     _jspx_th_c_forEach_0.setPageContext(_jspx_page_context);
     _jspx_th_c_forEach_0.setParent(null);
-    _jspx_th_c_forEach_0.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${requestScope.cat}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    _jspx_th_c_forEach_0.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${cat}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
     _jspx_th_c_forEach_0.setVar("g");
     int[] _jspx_push_body_count_c_forEach_0 = new int[] { 0 };
     try {
@@ -315,15 +317,15 @@ public final class manage_005fproduct_jsp extends org.apache.jasper.runtime.Http
         do {
           out.write("\n");
           out.write("                                        <option value=\"");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${g.categoryId}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${g.categoryName}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("\" \n");
           out.write("                                                ");
           if (_jspx_meth_c_if_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
             return true;
-          out.write("\n");
+          out.write(">\n");
           out.write("                                                ");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${g.categoryName}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write(">\n");
+          out.write("\n");
           out.write("                                    </option>\n");
           out.write("                                ");
           int evalDoAfterBody = _jspx_th_c_forEach_0.doAfterBody();
@@ -418,12 +420,7 @@ public final class manage_005fproduct_jsp extends org.apache.jasper.runtime.Http
           out.write("\"><i class=\"fa fa-solid fa-pencil\"></i></a>\n");
           out.write("                                </th>\n");
           out.write("                                <!--                                    <th scope=\"row\">\n");
-          out.write("                                                                        <button class=\"btn btn-link\" type=\"button\" class=\"btn btn-primary\"\n");
-          out.write("                                                                                data-bs-toggle=\"modal\" data-bs-target=\"#exampleModal");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${f.productId}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("\"><i\n");
-          out.write("                                                                                class=\"fa fa-solid fa-trash mb-1\"></i>\n");
-          out.write("                                                                        </button>\n");
+          out.write("                                                                        \n");
           out.write("                                                                    </th>-->\n");
           out.write("\n");
           out.write("                            </tr>\n");
@@ -553,7 +550,7 @@ public final class manage_005fproduct_jsp extends org.apache.jasper.runtime.Http
           out.write(" \" >\n");
           out.write("                                    <a class=\"page-link\" href=\"manageProductControll?page=");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${i}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("&productName=");
+          out.write("&name=");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${productName}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("&category=");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${category}", java.lang.String.class, (PageContext)_jspx_page_context, null));

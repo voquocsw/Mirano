@@ -5,10 +5,10 @@ JSP
 *F
 + 0 newjsp.jsp
 newjsp.jsp
-+ 1 setupCss.jsp
-setupCss.jsp
 *L
-5,8:49
-1#1,40:57
-12#0,9:96
+1,84:44
+85:128,3
+86,59:131
+145:190,36
+146,29:226
 *E

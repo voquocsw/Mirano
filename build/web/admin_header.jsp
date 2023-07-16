@@ -40,16 +40,19 @@
                 <div class="collapse navbar-collapse" id="navbarNav" style="margin-left: 220px;">
                     <ul class="navbar-nav">
                         <li class="nav-item active">
-                            <a class="nav-link ms-5" href="adminDashboardController">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link ms-1" href="adminDashboardController">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link ms-4" href="manageProductControll?productName=&category=&page=1">Product</a>
+                            <a class="nav-link ms-4" href="manageProductControll?name=&category=&page=1">Product</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link ms-4" href="managerOrderCotroller?page=1">Booking</a>
+                            <a class="nav-link ms-4" href="managerOrderController?page=1">All Order</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link ms-4" href="managerUserControll?page=1">Users</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link ms-4" href="revenueController">Revenue</a>
                         </li>
                     </ul>
                 </div>

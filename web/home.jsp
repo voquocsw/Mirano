@@ -132,7 +132,7 @@
                     </div>
                 </div>
                 <div class="btn-box">
-                    <a href="menuController" style="background-color: brown !important;padding: 15px 25px; text-decoration: none;">
+                    <a href="menuController?name=&category=&page=1" style="background-color: brown !important;padding: 15px 25px; text-decoration: none;">
                         View More
                     </a>
                 </div>

@@ -50,7 +50,7 @@
                                         <th scope="row">${f.date}</th>
                                         <th scope="row">${f.totalPrice}</th>
                                             <th scope="row">
-                                                <a style="margin-left: 10px" href="userHistoryOrderController?id=${f.orderID}"><i class="fa fa-solid fa-pencil"></i></a>
+                                                <a style="margin-left: 10px" href="adminHistoryOrderController?id=${f.orderID}"><i class="fa fa-solid fa-pencil"></i></a>
                                         </th>
                                     </tr>
                                 </c:forEach>                      

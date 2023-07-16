@@ -152,6 +152,42 @@
         <servlet-name>createCategoryController</servlet-name>
         <servlet-class>Controller.createCategoryController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ajaxServlet</servlet-name>
+        <servlet-class>com.vnpay.common.ajaxServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>cancleShipController</servlet-name>
+        <servlet-class>Controller.cancleShipController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>cancelShipController</servlet-name>
+        <servlet-class>Controller.cancelShipController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>adminHistoryOrderController</servlet-name>
+        <servlet-class>Controller.adminHistoryOrderController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>manageCategoryController</servlet-name>
+        <servlet-class>Controller.manageCategoryController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>updateCategoryController</servlet-name>
+        <servlet-class>Controller.updateCategoryController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>moneyByMonth</servlet-name>
+        <servlet-class>Controller.moneyByMonth</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>moneyByDay</servlet-name>
+        <servlet-class>Controller.moneyByDay</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>revenueController</servlet-name>
+        <servlet-class>Controller.revenueController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>loginController</servlet-name>
         <url-pattern>/loginController</url-pattern>
@@ -303,6 +339,42 @@
     <servlet-mapping>
         <servlet-name>createCategoryController</servlet-name>
         <url-pattern>/createCategoryController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ajaxServlet</servlet-name>
+        <url-pattern>/ajaxServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>cancleShipController</servlet-name>
+        <url-pattern>/cancleShipController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>cancelShipController</servlet-name>
+        <url-pattern>/cancelShipController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>adminHistoryOrderController</servlet-name>
+        <url-pattern>/adminHistoryOrderController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>manageCategoryController</servlet-name>
+        <url-pattern>/manageCategoryController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>updateCategoryController</servlet-name>
+        <url-pattern>/updateCategoryController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>moneyByMonth</servlet-name>
+        <url-pattern>/moneyByMonth</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>moneyByDay</servlet-name>
+        <url-pattern>/moneyByDay</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>revenueController</servlet-name>
+        <url-pattern>/revenueController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

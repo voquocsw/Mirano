@@ -28,54 +28,61 @@
         </c:if>
         <!-- Section: Design Block -->
         <section class="py-1">
-            <form action="changeShipStatus" method="post">
-                <!-- style="background-color: white"-->
-                <div class="container d-flex " style="min-height: 800px;">
 
-                    <div class="col-md-12">
-                        <h3 class="mt-5">Detail</h3>
-                        <div class="user_option">
-                            <div class="col-md-12" style="width: 10%">
-                                <label class="labels">Order ID</label>
-                                <input type="text" readonly class="form-control" 
-                                       placeholder="" value="${id}" name="id">
-                            </div>
-                            <h6 class="mt-5" > Date: ${dt}</h6>
+            <!-- style="background-color: white"-->
+            <div class="container d-flex " style="min-height: 800px;">
+
+                <div class="col-md-12">
+                    <h3 class="mt-5">Detail</h3>
+                    <div class="user_option">
+                        <div class="col-md-12" style="width: 10%">
+                            <label class="labels">Order ID</label>
+                            <input type="text" readonly class="form-control" 
+                                   placeholder="" value="${id}" name="id">
                         </div>
+                        <h6 class="mt-5" > Date: ${dt}</h6>
 
-                        <table class="table col-3 table-bordered" style="height: 100px">
-                            <thead>
-                                <tr>
-                                    <th scope="col">No</th>
-                                    <th scope="col">Product Name</th>
-                                    <th scope="col">Price</th>
-                                    <th scope="col">Quantity</th>
-                                    <th scope="col">Total Price</th>                             
+                    </div>
+
+                    <table class="table col-3 table-bordered" style="height: 100px">
+                        <thead>
+                            <tr>
+                                <th scope="col">No</th>
+                                <th scope="col">Product Name</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Total Price</th>                             
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <c:set var="tt" value="0"/>
+                            <c:forEach items="${OrDe}" var="f">
+                                <c:set var="tt" value="${tt+1}"/>
+                                <tr style="height: 60px">
+                                    <th scope="row">${tt}</th>
+                                    <th scope="row">${f.productName}</th>
+                                    <th scope="row">${f.price}</th>
+                                    <th scope="row">${f.quantity}</th>
+                                    <th scope="row">${(f.price*f.quantity)}</th>
                                 </tr>
-                            </thead>
-                            <tbody>
-                                <c:set var="tt" value="0"/>
-                                <c:forEach items="${OrDe}" var="f">
-                                    <c:set var="tt" value="${tt+1}"/>
-                                    <tr style="height: 60px">
-                                        <th scope="row">${tt}</th>
-                                        <th scope="row">${f.productName}</th>
-                                        <th scope="row">${f.price}</th>
-                                        <th scope="row">${f.quantity}</th>
-                                        <th scope="row">${(f.price*f.quantity)}</th>
-                                    </tr>
+                            </c:forEach>                      
+                        </tbody>
+                    </table>
+                    <div style="margin-left: 75%">
+                        <h5>Total Price: ${pr} đ</h5> 
+                        <c:if test="${sessionScope.role != 2}">      
+                            <c:if test= "${status == 1}">
+                                <a href="cancelShipController?OrderId=${id}&status=${status}" class="btn btn-success">Cancel</a>
+                            </c:if>
+                        </c:if>
+                    </div>
 
-                                </c:forEach>                      
-                            </tbody>
-                        </table>
-                        <div style="margin-left: 75%">
-                            <h5>Total Price: ${pr} đ</h5>
-                        </div>
-                    </div>                                
-                </div>
+                </div> 
+            </div>                          
         </section>
         <%@include file="footer.jsp" %>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Section: Design Block -->
     </body>
 </html>
+

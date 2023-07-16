@@ -55,13 +55,15 @@
                                         <c:if test="${f.status == 0}">Done</c:if>
                                         <c:if test="${f.status == 1}">Not Yet</c:if>
                                         <c:if test="${f.status == 2}">Cancel</c:if>
+                                        <c:if test="${f.status == 3}">Confirm</c:if>
+                                        <c:if test="${f.status == 4}">Coming</c:if>
                                         </th>
-                            <th scope="row">
-                                <a style="margin-left: 10px" href="shipDetailController?id=${f.orderID}"><i class="fa fa-solid fa-pencil"></i></a>
-                            </th>
-                            </tr>
+                                        <th scope="row">
+                                            <a style="margin-left: 10px" href="shipDetailController?id=${f.orderID}"><i class="fa fa-solid fa-pencil"></i></a>
+                                    </th>
+                                </tr>
 
-                        </c:forEach>                      
+                            </c:forEach>                      
                         </tbody>
                     </table>
                     <div class="d-flex justify-content-center">

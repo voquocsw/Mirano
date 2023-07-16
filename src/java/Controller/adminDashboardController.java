@@ -63,12 +63,14 @@ public class adminDashboardController extends HttpServlet {
         OrderDAO oDB = new OrderDAO();
         int totalOrder = oDB.totalOrder();
         int totalUser = uDB.totalUser();
+        float totalMoney = oDB.getTotalMoney();
 //        ShowDao sDB = new ShowDao();
 //        int totalShow = sDB.countShowActive();
         productDao fDB = new productDao();
         int totalProduct = fDB.countProductActive();
 //        BookingDao bDb = new BookingDao();
 //        int totalBooking = bDb.totalSeatIsBooking();
+        request.setAttribute("totalMoney", totalMoney);
         request.setAttribute("totalOrder", totalOrder);
         request.setAttribute("totalUser", totalUser);
 //        request.setAttribute("totalShow", totalShow);

@@ -62,13 +62,20 @@ public class menuController extends HttpServlet {
         protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String name = request.getParameter("name")==null? "": request.getParameter("name");
-        productDao productDb = new productDao();
-        List<Product> product = productDb.getAllProduct(name);
-        CategoryDao catDao = new CategoryDao();
-        List<Category> category = catDao.getAllCategory();
-        request.setAttribute("product", product);
-        request.setAttribute("category", category);
+        String proCat = request.getParameter("category");
+        int page = Integer.parseInt(request.getParameter("page"));
+        productDao db = new productDao();
+        List<Product> product = db.getProductByCondition(name, proCat, page);
+        List<Category> cat = db.getAllCategory();
+        int total = db.totalProductByCondition(name, proCat);
+        request.setAttribute("cat", cat);
+        request.setAttribute("name", name);
+        request.setAttribute("category", proCat);
+        request.setAttribute("page", page);
+        request.setAttribute("pro", product);
+        request.setAttribute("total", Math.ceil((double) total / 10));
         request.getRequestDispatcher("menu.jsp").forward(request, response);
+        return;
     }
 
     /**

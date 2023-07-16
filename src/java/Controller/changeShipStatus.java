@@ -75,7 +75,7 @@ public class changeShipStatus extends HttpServlet {
         int status = Integer.valueOf(request.getParameter("status"));
         ShipDao sd = new ShipDao();
         sd.changeShipStatus(OrderId, status);
-        response.sendRedirect("shipController");
+        response.sendRedirect("shipController?page=1");
     }
 
     /**

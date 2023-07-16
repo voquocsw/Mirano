@@ -62,15 +62,17 @@ public class userHistoryOrderController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         int OrderId = Integer.parseInt(request.getParameter("id"));
+        int status = Integer.parseInt(request.getParameter("status"));
         OrderDAO db = new OrderDAO();
         ShipDao sd = new ShipDao();
-        List <OrderDetail> od = db.getOrderDetail(OrderId);
+        List<OrderDetail> od = db.getOrderDetail(OrderId);
         Date dt = db.getDateOrder(OrderId);
         float pr = db.getTotalPrice(OrderId);
         request.setAttribute("id", OrderId);
         request.setAttribute("pr", pr);
         request.setAttribute("dt", dt);
         request.setAttribute("OrDe", od);
+        request.setAttribute("status", status);
         request.getRequestDispatcher("UserOrderDetail.jsp").forward(request, response);
     }
 

@@ -100,7 +100,7 @@
                                     Save Changes
                                 </button>
                             </div>
-                        </form>>
+                        </form>
                     </div>
                 </div>
 

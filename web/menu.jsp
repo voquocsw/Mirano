@@ -15,7 +15,7 @@
         <c:if test="${sessionScope.role == 0}">
             <%@include file="Staff_header.jsp"%>
         </c:if>
-        
+
         <!--Header-->
 
         <!-- food section -->
@@ -28,11 +28,26 @@
                     </h2>
                 </div>
                 <form method="get" action="menuController" class=row>
-                    <div class="col-md-4">
-
-                    </div>
-                    <div class="col-md-3">
+                    <input hidden type="text form-control" value="1" name="page">
+                    <div class="col-3"></div>
+                    <div class="col-3">
+                        <label class="col-md-3">Name: </label>
                         <input type="text"  class="form-control" name="name" value="${param["name"]}">
+                    </div>
+                    <div class="col-3">
+                        <label class="col-md-3">Category: </label>
+                        <select class="col-md-8 form-select"  name="category">
+                            <option value="" 
+                                    <c:if test="${category == ''}">selected</c:if> >
+                                        All
+                                    </option>
+                            <c:forEach items="${cat}" var="g">
+                                <option value="${g.categoryName}" 
+                                        <c:if test="${category == g.categoryName}">selected</c:if>>
+                                    ${g.categoryName}
+                                </option>
+                            </c:forEach>
+                        </select>
                     </div>
                     <div class="col-md-3">
                         <input type="submit" value="Seach" class="btn btn-primary">
@@ -41,16 +56,10 @@
 
                     </div>
                 </form>
-                <ul class="filters_menu">
-                    <li class="active" data-filter="*">All</li>
-                        <c:forEach items="${category}" var="g">
-                        <li data-filter=".${g.categoryName}">${g.categoryName}</li>
-                        </c:forEach>
-                </ul>
 
                 <div class="filters-content">
                     <div class="row grid">
-                        <c:forEach items="${requestScope.product}" var="f">
+                        <c:forEach items="${requestScope.pro}" var="f">
                             <div class="col-sm-6 col-lg-4 all ${f.category.categoryName}">
                                 <div class="box" style="box-shadow:  0 0 5px 5px lightgray; ">
                                     <div>
@@ -69,6 +78,21 @@
                             </div>
                         </c:forEach>
                     </div>
+
+                </div>
+                                        <div><br></div>
+                <div class="d-flex justify-content-center">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <c:forEach begin="1" end="${requestScope.total}" step="1" var="i">
+                                <li class="page-item <c:if test="${i == requestScope.page}"> active </c:if> " >
+                                    <a class="page-link" href="menuController?page=${i}&name=${productName}&category=${category}">
+                                        ${i}
+                                    </a>
+                                </li>
+                            </c:forEach>
+                        </ul>
+                    </nav>
                 </div>
             </div>
 

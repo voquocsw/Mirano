@@ -71,9 +71,9 @@
                         <h5>Total Price: ${totalPrice} đ</h5>
                     </div>
                 </div>
-                <form action="checkoutController">
+                <form action="PaymentOnlineServlet">
                     <div>
-                        <input hidden type="search" value="${totalPrice}" name="ttpr" hidden>
+                        <input hidden type="search" value="${totalPrice}" name="price" hidden>
                         <input hidden type="search" value="${tableId}" name="tbId" hidden>
                         <button type="submit" class="btn btn-primary">Payment</button>
                     </div>

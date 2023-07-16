@@ -57,10 +57,11 @@ public class PaymentOnlineServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        int tableId = Integer.parseInt(request.getParameter("tbId"));
         HttpSession session = request.getSession(true);
-        float price_raw = (float) session.getAttribute("price");
+        float price_raw = Float.parseFloat(request.getParameter("price"));
         int price = (int) price_raw;
+        request.setAttribute("tableId", tableId);
         session.setAttribute("price", price);
         response.sendRedirect("vnpay_pay.jsp");
     }

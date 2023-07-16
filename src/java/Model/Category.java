@@ -12,8 +12,23 @@ package Model;
 public class Category {
     private int categoryId;
     private String categoryName;
+    private int totalProduct;
 
     public Category(){};
+
+    public int getTotalProduct() {
+        return totalProduct;
+    }
+
+    public void setTotalProduct(int totalProduct) {
+        this.totalProduct = totalProduct;
+    }
+    
+    public Category(int categoryId, String categoryName, int totalProduct) {
+        this.categoryId = categoryId;
+        this.totalProduct = totalProduct;
+        this.categoryName = categoryName;
+    }
     
     public Category(int categoryId, String categoryName) {
         this.categoryId = categoryId;

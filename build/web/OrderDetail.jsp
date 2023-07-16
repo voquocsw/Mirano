@@ -30,10 +30,10 @@
                         <h3 class="mt-5">Detail</h3>
                         <div class="user_option">
                             <div class="col-md-12" style="width: 10%">
-                                    <label class="labels">Order ID</label>
-                                    <input type="text" readonly class="form-control" 
-                                           placeholder="" value="${id}" name="id">
-                                </div>
+                                <label class="labels">Order ID</label>
+                                <input type="text" readonly class="form-control" 
+                                       placeholder="" value="${id}" name="id">
+                            </div>
                             <h6 class="mt-5" style="margin-left: 75%" > Date: ${dt}</h6>
                         </div>
 
@@ -67,24 +67,54 @@
                             <div>
                                 <label class="labels">Status</label>
                                 <select name="status" class="form-control" style="width: 100px">
-                                    <option value = "1" 
-                                            <c:if test="${status == 1}">
-                                                selected
-                                            </c:if>>
-                                        Not yet
-                                    </option>
-                                    <option value = "0" 
-                                            <c:if test="${status == 0}">
-                                                selected
-                                            </c:if>>
+                                    <c:if test = "${status == 1}">
+                                        <option value = "1" 
+                                                <c:if test="${status == 1}">
+                                                    selected
+                                                </c:if>>
+                                            Not yet
+                                        </option>
+                                        <option value = "3"
+                                                <c:if test="${status == 3}"> 
+                                                    selected
+                                                </c:if>>
+                                            Confirm
+                                        </option>
+                                        <option value = "2"
+                                                <c:if test="${status == 2}"> 
+                                                    selected
+                                                </c:if>>
+                                            Cancel
+                                        </option>
+                                    </c:if>
+                                    <c:if test="${status == 3}">
+                                        <option value = "4"
+                                                <c:if test="${status == 4}"> 
+                                                    selected
+                                                </c:if>>
+                                            Coming
+                                        </option> 
+                                        <option value = "3"
+                                                <c:if test="${status == 3}"> 
+                                                    selected
+                                                </c:if>>
+                                            Confirm
+                                        </option>
+                                        <option value = "2"
+                                                <c:if test="${status == 2}"> 
+                                                    selected
+                                                </c:if>>
+                                            Cancel
+                                        </option>
+                                    </c:if>
+                                    <c:if test="${status == 4}">
+                                        <option value = "0" 
+                                          <c:if test="${status == 0}">
+                                            selected
+                                        </c:if>>
                                         Done
-                                    </option>
-                                    <option value = "2"
-                                            <c:if test="${status == 2}"> 
-                                                selected
-                                            </c:if>>
-                                        Cancel
-                                    </option>
+                                        </option>                                                                      
+                                    </c:if>
                                 </select>
                             </div>
                         </div>

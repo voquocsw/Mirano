@@ -44,17 +44,7 @@
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-5">
-                                <div class="card bg-success text-white mb-4" >
-                                    <div class="card-body">Total Booking: </div>
-                                    <h3 class="card-body text-center">${totalBooking} Booking</h3>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="manageBookingController?title=&date=&order=showId&dimesion=asc&page=1">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
+                            </div>                        
                             <div class="col-md-5">
                                 <div class="card bg-success text-white mb-4">
                                     <div class="card-body">Ship </div>
@@ -68,9 +58,9 @@
                             <div class="col-md-5">
                                 <div class="card bg-success text-white mb-4">
                                     <div class="card-body">Total revenue: </div>
-                                    <h3 class="card-body text-center">${totalBooking}$</h3>
+                                    <h3 class="card-body text-center">${totalMoney}đ</h3>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
+                                        <a class="small text-white stretched-link" href="#"></a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>

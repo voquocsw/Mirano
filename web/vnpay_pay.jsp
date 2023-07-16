@@ -134,7 +134,7 @@
             </div>
             <h3>Tạo mới đơn hàng</h3>
             <div class="table-responsive">
-                <form action="vnpayajax" id="frmCreateOrder" method="post">        
+                <form action="ajaxServlet" id="frmCreateOrder" method="post">        
                     <div class="form-group ">
                         <label for="amount">Số tiền (VND)</label>
                         <input class="form-control" readonly="" data-val="true" data-val-number="The field Amount must be a number." data-val-required="The Amount field is required." id="amount"  name="amount" type="number" value="${sessionScope.price}" />

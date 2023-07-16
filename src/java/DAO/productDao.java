@@ -125,7 +125,7 @@ public class productDao extends DBContext {
             String sql = "select * from Products f left join Category g on f.categoryID = g.categoryID \n"
                     + "where productName like ?\n"
                     + "and g.categoryName like ?\n"
-                    + "order by [price] offset (?-1)*10 row fetch next 10 row only";
+                    + "order by [price] offset (?-1)*9 row fetch next 9 row only";
             PreparedStatement stm = connection.prepareCall(sql);
             stm.setString(1, "%" + proName + "%");
             stm.setString(2, "%" + category + "%");

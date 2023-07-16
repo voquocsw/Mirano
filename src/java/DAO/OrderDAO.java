@@ -75,11 +75,10 @@ public class OrderDAO extends DBContext {
         }
     }
 
-
     public List<Order> getAllOrder(int page) {
         List<Order> orders = new ArrayList<>();
         try {
-            String sql = "select * from Orders "
+            String sql = "select * from Orders where status = 0"
                     + "order by [date_Time] desc offset (?-1)*10 row fetch next 10 row only ";
             PreparedStatement stm = connection.prepareCall(sql);
             stm.setInt(1, page);
@@ -179,18 +178,67 @@ public class OrderDAO extends DBContext {
 
     }
 
+    public double totalMoneyDay(int day) {
+        double a = 0;     
+        try {
+            String sql = "select top 1 SUM(totalPrice) as sum from Orders where DATEPART(dw,[date_Time]) = ? Group by date_Time order by sum desc";
+            PreparedStatement stm = connection.prepareCall(sql);
+            stm.setInt(1, day);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                a = rs.getFloat("sum");
+                return a;
+            }
+        } catch (Exception e) {
+        }
+        return 0;
+    }
+
+    public double totalMoneyMonth(int month) {
+        String sql = "select SUM(totalPrice) from Orders\r\n"
+                + "where MONTH(date_Time)= ? and status = 0\r\n"
+                + "Group by MONTH(date_Time)";
+        try {
+            PreparedStatement stm = connection.prepareCall(sql);
+            stm.setInt(1, month);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                return rs.getDouble(1);
+            }
+        } catch (Exception e) {
+        }
+        return 0;
+    }
+
+    public int setOrderStatus(int id) {
+        try {
+            String sql = "UPDATE [dbo].[orders]\n"
+                    + "   SET [status] = 1\n"
+                    + "WHERE [orders].orderId = ?";
+            PreparedStatement stm = connection.prepareCall(sql);
+            stm.setInt(1, id);
+            stm.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(CategoryDao.class.getName()).log(Level.SEVERE, null, ex);
+            return 0;
+        }
+        return 1;
+    }
+
     public void addOrder(User c, Cart cart) {
         LocalDate curDate = LocalDate.now();
         String date = curDate.toString();
         try {
             //add order
-            String sql = "insert into [orders] values(?,?,?)";
+            String sql = "insert into [orders] values(?,?,?,?)";
             PreparedStatement st = connection.prepareStatement(sql);
             st.setInt(1, c.getId());
             st.setString(2, date);
             st.setDouble(3, cart.getTotalMoney());
+            st.setInt(4, 0);
             st.executeUpdate();
             //lay id cua order vua add
+
             String sql1 = "select top 1 orderID from [Orders] order by orderID desc";
             PreparedStatement st1 = connection.prepareStatement(sql1);
             ResultSet rs = st1.executeQuery();
@@ -210,9 +258,10 @@ public class OrderDAO extends DBContext {
         } catch (SQLException e) {
         }
     }
-    public int deleteFromCart(int tableId){
+
+    public int deleteFromCart(int tableId) {
         try {
-            String sql ="delete from Cart where tableId = ?";
+            String sql = "delete from Cart where tableId = ?";
             PreparedStatement st = connection.prepareStatement(sql);
             st.setInt(1, tableId);
             st.executeUpdate();
@@ -222,6 +271,7 @@ public class OrderDAO extends DBContext {
         }
         return 1;
     }
+
     public void addOrder2(User c, List<Item> item, float totalPrice) {
         LocalDate curDate = LocalDate.now();
         String date = curDate.toString();
@@ -280,6 +330,57 @@ public class OrderDAO extends DBContext {
             return 0;
         }
         return 1;
+    }
+
+    public float getTotalStaffMoney() {
+        try {
+            String sql = "select sum(a.totalPrice)\n"
+                    + "    from Orders a, users b \n"
+                    + "where a.userId = b.userId and b.roleID = 0 and a.[status] = 0";
+            PreparedStatement stm = connection.prepareCall(sql);
+            ResultSet rs = stm.executeQuery();
+            if (rs.next()) {
+                float count = rs.getFloat(1);
+                return count;
+            }
+            return 0;
+        } catch (SQLException ex) {
+            Logger.getLogger(UserDao.class.getName()).log(Level.SEVERE, null, ex);
+            return 0;
+        }
+    }
+
+    public float getTotalMoneyById(int id) {
+        try {
+            String sql = "select Sum(totalPrice) from Orders where userid = ?";
+            PreparedStatement stm = connection.prepareCall(sql);
+            stm.setInt(1, id);
+            ResultSet rs = stm.executeQuery();
+            if (rs.next()) {
+                float count = rs.getFloat(1);
+                return count;
+            }
+            return 0;
+        } catch (SQLException ex) {
+            Logger.getLogger(UserDao.class.getName()).log(Level.SEVERE, null, ex);
+            return 0;
+        }
+    }
+
+    public float getTotalMoney() {
+        try {
+            String sql = "select sum(totalPrice) from [Orders] where status = 0";
+            PreparedStatement stm = connection.prepareCall(sql);
+            ResultSet rs = stm.executeQuery();
+            if (rs.next()) {
+                float count = rs.getFloat(1);
+                return count;
+            }
+            return 0;
+        } catch (SQLException ex) {
+            Logger.getLogger(UserDao.class.getName()).log(Level.SEVERE, null, ex);
+            return 0;
+        }
     }
 
     public float getTotalPrice(int id) {
@@ -342,7 +443,7 @@ public class OrderDAO extends DBContext {
 
     public int totalOrder() {
         try {
-            String sql = "select count([orderID]) as count from [Orders]";
+            String sql = "select count([orderID]) as count from [Orders] where status = 0";
             PreparedStatement stm = connection.prepareCall(sql);
             ResultSet rs = stm.executeQuery();
             if (rs.next()) {
@@ -373,7 +474,7 @@ public class OrderDAO extends DBContext {
     }
 
     public static void main(String[] args) {
-        OrderDAO n = new OrderDAO();      
-        System.out.println(n.getItemByTableId(2));
+        OrderDAO n = new OrderDAO();
+        System.out.println(n.totalMoneyDay(7));
     }
 }

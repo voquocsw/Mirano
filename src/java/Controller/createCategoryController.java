@@ -5,6 +5,8 @@
  */
 package Controller;
 
+import DAO.CategoryDao;
+import Model.Status;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -56,7 +58,7 @@ public class createCategoryController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        request.getRequestDispatcher("addCategory.jsp").forward(request, response);
     }
 
     /**
@@ -70,7 +72,19 @@ public class createCategoryController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        String categoryName = request.getParameter("categoryName");
+        CategoryDao cd = new CategoryDao();
+        int status = cd.addCategory(categoryName);
+        if(status == 1){
+            request.setAttribute("mess", new Status(200, "successfully"));
+            request.getRequestDispatcher("addCategory.jsp").forward(request, response);
+            return;
+        }
+        else{
+            request.setAttribute("mess", new Status(400, "Fail"));
+            request.getRequestDispatcher("addCategory.jsp").forward(request, response); 
+            return;
+        }
     }
 
     /**

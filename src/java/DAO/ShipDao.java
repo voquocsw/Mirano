@@ -58,6 +58,22 @@ public class ShipDao extends DBContext {
         return 1;
     }
 
+    public int cancelShip(int id) {
+        try {
+            String sql = "UPDATE [dbo].[Ship]\n"
+                    + "   SET [statuss] = 2\n"
+                    + "WHERE orderId = ?";
+            PreparedStatement stm = connection.prepareCall(sql);
+            stm.setInt(1, id);
+            stm.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(ShipDao.class.getName()).log(Level.SEVERE, null, ex);
+            return 0;
+        }
+        return 1;
+
+    }
+
     public int changeShipStatus(int id, int status) {
         try {
             String sql = "UPDATE [dbo].[Ship]\n"
@@ -94,7 +110,7 @@ public class ShipDao extends DBContext {
 
     public int totalShip() {
         try {
-            String sql = "select count([orderID]) as count from [Ship] where statuss = 1 ";
+            String sql = "select count([orderID]) as count from [Ship] where statuss != 0 ";
             PreparedStatement stm = connection.prepareCall(sql);
             ResultSet rs = stm.executeQuery();
             if (rs.next()) {
@@ -157,7 +173,7 @@ public class ShipDao extends DBContext {
         List<Ship> ship = new ArrayList<>();
         try {
             String sql = "select * from Ship "
-                    + "where statuss = 1\n"
+                    + "where statuss != 0\n"
                     + "order by [orderID] desc offset (?-1)*10 row fetch next 10 row only";
             PreparedStatement stm = connection.prepareCall(sql);
             stm.setInt(1, page);
@@ -184,6 +200,6 @@ public class ShipDao extends DBContext {
         ShipDao s = new ShipDao();
         System.out.println(s.totalShip());
         System.out.println(s.getShipById(17, 1));
-        
+
     }
 }

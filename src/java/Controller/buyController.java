@@ -97,7 +97,8 @@ public class buyController extends HttpServlet {
         Cookie c=new Cookie("cart", txt);
         c.setMaxAge(2*24*60*60);
         response.addCookie(c);
-        response.sendRedirect("menuController");//thay cai duoi
+       
+        response.sendRedirect("menuController?name=&category=&page=1");//thay cai duoi
         //request.getRequestDispatcher("shop").forward(request, response);
     }
     /**

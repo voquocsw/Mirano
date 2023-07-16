@@ -35,6 +35,7 @@
                         <h3 class="text-center mt-5" >Filter</h3>
                         <form action="manageProductControll" method="get" class="row">
                             <input hidden type="text form-control" value="1" name="page">
+                            
                             <div class="col-3">
                                 <label class="col-md-3">Name: </label>
                                 <input class="col-md-8  form-control" type="text" value="${name}" name="name"/>
@@ -60,7 +61,7 @@
                     </form>
                 </div>
                 <div class="d-flex justify-content-between col-3 ">
-                    
+                    <a href="manageCategoryController?page=1" class="btn btn-success ">Category</a>
                     <a href="createProductController" class="btn btn-success ">Add product</a>
                 </div>
                 <table class="table col-3 table-bordered" style="height: 100px">
@@ -89,10 +90,7 @@
                                         <a style="margin-left: 10px" href="updateProductController?productId=${f.productId}"><i class="fa fa-solid fa-pencil"></i></a>
                                 </th>
                                 <!--                                    <th scope="row">
-                                                                        <button class="btn btn-link" type="button" class="btn btn-primary"
-                                                                                data-bs-toggle="modal" data-bs-target="#exampleModal${f.productId}"><i
-                                                                                class="fa fa-solid fa-trash mb-1"></i>
-                                                                        </button>
+                                                                        
                                                                     </th>-->
 
                             </tr>
@@ -130,7 +128,7 @@
                         <ul class="pagination">
                             <c:forEach begin="1" end="${requestScope.total}" step="1" var="i">
                                 <li class="page-item <c:if test="${i == requestScope.page}"> active </c:if> " >
-                                    <a class="page-link" href="manageProductControll?page=${i}&productName=${productName}&category=${category}">
+                                    <a class="page-link" href="manageProductControll?page=${i}&name=${productName}&category=${category}">
                                         ${i}
                                     </a>
                                 </li>
