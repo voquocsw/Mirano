@@ -40,7 +40,7 @@
                                     <div class="card-body">Total Order </div>
                                     <h3 class="card-body text-center">${totalOrder} Order</h3>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="menuController?page=1">View Details</a>
+                                        <a class="small text-white stretched-link" href="menuController?name=&category=&page=1">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -61,6 +61,16 @@
                                     <h3 class="card-body text-center">${totalMoney}đ</h3>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="#"></a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="card bg-success text-white mb-4">
+                                    <div class="card-body">Total table: </div>
+                                    <h3 class="card-body text-center">${totalTable} table</h3>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="Addtable.jsp">Add Table</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>

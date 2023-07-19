@@ -79,7 +79,7 @@
                                         <th scope="row">${f.price/2}</th>
                                         <th scope="row">
                                             <a href="processController?&num=-1&productId=${f.product.productId}" class="order_online" style="text-decoration: none; font-size: 22px;">-</a>
-                                            <input type="text" value="${f.quantity}">
+                                            <input type="text" readonly value="${f.quantity}">
                                             <a href="processController?&num=1&productId=${f.product.productId}" class="order_online" style="text-decoration: none; font-size: 22px;">+</a>
                                         <th scope="row">${(f.price*f.quantity)/2}</th>
                                         <th scope="row">
@@ -133,7 +133,7 @@
                         </c:if>
                         <c:if test="${sessionScope.role == 1}">
                             <div class="d-flex justify-content-between col-3 " style="align-text: right">
-                                <a href="infoController" class="btn btn-success">Next</a>
+                                <a href="shipInfromationController" class="btn btn-success">Next</a>
                             </div>
                         </c:if>
                     </c:if>

@@ -123,6 +123,7 @@ public class ShipDao extends DBContext {
             return 0;
         }
     }
+    
 
     public int totalShipById(int id) {
         try {
@@ -140,6 +141,7 @@ public class ShipDao extends DBContext {
             return 0;
         }
     }
+    
 
     public List<Ship> getShipById(int UserId, int page) {
         List<Ship> ship = new ArrayList<>();
@@ -165,6 +167,51 @@ public class ShipDao extends DBContext {
             return ship;
         } catch (SQLException ex) {
             Logger.getLogger(ShipDao.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+    }
+    
+    public int totalShip1() {
+        try {
+            String sql = "select count([orderID]) as count from [Ship] where statuss != 0 "
+                                        + "and statuss != 2";
+            PreparedStatement stm = connection.prepareCall(sql);
+            ResultSet rs = stm.executeQuery();
+            if (rs.next()) {
+                int count = rs.getInt("count");
+                return count;
+            }
+            return 0;
+        } catch (SQLException ex) {
+            Logger.getLogger(ShipDao.class.getName()).log(Level.SEVERE, null, ex);
+            return 0;
+        }
+    }
+    
+    public List<Ship> getAllShip1(int page) {
+        List<Ship> ship = new ArrayList<>();
+        try {
+            String sql = "select * from Ship "
+                    + "where statuss != 0\n"
+                    + "and statuss != 2"
+                    + "order by [orderID] desc offset (?-1)*10 row fetch next 10 row only";
+            PreparedStatement stm = connection.prepareCall(sql);
+            stm.setInt(1, page);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                Ship fl = new Ship();
+                fl.setUserId(rs.getInt("userId"));
+                fl.setOrderID(rs.getInt("orderID"));
+                fl.setPhone(rs.getString("phone"));
+                fl.setAddress(rs.getString("addresss"));
+                fl.setName(rs.getString("name"));
+                fl.setPrice(rs.getFloat("totalPrice"));
+                fl.setStatus(rs.getInt("statuss"));
+                ship.add(fl);
+            }
+            return ship;
+        } catch (SQLException ex) {
+            Logger.getLogger(productDao.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
     }

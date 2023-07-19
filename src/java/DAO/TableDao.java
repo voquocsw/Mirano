@@ -43,6 +43,70 @@ public class TableDao extends DBContext {
         return seats;
     }
 
+    public int totalTable() {
+        try {
+            String sql = "select count([tableId]) as count from [table] ";
+            PreparedStatement stm = connection.prepareCall(sql);
+            ResultSet rs = stm.executeQuery();
+            if (rs.next()) {
+                int count = rs.getInt("count");
+                return count;
+            }
+            return 0;
+        } catch (SQLException ex) {
+            Logger.getLogger(TableDao.class.getName()).log(Level.SEVERE, null, ex);
+            return 0;
+        }
+    }
+
+    public int deleteTable(int tableId) {
+        try {
+            String sql = "delete from [table] where tableid = ?";
+            PreparedStatement st = connection.prepareStatement(sql);
+            st.setInt(1, tableId);
+            st.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(TableDao.class.getName()).log(Level.SEVERE, null, ex);
+            return 0;
+        }
+        return 1;
+    }
+
+    public int addTable(String tableName) {
+        try {
+            String sql = "insert into [table] values (?, ?)";
+            PreparedStatement st = connection.prepareStatement(sql);
+            st.setString(1, tableName);
+            st.setInt(2, 0);
+            st.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(TableDao.class.getName()).log(Level.SEVERE, null, ex);
+            return 0;
+        }
+        return 1;
+    }
+
+    public List<Table> getTableCanDelete() {
+        List<Table> table = new ArrayList<>();
+        try {
+            String sql = "SELECT tableid, tableName\n"
+                    + " FROM [table]\n"
+                    + " WHERE tableid NOT IN (SELECT DISTINCT tableid FROM [cart]);";
+            PreparedStatement stm = connection.prepareCall(sql);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                Table s = new Table();
+                s.setTableId(rs.getInt("tableId"));
+                s.setTableName(rs.getString("tableName"));
+                table.add(s);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(TableDao.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+        return table;
+    }
+
     public List<Table> getTableInvalid() {
         List<Table> table = new ArrayList<>();
         try {
@@ -62,6 +126,25 @@ public class TableDao extends DBContext {
             return null;
         }
         return table;
+    }
+
+    public Table getTableByName(String tableName) {
+        try {
+            String sql = "select * from [table] where tableName = ?";
+            PreparedStatement stm = connection.prepareCall(sql);
+            stm.setString(1, tableName);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                Table s = new Table();
+                s.setTableId(rs.getInt("tableId"));
+                s.setTableName(rs.getString("tableName"));
+                return s;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(TableDao.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+        return null;
     }
 
     public List<Table> GetAllTable() {
@@ -104,7 +187,7 @@ public class TableDao extends DBContext {
 
     public static void main(String[] args) {
         TableDao db = new TableDao();
-        List<Table> table = db.getTableIsBooking(1);
-        System.out.println(table.size());
+        List<Table> table = db.getTableCanDelete();
+        System.out.println(table);
     }
 }

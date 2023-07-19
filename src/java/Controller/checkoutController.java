@@ -72,9 +72,9 @@ public class checkoutController extends HttpServlet {
         User a = us.getUserByID(id);
         float totalPrice = Float.parseFloat(request.getParameter("price"));
         int tableId = Integer.parseInt(request.getParameter("tbId"));
-//        List<Item> it = d.getItemByTableId(tableId);
-//        d.addOrder2(a, it, totalPrice);
-//        d.deleteFromCart(tableId);
+       List<Item> it = d.getItemByTableId(tableId);
+      d.addOrder2(a, it, totalPrice);
+       d.deleteFromCart(tableId);
         request.setAttribute("tableId", tableId);
         request.setAttribute("price", totalPrice);
         request.getRequestDispatcher("vnpay_pay.jsp").forward(request, response);

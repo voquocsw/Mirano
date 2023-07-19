@@ -188,6 +188,38 @@
         <servlet-name>revenueController</servlet-name>
         <servlet-class>Controller.revenueController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PaypalConfirmServlet</servlet-name>
+        <servlet-class>Controller.PaypalConfirmServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PaypalPaymentServlet</servlet-name>
+        <servlet-class>Controller.PaypalPaymentServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>shipInfromationController</servlet-name>
+        <servlet-class>Controller.shipInfromationController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Staff_PaypalConfirmServlet</servlet-name>
+        <servlet-class>Controller.Staff_PaypalConfirmServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PaymentOffline</servlet-name>
+        <servlet-class>Controller.PaymentOffline</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>createTableController</servlet-name>
+        <servlet-class>Controller.createTableController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>deleteTableController</servlet-name>
+        <servlet-class>Controller.deleteTableController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>quantityController</servlet-name>
+        <servlet-class>Controller.quantityController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>loginController</servlet-name>
         <url-pattern>/loginController</url-pattern>
@@ -375,6 +407,38 @@
     <servlet-mapping>
         <servlet-name>revenueController</servlet-name>
         <url-pattern>/revenueController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PaypalConfirmServlet</servlet-name>
+        <url-pattern>/PaypalConfirmServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PaypalPaymentServlet</servlet-name>
+        <url-pattern>/PaypalPaymentServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>shipInfromationController</servlet-name>
+        <url-pattern>/shipInfromationController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Staff_PaypalConfirmServlet</servlet-name>
+        <url-pattern>/Staff_PaypalConfirmServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PaymentOffline</servlet-name>
+        <url-pattern>/PaymentOffline</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>createTableController</servlet-name>
+        <url-pattern>/createTableController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>deleteTableController</servlet-name>
+        <url-pattern>/deleteTableController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>quantityController</servlet-name>
+        <url-pattern>/quantityController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

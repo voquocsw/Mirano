@@ -7,6 +7,7 @@ package Controller;
 
 import DAO.OrderDAO;
 import DAO.ShipDao;
+import DAO.TableDao;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -59,16 +60,19 @@ public class staffController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         ShipDao sip = new ShipDao();
-        int totalShip = sip.totalShip();
+        int totalShip = sip.totalShip1();
         OrderDAO od = new OrderDAO();
         int id = (int) request.getSession().getAttribute("id");
         float totalMoney = od.getTotalMoneyById(id);
+        TableDao td = new TableDao();
+        int totalTable = td.totalTable();
 //        ShowDao sDB = new ShowDao();
 //        int totalShow = sDB.countShowActive();
 //        productDao fDB = new productDao();
 //        int totalProduct = fDB.countProductActive();
 //        BookingDao bDb = new BookingDao();
 //        int totalBooking = bDb.totalSeatIsBooking();
+        request.setAttribute("totalTable", totalTable);
         request.setAttribute("totalMoney", totalMoney);
         request.setAttribute("totalShip", totalShip);
 //        request.setAttribute("totalShow", totalShow);

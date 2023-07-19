@@ -1,0 +1,39 @@
+SMAP
+paypal_005fpay_jsp.java
+JSP
+*S JSP
+*F
++ 0 paypal_pay.jsp
+paypal_pay.jsp
++ 1 setupCss.jsp
+setupCss.jsp
++ 2 header.jsp
+header.jsp
++ 3 footer.jsp
+footer.jsp
++ 4 setupJS.jsp
+setupJS.jsp
+*L
+5,6:62
+1#1,40:68
+10#0,4:107
+1#2,49:111
+49:347,8
+50,10:355
+59,5:162
+63:383,8
+64,10:391
+73,2:169
+74:419,8
+75,10:427
+84,12:173
+13#0,26:184
+39:210,3
+40,14:213
+62:236,2
+63,11:238
+5#3,38:249
+73#0,5:286
+1#4,35:291
+77#0,5:325
+*E

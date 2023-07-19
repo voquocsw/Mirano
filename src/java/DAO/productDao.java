@@ -151,12 +151,67 @@ public class productDao extends DBContext {
             return null;
         }
     }
-
+    
+    public List<Product> getProductByCondition1(String proName, String category, int page) {
+        List<Product> product = new ArrayList<>();
+        try {
+            String sql = "select * from Products f left join Category g on f.categoryID = g.categoryID \n"
+                    + "where productName like ?\n"
+                    + "and g.categoryName like ?\n"
+                    + "and f.productStatus = 1"
+                    + "order by [price] offset (?-1)*9 row fetch next 9 row only";
+            PreparedStatement stm = connection.prepareCall(sql);
+            stm.setString(1, "%" + proName + "%");
+            stm.setString(2, "%" + category + "%");
+            stm.setInt(3, page);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                Product fl = new Product();
+                fl.setProductId(rs.getInt("productID"));
+                fl.setProductName(rs.getString("productName"));
+                fl.setDescript(rs.getString("descript"));
+                fl.setImage(rs.getString("imagee"));
+                fl.setPrice(rs.getFloat("price"));
+                Category cat = new Category();
+                cat.setCategoryId(rs.getInt("categoryId"));
+                cat.setCategoryName(rs.getString("categoryName"));
+                fl.setCategory(cat);
+                fl.setStatus(rs.getInt("productStatus"));
+                product.add(fl);
+            }
+            return product;
+        } catch (SQLException ex) {
+            Logger.getLogger(productDao.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+    }
+    
     public int totalProductByCondition(String name, String category) {
         try {
             String sql = "select count(*) as count from Products f  left join Category g on f.categoryID = g.categoryID \n"
                     + "where productName like ? \n"
                     + "and g.categoryName like ?\n";
+            PreparedStatement stm = connection.prepareCall(sql);
+            stm.setString(1, "%" + name + "%");
+            stm.setString(2, "%" + category + "%");
+            ResultSet rs = stm.executeQuery();
+            if (rs.next()) {
+                int count = rs.getInt("count");
+                return count;
+            }
+            return 0;
+        } catch (SQLException ex) {
+            Logger.getLogger(productDao.class.getName()).log(Level.SEVERE, null, ex);
+            return 0;
+        }
+    }
+
+    public int totalProductByCondition1(String name, String category) {
+        try {
+            String sql = "select count(*) as count from Products f  left join Category g on f.categoryID = g.categoryID \n"
+                    + "where productName like ? \n"
+                    + "and g.categoryName like ?\n"
+                    + "and f.productStatus = 1";
             PreparedStatement stm = connection.prepareCall(sql);
             stm.setString(1, "%" + name + "%");
             stm.setString(2, "%" + category + "%");

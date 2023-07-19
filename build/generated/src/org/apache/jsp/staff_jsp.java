@@ -110,7 +110,7 @@ public final class staff_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                            <a class=\"nav-link ms-5\" href=\"staffController\">Home <span class=\"sr-only\">(current)</span></a>\n");
       out.write("                        </li>\n");
       out.write("                        <li class=\"nav-item\">\n");
-      out.write("                            <a class=\"nav-link ms-4\" href=\"menuController\">Order</a>\n");
+      out.write("                            <a class=\"nav-link ms-4\" href=\"menuController?name=&category=&page=1\">Order</a>\n");
       out.write("                        </li>\n");
       out.write("                        <li class=\"nav-item\">\n");
       out.write("                            <a class=\"nav-link ms-4\" href=\"shipController?page=1\">Ship</a>\n");
@@ -149,7 +149,7 @@ public final class staff_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${totalOrder}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write(" Order</h3>\n");
       out.write("                                    <div class=\"card-footer d-flex align-items-center justify-content-between\">\n");
-      out.write("                                        <a class=\"small text-white stretched-link\" href=\"menuController?page=1\">View Details</a>\n");
+      out.write("                                        <a class=\"small text-white stretched-link\" href=\"menuController?name=&category=&page=1\">View Details</a>\n");
       out.write("                                        <div class=\"small text-white\"><i class=\"fas fa-angle-right\"></i></div>\n");
       out.write("                                    </div>\n");
       out.write("                                </div>\n");
@@ -174,6 +174,18 @@ public final class staff_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("đ</h3>\n");
       out.write("                                    <div class=\"card-footer d-flex align-items-center justify-content-between\">\n");
       out.write("                                        <a class=\"small text-white stretched-link\" href=\"#\"></a>\n");
+      out.write("                                        <div class=\"small text-white\"><i class=\"fas fa-angle-right\"></i></div>\n");
+      out.write("                                    </div>\n");
+      out.write("                                </div>\n");
+      out.write("                            </div>\n");
+      out.write("                            <div class=\"col-md-5\">\n");
+      out.write("                                <div class=\"card bg-success text-white mb-4\">\n");
+      out.write("                                    <div class=\"card-body\">Total table: </div>\n");
+      out.write("                                    <h3 class=\"card-body text-center\">");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${totalTable}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write(" table</h3>\n");
+      out.write("                                    <div class=\"card-footer d-flex align-items-center justify-content-between\">\n");
+      out.write("                                        <a class=\"small text-white stretched-link\" href=\"Addtable.jsp\">Add Table</a>\n");
       out.write("                                        <div class=\"small text-white\"><i class=\"fas fa-angle-right\"></i></div>\n");
       out.write("                                    </div>\n");
       out.write("                                </div>\n");

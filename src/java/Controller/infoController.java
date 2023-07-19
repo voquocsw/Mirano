@@ -64,6 +64,10 @@ public class infoController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        float tp = Float.parseFloat(request.getParameter("totalPrice"));
+        String name = request.getParameter("name");
+        String phone = request.getParameter("phone");
+        String address = request.getParameter("address");
         OrderDAO d = new OrderDAO();
         List<Product> list = d.getAllProduct();
         Cookie[] arr = request.getCookies();
@@ -76,12 +80,14 @@ public class infoController extends HttpServlet {
             }
         }
         Cart cart = new Cart(txt, list);
-
         int id = (int) request.getSession().getAttribute("id");
         UserDao db = new UserDao();
         User user = db.findUser(id);
         request.setAttribute("user", user);
         request.setAttribute("cart", cart);
+        request.setAttribute("name", name);
+        request.setAttribute("phone", phone);
+        request.setAttribute("address", address);
         request.getRequestDispatcher("orderInformation.jsp").forward(request, response);
     }
 
@@ -96,40 +102,7 @@ public class infoController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        ShipDao s = new ShipDao();
-        OrderDAO n = new OrderDAO();
-        int id = (int) request.getSession().getAttribute("id");
-        float tp = Float.parseFloat(request.getParameter("totalPrice"));
-        String name = request.getParameter("name");
-        String phone = request.getParameter("phone");
-        String address = request.getParameter("address");      
-        request.setAttribute("id", id);
-        UserDao us = new UserDao();
-        List<Product> list = n.getAllProduct();
-        Cookie[] arr = request.getCookies();
-        String txt = "";
-        if (arr != null) {
-            for (Cookie o : arr) {
-                if (o.getName().equals("cart")) {
-                    txt += o.getValue();
-                }
-            }
-        }
-        Cart cart = new Cart(txt, list);
-        User a = us.getUserByID(id);        
-        n.addOrder(a, cart);
-        int oid = n.getTopOrderId(id);
-        int status = s.addInfo(id, oid, name, phone, address, tp);
-        Cookie c = new Cookie("cart", "");
-        c.setMaxAge(0);
-        response.addCookie(c);
-        request.setAttribute("oid", oid);
-        request.setAttribute("name", name);
-        request.setAttribute("phone", phone);
-        request.setAttribute("address", address);
-        request.setAttribute("price", tp);
-//        response.sendRedirect("Bill.jsp");
-        request.getRequestDispatcher("Bill.jsp").forward(request, response);       
+       
         //request.getRequestDispatcher("shop").forward(request, response);
     }
 

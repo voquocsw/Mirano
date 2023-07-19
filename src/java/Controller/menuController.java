@@ -65,9 +65,9 @@ public class menuController extends HttpServlet {
         String proCat = request.getParameter("category");
         int page = Integer.parseInt(request.getParameter("page"));
         productDao db = new productDao();
-        List<Product> product = db.getProductByCondition(name, proCat, page);
+        List<Product> product = db.getProductByCondition1(name, proCat, page);
         List<Category> cat = db.getAllCategory();
-        int total = db.totalProductByCondition(name, proCat);
+        int total = db.totalProductByCondition1(name, proCat);
         request.setAttribute("cat", cat);
         request.setAttribute("name", name);
         request.setAttribute("category", proCat);

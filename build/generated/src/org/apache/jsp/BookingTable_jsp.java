@@ -171,12 +171,12 @@ public final class BookingTable_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("                    </button>\r\n");
       out.write("\r\n");
       out.write("                    <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\r\n");
-      out.write("                        <ul class=\"navbar-nav  mx-auto \">\r\n");
+      out.write("                        <ul class=\"navbar-nav  mx-auto \" style=\"margin-right: -40px;\">\r\n");
       out.write("                            <li class=\"nav-item\">\r\n");
       out.write("                                <a class=\"nav-link\" href=\"homeController\">Home</a>\r\n");
       out.write("                            </li>\r\n");
       out.write("                            <li class=\"nav-item\">\r\n");
-      out.write("                                <a class=\"nav-link\" href=\"menuController\">Menu</a>\r\n");
+      out.write("                                <a class=\"nav-link\" href=\"menuController?name=&category=&page=1\">Menu</a>\r\n");
       out.write("                            </li>\r\n");
       out.write("                            ");
       if (_jspx_meth_c_if_0(_jspx_page_context))
@@ -255,7 +255,7 @@ public final class BookingTable_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("                                <br>\n");
       out.write("\n");
       out.write("                                <div class=\"d-flex justify-content-center mr-5\">\n");
-      out.write("                                    <button type=\"submit\" class=\"btn btn-warning btn-lg ms-3 text-center\" style=\"border-radius: 10px\">Submit form</button>\n");
+      out.write("                                    <a href=\"#\" class=\"btn btn-warning btn-lg ms-3 text-center\">Coming in the next update</a>                                  \n");
       out.write("                                </div>\n");
       out.write("\n");
       out.write("                            </div>\n");
@@ -343,6 +343,9 @@ public final class BookingTable_jsp extends org.apache.jasper.runtime.HttpJspBas
         out.write("                                <li class=\"nav-item\">\r\n");
         out.write("                                    <a class=\"nav-link\" href=\"cartController\">Carts</a>\r\n");
         out.write("                                </li>  \r\n");
+        out.write("                                <li class=\"nav-item\">\r\n");
+        out.write("                                    <a class=\"nav-link\" href=\"historyOrderController?page=1\">History</a>\r\n");
+        out.write("                                </li> \r\n");
         out.write("                            ");
         int evalDoAfterBody = _jspx_th_c_if_0.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -411,6 +414,9 @@ public final class BookingTable_jsp extends org.apache.jasper.runtime.HttpJspBas
         out.write("                                </a> \r\n");
         out.write("                                <a href=\"registerController\" class=\"order_online\" style=\"text-decoration: none\">\r\n");
         out.write("                                    Register\r\n");
+        out.write("                                </a>\r\n");
+        out.write("                                <a href=\"forgotPasswordController\" class=\"order_online\" style=\"text-decoration: none\">\r\n");
+        out.write("                                    Forgot Password\r\n");
         out.write("                                </a>\r\n");
         out.write("                            ");
         int evalDoAfterBody = _jspx_th_c_if_2.doAfterBody();

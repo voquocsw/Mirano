@@ -74,6 +74,88 @@ public class OrderDAO extends DBContext {
             return null;
         }
     }
+    
+    public int addQuantity(int productId, int tableId){
+        int quantity = getQuantityInCart(productId, tableId);
+        try {
+            String sql = "UPDATE [dbo].[Cart]\n"
+                    + "   SET [quantity] = ?\n"
+                    + "WHERE productid = ? and tableid = ?";
+            PreparedStatement stm = connection.prepareCall(sql);
+            stm.setInt(1, (quantity + 1));
+            stm.setInt(2, productId);
+            stm.setInt(3, tableId);
+            stm.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(CategoryDao.class.getName()).log(Level.SEVERE, null, ex);
+            return 0;
+        }
+        return 1;
+    }
+    public int subQuantity(int productId, int tableId){
+        int quantity = getQuantityInCart(productId, tableId);
+        try {
+            String sql = "UPDATE [dbo].[Cart]\n"
+                    + "   SET [quantity] = ?\n"
+                    + "WHERE productid = ? and tableid = ?";
+            PreparedStatement stm = connection.prepareCall(sql);
+            stm.setInt(1, (quantity - 1));
+            stm.setInt(2, productId);
+            stm.setInt(3, tableId);
+            stm.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(CategoryDao.class.getName()).log(Level.SEVERE, null, ex);
+            return 0;
+        }
+        return 1;
+    }
+    
+    public int deleteProductFromCart(int productId, int tableId){
+        try {
+            String sql = "delete from Cart\n"             
+                    + "WHERE productid = ? and tableid = ?";
+            PreparedStatement stm = connection.prepareCall(sql);
+            stm.setInt(1, productId);
+            stm.setInt(2, tableId);
+            stm.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(OrderDAO.class.getName()).log(Level.SEVERE, null, ex);
+            return 0;
+        }
+        return 1;
+    }
+    
+    public int sumQuantity(int tableId) {
+        int a = 0;     
+        try {
+            String sql = "select SUM(quantity) as sum from cart where tableId = ?";
+            PreparedStatement stm = connection.prepareCall(sql);
+            stm.setInt(1, tableId);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                a = rs.getInt("sum");
+                return a;
+            }
+        } catch (Exception e) {
+        }
+        return 0;
+    }
+    
+    public int getQuantityInCart(int productId, int tableId){
+        try {
+            String sql = "Select quantity from cart where productID = ? and tableid = ?";
+            PreparedStatement st = connection.prepareStatement(sql);
+            st.setInt(2, tableId);
+            st.setInt(1, productId);
+            ResultSet rs = st.executeQuery();
+            while (rs.next()) {
+                int t = rs.getInt("quantity");
+                return t;
+            }
+        } catch (SQLException e) {
+        }
+        return 0;
+    }
 
     public List<Order> getAllOrder(int page) {
         List<Order> orders = new ArrayList<>();
@@ -277,11 +359,12 @@ public class OrderDAO extends DBContext {
         String date = curDate.toString();
         try {
             //add order
-            String sql = "insert into [orders] values(?,?,?)";
+            String sql = "insert into [orders] values(?,?,?,?)";
             PreparedStatement st = connection.prepareStatement(sql);
             st.setInt(1, c.getId());
             st.setString(2, date);
             st.setFloat(3, totalPrice);
+            st.setInt(4, 0);
             st.executeUpdate();
             //lay id cua order vua add
             String sql1 = "select top 1 orderID from [Orders] order by orderID desc";

@@ -120,16 +120,13 @@ public final class tableOrder_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                            <a class=\"nav-link ms-5\" href=\"staffController\">Home <span class=\"sr-only\">(current)</span></a>\n");
       out.write("                        </li>\n");
       out.write("                        <li class=\"nav-item\">\n");
-      out.write("                            <a class=\"nav-link ms-4\" href=\"menuController\">Order</a>\n");
+      out.write("                            <a class=\"nav-link ms-4\" href=\"menuController?name=&category=&page=1\">Order</a>\n");
       out.write("                        </li>\n");
       out.write("                        <li class=\"nav-item\">\n");
       out.write("                            <a class=\"nav-link ms-4\" href=\"shipController?page=1\">Ship</a>\n");
       out.write("                        </li>\n");
       out.write("                        <li class=\"nav-item\">\n");
       out.write("                            <a class=\"nav-link ms-4\" href=\"cartController\">Cart</a>\n");
-      out.write("                        </li>\n");
-      out.write("                        <li class=\"nav-item\">\n");
-      out.write("                            <a class=\"nav-link ms-4\" href=\"managerUserControll?page=1\">Users</a>\n");
       out.write("                        </li>\n");
       out.write("                        <li class=\"nav-item\">\n");
       out.write("                            <a class=\"nav-link ms-4\" href=\"tableOrderController?\">TBOrder</a>\n");
@@ -150,7 +147,7 @@ public final class tableOrder_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            <!-- style=\"background-color: white\"-->\n");
       out.write("            <div class=\"container d-flex \" style=\"min-height: 800px;\">\n");
       out.write("                <div class=\"col-md-12\">\n");
-      out.write("                    <h3 class=\"mt-5\">Ship</h3>\n");
+      out.write("                    <h3 class=\"mt-5\">Table Order</h3>\n");
       out.write("                    <form action=\"tableOrderController\" method =\"post\">\n");
       out.write("                        <div>\n");
       out.write("                            <label class=\"labels\">Table</label>\n");
@@ -161,9 +158,10 @@ public final class tableOrder_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("                            </select>\n");
       out.write("                        </div>\n");
-      out.write("                        <div class=\"col-3 d-flex justify-content-center\">\n");
-      out.write("                            <button type=\"submit\" class=\"btn btn-primary\" style=\"height: 35px; margin-top: 20px\">Submit</button>\n");
-      out.write("                        </div>\n");
+      out.write("                        ");
+      if (_jspx_meth_c_if_1(_jspx_page_context))
+        return;
+      out.write("\n");
       out.write("                    </form>\n");
       out.write("                    <table class=\"table col-3 table-bordered\" style=\"height: 100px\">\n");
       out.write("                        <thead>\n");
@@ -182,25 +180,20 @@ public final class tableOrder_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                      \n");
       out.write("                        </tbody>\n");
       out.write("                    </table>\n");
+      out.write("\n");
       out.write("                    <div style=\"margin-left: 75%\">\n");
       out.write("                        <h5>Total Price: ");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${totalPrice}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write(" đ</h5>\n");
       out.write("                    </div>\n");
-      out.write("                </div>\n");
-      out.write("                <form action=\"checkoutController\">\n");
-      out.write("                    <div>\n");
-      out.write("                        <input hidden type=\"search\" value=\"");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${totalPrice}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("\" name=\"ttpr\" hidden>\n");
-      out.write("                        <input hidden type=\"search\" value=\"");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${tableId}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("\" name=\"tbId\" hidden>\n");
-      out.write("                        <button type=\"submit\" class=\"btn btn-primary\">Payment</button>\n");
+      out.write("                    ");
+      if (_jspx_meth_c_if_2(_jspx_page_context))
+        return;
+      out.write("\n");
       out.write("                    </div>\n");
-      out.write("                </form>\n");
-      out.write("            </div>\n");
-      out.write("        </section>\n");
+      out.write("\n");
+      out.write("                </div>\n");
+      out.write("            </section>\n");
       out.write("        ");
       out.write("\n");
       out.write("\n");
@@ -318,6 +311,36 @@ public final class tableOrder_jsp extends org.apache.jasper.runtime.HttpJspBase
     return false;
   }
 
+  private boolean _jspx_meth_c_if_1(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:if
+    org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_1 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
+    _jspx_th_c_if_1.setPageContext(_jspx_page_context);
+    _jspx_th_c_if_1.setParent(null);
+    _jspx_th_c_if_1.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${requestScope.table != []}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    int _jspx_eval_c_if_1 = _jspx_th_c_if_1.doStartTag();
+    if (_jspx_eval_c_if_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("\n");
+        out.write("                            <div class=\"col-3 d-flex justify-content-center\">\n");
+        out.write("                                <button type=\"submit\" class=\"btn btn-primary\" style=\"height: 35px; margin-top: 20px\">Submit</button>\n");
+        out.write("                            </div>\n");
+        out.write("                        ");
+        int evalDoAfterBody = _jspx_th_c_if_1.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_if_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_1);
+      return true;
+    }
+    _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_1);
+    return false;
+  }
+
   private boolean _jspx_meth_c_forEach_1(PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
@@ -341,9 +364,21 @@ public final class tableOrder_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write("                                    <th scope=\"row\">");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${f.price}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</th>\n");
-          out.write("                                    <th scope=\"row\"> <input type=\"text\" value=\"");
+          out.write("                                    <th scope=\"row\">\n");
+          out.write("                                        <a href=\"quantityController?&num=-1&productId=");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${f.product.productId}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("&tableId=");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${tableId}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("\" class=\"order_online\" style=\"text-decoration: none; font-size: 22px;\">-</a>\n");
+          out.write("                                        <input type=\"text\" readonly value=\"");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${f.quantity}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("\"></th>\n");
+          out.write("\">\n");
+          out.write("                                        <a href=\"quantityController?&num=1&productId=");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${f.product.productId}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("&tableId=");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${tableId}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("\" class=\"order_online\" style=\"text-decoration: none; font-size: 22px;\">+</a>\n");
+          out.write("                                    </th>\n");
           out.write("                                    <th scope=\"row\">");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${(f.price*f.quantity)}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</th>\n");
@@ -368,6 +403,48 @@ public final class tableOrder_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_th_c_forEach_1.doFinally();
       _jspx_tagPool_c_forEach_var_items.reuse(_jspx_th_c_forEach_1);
     }
+    return false;
+  }
+
+  private boolean _jspx_meth_c_if_2(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:if
+    org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_2 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
+    _jspx_th_c_if_2.setPageContext(_jspx_page_context);
+    _jspx_th_c_if_2.setParent(null);
+    _jspx_th_c_if_2.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${tableId != null}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    int _jspx_eval_c_if_2 = _jspx_th_c_if_2.doStartTag();
+    if (_jspx_eval_c_if_2 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("\n");
+        out.write("                        <form action=\"PaypalPaymentServlet\" method=\"post\">\n");
+        out.write("                            <div>\n");
+        out.write("                                <input hidden type=\"search\" value=\"");
+        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${totalPrice}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+        out.write("\" name=\"price\" hidden>\n");
+        out.write("                                <input hidden type=\"search\" value=\"");
+        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${tableId}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+        out.write("\" name=\"tbId\" hidden>\n");
+        out.write("                                <button type=\"submit\" class=\"btn btn-primary\">Payment online</button>\n");
+        out.write("                                <a href=\"PaymentOffline?price=");
+        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${totalPrice}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+        out.write("&tbId=");
+        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${tableId}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+        out.write("\" class=\"btn btn-success\">Payment offline</a>\n");
+        out.write("                            </div>\n");
+        out.write("                        </form>");
+        int evalDoAfterBody = _jspx_th_c_if_2.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_if_2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_2);
+      return true;
+    }
+    _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_2);
     return false;
   }
 }

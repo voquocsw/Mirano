@@ -81,7 +81,7 @@
                                 <br>
 
                                 <div class="d-flex justify-content-center mr-5">
-                                    <button type="submit" class="btn btn-warning btn-lg ms-3 text-center" style="border-radius: 10px">Submit form</button>
+                                    <a href="#" class="btn btn-warning btn-lg ms-3 text-center">Coming in the next update</a>                                  
                                 </div>
 
                             </div>

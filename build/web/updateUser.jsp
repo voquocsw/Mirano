@@ -47,8 +47,12 @@
                                 </div>
                                 <div class="col-md-12">
                                     <label class="labels">Gender</label>
+                                    <c:if test="${user.gender == true}">
                                     <input type="text" readonly class="form-control" 
-                                           placeholder="gender" value="${user.gender}" name="gender">
+                                           placeholder="gender" value="Male" name="gender"></c:if>
+                                    <c:if test="${user.gender == false}">
+                                    <input type="text" readonly class="form-control" 
+                                           placeholder="gender" value="Female" name="gender"></c:if>
                                 </div>
                                 <div class="col-md-12">
                                     <label class="labels">Phone</label>

@@ -26,7 +26,7 @@
             <!-- style="background-color: white"-->
             <div class="container d-flex " style="min-height: 800px;">
                 <div class="col-md-12">
-                    <h3 class="mt-5">Ship</h3>
+                    <h3 class="mt-5">Table Order</h3>
                     <form action="tableOrderController" method ="post">
                         <div>
                             <label class="labels">Table</label>
@@ -39,9 +39,11 @@
                                 </c:forEach>
                             </select>
                         </div>
-                        <div class="col-3 d-flex justify-content-center">
-                            <button type="submit" class="btn btn-primary" style="height: 35px; margin-top: 20px">Submit</button>
-                        </div>
+                        <c:if test="${requestScope.table != []}">
+                            <div class="col-3 d-flex justify-content-center">
+                                <button type="submit" class="btn btn-primary" style="height: 35px; margin-top: 20px">Submit</button>
+                            </div>
+                        </c:if>
                     </form>
                     <table class="table col-3 table-bordered" style="height: 100px">
                         <thead>
@@ -58,7 +60,11 @@
                                 <tr style="height: 60px">
                                     <th scope="row">${f.product.productName}</th>
                                     <th scope="row">${f.price}</th>
-                                    <th scope="row"> <input type="text" value="${f.quantity}"></th>
+                                    <th scope="row">
+                                        <a href="quantityController?&num=-1&productId=${f.product.productId}&tableId=${tableId}" class="order_online" style="text-decoration: none; font-size: 22px;">-</a>
+                                        <input type="text" readonly value="${f.quantity}">
+                                        <a href="quantityController?&num=1&productId=${f.product.productId}&tableId=${tableId}" class="order_online" style="text-decoration: none; font-size: 22px;">+</a>
+                                    </th>
                                     <th scope="row">${(f.price*f.quantity)}</th>
                                     <th scope="row">
                                         <!--                                            <a style="margin-left: 10px" href="shipDetailController?id="><i class="fa fa-solid fa-trash mb-1"></i></a>-->
@@ -67,19 +73,23 @@
                             </c:forEach>                      
                         </tbody>
                     </table>
+
                     <div style="margin-left: 75%">
                         <h5>Total Price: ${totalPrice} đ</h5>
                     </div>
-                </div>
-                <form action="PaymentOnlineServlet">
-                    <div>
-                        <input hidden type="search" value="${totalPrice}" name="price" hidden>
-                        <input hidden type="search" value="${tableId}" name="tbId" hidden>
-                        <button type="submit" class="btn btn-primary">Payment</button>
+                    <c:if test = "${tableId != null}">
+                        <form action="PaypalPaymentServlet" method="post">
+                            <div>
+                                <input hidden type="search" value="${totalPrice}" name="price" hidden>
+                                <input hidden type="search" value="${tableId}" name="tbId" hidden>
+                                <button type="submit" class="btn btn-primary">Payment online</button>
+                                <a href="PaymentOffline?price=${totalPrice}&tbId=${tableId}" class="btn btn-success">Payment offline</a>
+                            </div>
+                        </form></c:if>
                     </div>
-                </form>
-            </div>
-        </section>
+
+                </div>
+            </section>
         <%@include file="admin_footer.jsp" %>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Section: Design Block -->

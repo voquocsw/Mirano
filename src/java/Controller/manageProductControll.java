@@ -66,7 +66,7 @@ public class manageProductControll extends HttpServlet {
         productDao db = new productDao();
         List<Product> product = db.getProductByCondition(proName, proCat, page);
         List<Category> cat = db.getAllCategory();
-        int total = db.totalProductByCondition(proName, proCat);
+        int total = db.totalProductByCondition1(proName, proCat);
         request.setAttribute("cat", cat);
         request.setAttribute("name", proName);
         request.setAttribute("category", proCat);

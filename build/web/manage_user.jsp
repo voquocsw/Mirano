@@ -48,8 +48,8 @@
                                     <th scope="row">${f.id}</th>
                                     <th scope="row">${f.fullname}</a></th>
                                     <th scope="row">
-                                        <c:if test="${f.gender}">Male</c:if>
-                                        <c:if test="${!f.gender}">Female</c:if>
+                                        <c:if test="${f.gender == true}">Male</c:if>
+                                        <c:if test="${f.gender == false}">Female</c:if>
                                         </th>
                                         <th scope="row">${f.phone}</th>
                                     <th scope="row">${f.address}</th>

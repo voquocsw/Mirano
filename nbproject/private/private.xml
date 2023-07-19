@@ -3,113 +3,77 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/Ship.jsp</file>
             <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/checkoutController.java</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/changePassController.java</file>
             <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/newPassword.jsp</file>
+            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/processController.java</file>
             <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/loginController.java</file>
+            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/OrderDetail.jsp</file>
+            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/Bill_Staff.jsp</file>
+            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/DAO/OrderDAO.java</file>
+            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/Addtable.jsp</file>
             <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/menu.jsp</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/admin_footer.jsp</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/footer.jsp</file>
+            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/Staff_header.jsp</file>
             <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/managerOrderController.java</file>
+            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/PaypalPaymentServlet.java</file>
             <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/Bill.jsp</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/saveController.java</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/viewProduct.jsp</file>
+            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/paypal_pay.jsp</file>
+            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/PaymentOffline.java</file>
+            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/addCategory.jsp</file>
+            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/adminDashboard.jsp</file>
+            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/shipInformation.jsp</file>
+            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/DeleteTable.jsp</file>
             <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/tableOrder.jsp</file>
             <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/DAO/MD5.java</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Model/BookingDetail.java</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/vnpay_return.jsp</file>
+            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/DAO/CategoryDao.java</file>
             <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/DAO/TableDao.java</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/historyOrder.jsp</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/createProduct.jsp</file>
             <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/infoController.java</file>
+            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/adminHistoryOrderController.java</file>
             <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/vnpay_pay.jsp</file>
             <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/createProductController.java</file>
+            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/changeShipStatus.java</file>
             <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Model/Category.java</file>
             <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/manageProductControll.java</file>
+            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/orderInformation.jsp</file>
             <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/updateUser.jsp</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/updateCategory.jsp</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/updateProduct.jsp</file>
+            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/manage_category.jsp</file>
+            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/profileController.java</file>
             <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/createCategoryController.java</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/homeController.java</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/updateProductController.java</file>
             <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/com/vnpay/common/ajaxServlet.java</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/admin_header.jsp</file>
             <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/UserOrderDetail.jsp</file>
             <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/productController.java</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Model/Item.java</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/setupJS.jsp</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/manage_product.jsp</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/shipController.java</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/registerController.java</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/menuController.java</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/managerUserControll.java</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/profile.jsp</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/cancelShipController.java</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/historyOrderController.java</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/updateUserController.java</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/vnpay_refund.jsp</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/revenue.jsp</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Model/Email.java</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/enterOtp.jsp</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/com/vnpay/common/Config.java</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/moneyByDay.java</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/userHistoryOrderController.java</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/moneyByDay.jsp</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Model/Order.java</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/Ship.jsp</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Model/OrderDetail.java</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/home.jsp</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/processController.java</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/OrderDetail.jsp</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/DAO/OrderDAO.java</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/Bill_Staff.jsp</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/Staff_header.jsp</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/loginjsp.jsp</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/addCategory.jsp</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Model/Cart.java</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/adminDashboard.jsp</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/product.jsp</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/forgotPassword.jsp</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/com/vnpay/common/vnpayQuery.java</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/com/vnpay/common/vnpayRefund.java</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/DAO/CategoryDao.java</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/forgotPasswordController.java</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/adminHistoryOrderController.java</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/changeShipStatus.java</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/changePassword.jsp</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/manage_category.jsp</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/orderInformation.jsp</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/profileController.java</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Model/Table.java</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/revenueController.java</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/logoutController.java</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/newPasswordController.java</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/DAO/UserDao.java</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/staffBill.jsp</file>
             <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/buyController.java</file>
+            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/staffBill.jsp</file>
+            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/DAO/UserDao.java</file>
             <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/adminDashboardController.java</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/cartController.java</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/index.html</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/BookingTable.jsp</file>
+            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/manage_product.jsp</file>
+            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/quantityController.java</file>
+            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/staffOrderInformation.jsp</file>
+            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/shipController.java</file>
+            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/PaypalConfirmServlet.java</file>
             <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/PaymentOnlineServlet.java</file>
+            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/BookingTable.jsp</file>
             <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/manage_user.jsp</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/shipDetailController.java</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/DAO/WhenDao.java</file>
+            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/deleteTableController.java</file>
+            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/menuController.java</file>
+            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/Staff_PaypalConfirmServlet.java</file>
             <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/moneyByMonth.jsp</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/manageCategoryController.java</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/register.jsp</file>
             <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/staff.jsp</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/setupCss.jsp</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/moneyByMonth.java</file>
+            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/vnpay_refund.jsp</file>
             <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/DAO/ShipDao.java</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/header.jsp</file>
+            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/OfflinePayment.jsp</file>
             <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/DAO/productDao.java</file>
+            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/shipInfromationController.java</file>
+            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/Staff_paypal_pay.jsp</file>
             <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/tableOrderController.java</file>
+            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Model/Ship.java</file>
             <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Model/Product.java</file>
             <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/manage_cart.jsp</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/manage_order.jsp</file>
+            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/moneyByDay.jsp</file>
             <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/staffController.java</file>
-            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/DAO/DBContext.java</file>
+            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/web/manage_order.jsp</file>
+            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Controller/createTableController.java</file>
+            <file>file:/C:/Users/Aver/Documents/NetBeansProjects/Mirano/src/java/Model/Order.java</file>
         </group>
     </open-files>
 </project-private>

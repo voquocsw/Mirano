@@ -52,7 +52,7 @@
                             <a class="nav-link ms-4" href="cartController">Cart</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link ms-4" href="tableOrderController?">TBOrder</a>
+                            <a class="nav-link ms-4" href="tableOrderController">TBOrder</a>
                         </li>
                     </ul>
                 </div>
